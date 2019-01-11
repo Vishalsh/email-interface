@@ -1,0 +1,14 @@
+@import "~styles/variables";
+
+.header {
+  background: map_get($gray, '1500');
+  box-sizing: border-box;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid map_get($gray, '1420')
+}
+
+.search {
+  border: 0;
+  font-size: map_get($fontSizes, '16');
+  margin-left: 1rem;
+}

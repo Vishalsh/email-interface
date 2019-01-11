@@ -1,6 +1,25 @@
+$icons-root: '~assets/images/icons/';
+
 .icon {
   display: inline-block;
   width: 20px;
   height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 
+.icon-hamburger {
+  background-image: url('#{$icons-root}icon-hamburger.png');
+}
+
+.icon-logout {
+  background-image: url('#{$icons-root}icon-logout.png');
+}
+
+.icon-email {
+  background-image: url('#{$icons-root}icon-email.png');
+}
+
+.icon-email-solid {
+  background-image: url('#{$icons-root}icon-email-solid.png');
+}

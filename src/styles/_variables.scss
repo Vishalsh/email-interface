@@ -1,3 +1,18 @@
 // colors
+$primary: #19a689;
 
-$primary: #1bb394;
+$gray: (
+        '1500': #ffffff,
+        '1530': #f3f3f3,
+        '1420': #e2e2e2,
+        '666': #666666
+);
+
+//typography
+
+$fontSizes: (
+        '10': 1rem,
+        '12': 1.2rem,
+        '14': 1.4rem,
+        '16': 1.6rem
+);

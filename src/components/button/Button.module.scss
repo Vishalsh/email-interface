@@ -1,0 +1,21 @@
+@import "~styles/variables";
+
+.button {
+  border: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  height: 3rem;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  zoom: 1;
+  font-size: map_get($fontSizes, '12');
+  padding: 6px 12px;
+  border-radius: 2px;
+}
+
+.primary {
+  background-color: $primary;
+}

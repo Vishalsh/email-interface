@@ -2,8 +2,8 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import routes from 'constants/routes';
-import Mailbox from 'pages/mailbox/Mailbox';
 import Header from 'features/header/Header';
+import Mailbox from 'pages/mailbox/Mailbox';
 
 const Layout = () => (
   <>
