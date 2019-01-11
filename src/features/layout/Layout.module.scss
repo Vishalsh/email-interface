@@ -1,0 +1,21 @@
+@import "~styles/variables";
+
+.header {
+  position: fixed;
+  left: 70px;
+  right: 0;
+  top: 0;
+}
+
+.sidebar {
+  position: fixed;
+  width: 70px;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: $sidebar;
+}
+
+.main {
+  margin: 80px 20px 20px 90px;
+}
