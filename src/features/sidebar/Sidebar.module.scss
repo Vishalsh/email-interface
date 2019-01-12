@@ -1,3 +1,5 @@
+@import "~styles/variables";
+
 .nav {
   list-style: none;
 }
@@ -13,4 +15,17 @@
 .linkIcon {
   height: 30px;
   width: 30px;
+}
+
+.active {
+  background-color: $sidebar-active;
+
+  &:before {
+    content: '';
+    width: 5px;
+    height: 60px;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+  }
 }

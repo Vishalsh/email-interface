@@ -7,106 +7,114 @@ exports[`Sidebar should render the component 1`] = `
   <li
     key="Dashboard_0"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/dashboard"
     >
       <i
         className="icon icon-dashboard linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Layouts_1"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/layouts"
     >
       <i
         className="icon icon-layouts linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Graphs_2"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/graphs"
     >
       <i
         className="icon icon-graphs linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Mailbox_3"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/mailbox"
     >
       <i
         className="icon icon-mailbox linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Metrics_4"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/metrics"
     >
       <i
         className="icon icon-metrics linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Widgets_5"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/widgets"
     >
       <i
         className="icon icon-widgets linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="Forms_6"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/forms"
     >
       <i
         className="icon icon-forms linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
   <li
     key="App Views_7"
   >
-    <Link
+    <NavLink
+      activeClassName="active"
+      aria-current="page"
       className="link"
-      replace={false}
       to="/app-views"
     >
       <i
         className="icon icon-app-views linkIcon"
       />
-    </Link>
+    </NavLink>
   </li>
 </nav>
 `;

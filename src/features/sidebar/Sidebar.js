@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import routes from 'constants/routes';
 import classes from './Sidebar.module.scss';
@@ -44,9 +44,9 @@ const Sidebar = () => {
       {
         links.map((link, index) => (
           <li key={`${link.name}_${index}`}>
-            <Link className={classes.link} to={link.routeTo}>
+            <NavLink className={classes.link} to={link.routeTo} activeClassName={classes.active}>
               <i className={`icon icon-${link.icon} ${classes.linkIcon}`} />
-            </Link>
+            </NavLink>
           </li>
         ))
       }
