@@ -48,10 +48,13 @@ const Sidebar = (props) => {
         {
           links.map((link, index) => (
             <li key={`${link.name}_${index}`}>
-              <NavLink className={`${classes.link} ${isOpen ? classes.linkOpen : ''}`} to={link.routeTo}
-                       activeClassName={classes.active}>
-                <i className={`icon icon-${link.icon} ${classes.linkIcon}`}/>
-                <span>{link.name}</span>
+              <NavLink className={classes.link} to={link.routeTo} activeClassName={classes.active}>
+                <div className={classes.linkIcon}>
+                  <i className={`icon icon-${link.icon} ${classes.icon}`}/>
+                </div>
+                <div className={classes.linkContent}>
+                  <span>{link.name}</span>
+                </div>
               </NavLink>
             </li>
           ))

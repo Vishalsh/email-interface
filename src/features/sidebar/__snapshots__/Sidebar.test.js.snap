@@ -13,15 +13,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/dashboard"
       >
-        <i
-          className="icon icon-dashboard linkIcon"
-        />
-        <span>
-          Dashboard
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-dashboard icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Dashboard
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -30,15 +38,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/layouts"
       >
-        <i
-          className="icon icon-layouts linkIcon"
-        />
-        <span>
-          Layouts
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-layouts icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Layouts
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -47,15 +63,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/graphs"
       >
-        <i
-          className="icon icon-graphs linkIcon"
-        />
-        <span>
-          Graphs
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-graphs icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Graphs
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -64,15 +88,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/mailbox"
       >
-        <i
-          className="icon icon-mailbox linkIcon"
-        />
-        <span>
-          Mailbox
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-mailbox icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Mailbox
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -81,15 +113,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/metrics"
       >
-        <i
-          className="icon icon-metrics linkIcon"
-        />
-        <span>
-          Metrics
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-metrics icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Metrics
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -98,15 +138,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/widgets"
       >
-        <i
-          className="icon icon-widgets linkIcon"
-        />
-        <span>
-          Widgets
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-widgets icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Widgets
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -115,15 +163,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/forms"
       >
-        <i
-          className="icon icon-forms linkIcon"
-        />
-        <span>
-          Forms
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-forms icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Forms
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -132,15 +188,23 @@ exports[`Sidebar should render the component in closed state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link "
+        className="link"
         to="/app-views"
       >
-        <i
-          className="icon icon-app-views linkIcon"
-        />
-        <span>
-          App Views
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-app-views icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            App Views
+          </span>
+        </div>
       </NavLink>
     </li>
   </nav>
@@ -160,15 +224,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/dashboard"
       >
-        <i
-          className="icon icon-dashboard linkIcon"
-        />
-        <span>
-          Dashboard
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-dashboard icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Dashboard
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -177,15 +249,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/layouts"
       >
-        <i
-          className="icon icon-layouts linkIcon"
-        />
-        <span>
-          Layouts
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-layouts icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Layouts
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -194,15 +274,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/graphs"
       >
-        <i
-          className="icon icon-graphs linkIcon"
-        />
-        <span>
-          Graphs
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-graphs icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Graphs
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -211,15 +299,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/mailbox"
       >
-        <i
-          className="icon icon-mailbox linkIcon"
-        />
-        <span>
-          Mailbox
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-mailbox icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Mailbox
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -228,15 +324,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/metrics"
       >
-        <i
-          className="icon icon-metrics linkIcon"
-        />
-        <span>
-          Metrics
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-metrics icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Metrics
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -245,15 +349,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/widgets"
       >
-        <i
-          className="icon icon-widgets linkIcon"
-        />
-        <span>
-          Widgets
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-widgets icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Widgets
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -262,15 +374,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/forms"
       >
-        <i
-          className="icon icon-forms linkIcon"
-        />
-        <span>
-          Forms
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-forms icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            Forms
+          </span>
+        </div>
       </NavLink>
     </li>
     <li
@@ -279,15 +399,23 @@ exports[`Sidebar should render the component in open state 1`] = `
       <NavLink
         activeClassName="active"
         aria-current="page"
-        className="link linkOpen"
+        className="link"
         to="/app-views"
       >
-        <i
-          className="icon icon-app-views linkIcon"
-        />
-        <span>
-          App Views
-        </span>
+        <div
+          className="linkIcon"
+        >
+          <i
+            className="icon icon-app-views icon"
+          />
+        </div>
+        <div
+          className="linkContent"
+        >
+          <span>
+            App Views
+          </span>
+        </div>
       </NavLink>
     </li>
   </nav>
