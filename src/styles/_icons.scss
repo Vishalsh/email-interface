@@ -1,4 +1,4 @@
-$icons-root: '~assets/images/icons/';
+$icons-root: '~assets/images/icons/icon-';
 
 .icon {
   display: inline-block;
@@ -9,49 +9,77 @@ $icons-root: '~assets/images/icons/';
 }
 
 .icon-hamburger {
-  background-image: url('#{$icons-root}icon-hamburger.png');
+  background-image: url('#{$icons-root}hamburger.png');
 }
 
 .icon-logout {
-  background-image: url('#{$icons-root}icon-logout.png');
+  background-image: url('#{$icons-root}logout.png');
 }
 
 .icon-email {
-  background-image: url('#{$icons-root}icon-email.png');
+  background-image: url('#{$icons-root}email.png');
 }
 
 .icon-email-solid {
-  background-image: url('#{$icons-root}icon-email-solid.png');
+  background-image: url('#{$icons-root}email-solid.png');
 }
 
 .icon-dashboard {
-  background-image: url('#{$icons-root}icon-dashboard.png');
+  background-image: url('#{$icons-root}dashboard.png');
 }
 
 .icon-layouts {
-  background-image: url('#{$icons-root}icon-layouts.png');
+  background-image: url('#{$icons-root}layouts.png');
 }
 
 .icon-graphs {
-  background-image: url('#{$icons-root}icon-graphs.png');
+  background-image: url('#{$icons-root}graphs.png');
 }
 
 .icon-mailbox {
-  background-image: url('#{$icons-root}icon-mailbox.png');
+  background-image: url('#{$icons-root}mailbox.png');
 }
 
 .icon-metrics {
-  background-image: url('#{$icons-root}icon-metrics.png');
+  background-image: url('#{$icons-root}metrics.png');
 }
 
 .icon-widgets {
-  background-image: url('#{$icons-root}icon-widgets.png');
+  background-image: url('#{$icons-root}widgets.png');
 }
 
 .icon-forms {
-  background-image: url('#{$icons-root}icon-forms.png');
+  background-image: url('#{$icons-root}forms.png');
 }
 
 .icon-app-views {
-  background-image: url('#{$icons-root}icon-app-views.png');
+  background-image: url('#{$icons-root}app-views.png');
+}
+
+.icon-forms {
+  background-image: url('#{$icons-root}forms.png');
+}
+
+.icon-inbox {
+  background-image: url('#{$icons-root}inbox.png');
+}
+
+.icon-send-mail {
+  background-image: url('#{$icons-root}send-mail.png');
+}
+
+.icon-important {
+  background-image: url('#{$icons-root}important.png');
+}
+
+.icon-drafts {
+  background-image: url('#{$icons-root}drafts.png');
+}
+
+.icon-trash {
+  background-image: url('#{$icons-root}trash.png');
+}
+
+.icon-tag {
+  background-image: url('#{$icons-root}tag.png');
 }

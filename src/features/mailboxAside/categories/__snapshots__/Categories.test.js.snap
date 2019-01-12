@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Categories should render the component 1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="listItem"
+    key="Work"
+  >
+    <i
+      className="icon"
+      style={
+        Object {
+          "background-color": "#1bb394",
+        }
+      }
+    />
+    <span>
+      Work
+    </span>
+  </li>
+  <li
+    className="listItem"
+    key="Documents"
+  >
+    <i
+      className="icon"
+      style={
+        Object {
+          "background-color": "#ef5352",
+        }
+      }
+    />
+    <span>
+      Documents
+    </span>
+  </li>
+  <li
+    className="listItem"
+    key="Social"
+  >
+    <i
+      className="icon"
+      style={
+        Object {
+          "background-color": "#1c84c6",
+        }
+      }
+    />
+    <span>
+      Social
+    </span>
+  </li>
+  <li
+    className="listItem"
+    key="Advertising"
+  >
+    <i
+      className="icon"
+      style={
+        Object {
+          "background-color": "#23c6c8",
+        }
+      }
+    />
+    <span>
+      Advertising
+    </span>
+  </li>
+  <li
+    className="listItem"
+    key="clients"
+  >
+    <i
+      className="icon"
+      style={
+        Object {
+          "background-color": "#f8ac59",
+        }
+      }
+    />
+    <span>
+      clients
+    </span>
+  </li>
+</ul>
+`;

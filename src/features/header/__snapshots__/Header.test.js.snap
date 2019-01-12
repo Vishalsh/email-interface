@@ -13,15 +13,10 @@ exports[`Header should render the component 1`] = `
       <div
         className="row middle-xs"
       >
-        <Button
-          disabled={false}
+        <i
+          className="icon icon-hamburger hamburgerIcon"
           onClick={[MockFunction]}
-          type="primary"
-        >
-          <i
-            className="icon icon-hamburger"
-          />
-        </Button>
+        />
         <input
           className="search"
           placeholder="Search for something..."
@@ -37,16 +32,12 @@ exports[`Header should render the component 1`] = `
         <i
           className="icon icon-email-solid"
         />
-        <div>
-          <Button
-            disabled={false}
-            onClick={[Function]}
-            type="default"
-          >
-            <i
-              className="icon icon-logout"
-            />
-          </Button>
+        <div
+          onClick={[Function]}
+        >
+          <i
+            className="icon icon-logout"
+          />
           <span>
             Log out
           </span>

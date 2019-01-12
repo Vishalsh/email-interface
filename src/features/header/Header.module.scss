@@ -12,3 +12,9 @@
   font-size: map_get($fontSizes, '16');
   margin-left: 1rem;
 }
+
+.hamburgerIcon {
+  height: 30px;
+  width: 40px;
+  cursor: pointer;
+}

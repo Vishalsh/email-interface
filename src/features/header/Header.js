@@ -10,9 +10,7 @@ const Header = ({ onClickHamburger }) => {
       <div className="row">
         <div className="col-xs-6">
           <div className="row middle-xs">
-            <Button type="primary" onClick={onClickHamburger}>
-              <i className="icon icon-hamburger"/>
-            </Button>
+            <i className={`icon icon-hamburger ${classes.hamburgerIcon}`} onClick={onClickHamburger}/>
             <input className={classes.search} placeholder="Search for something..."/>
           </div>
         </div>
@@ -20,10 +18,8 @@ const Header = ({ onClickHamburger }) => {
         <div className="col-xs-6">
           <div className="row end-xs middle-xs">
             <i className="icon icon-email-solid"/>
-            <div>
-              <Button onClick={() => alert('logout')}>
-                <i className="icon icon-logout"/>
-              </Button>
+            <div onClick={() => alert('logout')}>
+              <i className="icon icon-logout"/>
               <span>Log out</span>
             </div>
           </div>

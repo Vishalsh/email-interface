@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MailboxAside should render the component 1`] = `
+<ul
+  className="list"
+>
+  <li>
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-inbox icon"
+      />
+      <span>
+        Inbox
+      </span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-send-mail icon"
+      />
+      <span>
+        Send Mail
+      </span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-important icon"
+      />
+      <span>
+        Important
+      </span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-drafts icon"
+      />
+      <span>
+        Drafts
+      </span>
+    </Link>
+  </li>
+  <li>
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-trash icon"
+      />
+      <span>
+        Trash
+      </span>
+    </Link>
+  </li>
+</ul>
+`;

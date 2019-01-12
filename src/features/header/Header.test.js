@@ -3,7 +3,6 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Header from './Header';
-import Button from 'components/button/Button';
 
 describe('Header', () => {
   const props = {
@@ -16,7 +15,7 @@ describe('Header', () => {
   });
 
   it('should trigger onClickHamburger', () => {
-    const hamburger = component.find(Button).get(0);
+    const hamburger = component.find('.icon-hamburger').get(0);
 
     hamburger.props.onClick();
 

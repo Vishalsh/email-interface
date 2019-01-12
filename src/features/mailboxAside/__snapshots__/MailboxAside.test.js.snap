@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MailboxAside should render the component 1`] = `
+<section
+  className="mailboxAside"
+>
+  <Button
+    disabled={false}
+    onClick={[Function]}
+    type="primary"
+  >
+    Compose Mail
+  </Button>
+  <section>
+    <h4>
+      FOLDERS
+    </h4>
+    <Folders />
+  </section>
+  <section>
+    <h4>
+      CATEGORIES
+    </h4>
+    <Categories />
+  </section>
+  <section>
+    <h4>
+      LABELS
+    </h4>
+    <Labels />
+  </section>
+</section>
+`;

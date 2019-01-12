@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Labels should render the component 1`] = `
+<ul
+  className="list"
+>
+  <li
+    className="listItem"
+    key="Family"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Family
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Work"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Work
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Home"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Home
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Children"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Children
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Holidays"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Holidays
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Music"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Music
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Photography"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Photography
+      </span>
+    </div>
+  </li>
+  <li
+    className="listItem"
+    key="Film"
+  >
+    <div
+      className="align"
+    >
+      <i
+        className="icon icon-tag"
+      />
+      <span>
+        Film
+      </span>
+    </div>
+  </li>
+</ul>
+`;
