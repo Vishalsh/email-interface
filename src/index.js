@@ -5,7 +5,6 @@ import { BrowserRouter } from 'react-router-dom';
 import './styles/index.scss';
 import Layout from './features/layout/Layout';
 
-
 render(
   <BrowserRouter>
     <Layout/>

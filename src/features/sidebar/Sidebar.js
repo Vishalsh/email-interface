@@ -42,8 +42,8 @@ const Sidebar = () => {
   return (
     <nav className={classes.nav}>
       {
-        links.map((link) => (
-          <li>
+        links.map((link, index) => (
+          <li key={`${link.name}_${index}`}>
             <Link className={classes.link} to={link.routeTo}>
               <i className={`icon icon-${link.icon} ${classes.linkIcon}`} />
             </Link>

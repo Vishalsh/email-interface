@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render the component 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col-xs-6"
+    >
+      <div
+        className="row middle-xs"
+      >
+        <Button
+          disabled={false}
+          onClick={[Function]}
+          type="primary"
+        >
+          <i
+            className="icon icon-hamburger"
+          />
+        </Button>
+        <input
+          className="search"
+          placeholder="Search for something..."
+        />
+      </div>
+    </div>
+    <div
+      className="col-xs-6"
+    >
+      <div
+        className="row end-xs middle-xs"
+      >
+        <i
+          className="icon icon-email-solid"
+        />
+        <div>
+          <Button
+            disabled={false}
+            onClick={[Function]}
+            type="default"
+          >
+            <i
+              className="icon icon-logout"
+            />
+          </Button>
+          <span>
+            Log out
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+`;

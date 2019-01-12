@@ -1,0 +1,112 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Sidebar should render the component 1`] = `
+<nav
+  className="nav"
+>
+  <li
+    key="Dashboard_0"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/dashboard"
+    >
+      <i
+        className="icon icon-dashboard linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Layouts_1"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/layouts"
+    >
+      <i
+        className="icon icon-layouts linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Graphs_2"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/graphs"
+    >
+      <i
+        className="icon icon-graphs linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Mailbox_3"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/mailbox"
+    >
+      <i
+        className="icon icon-mailbox linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Metrics_4"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/metrics"
+    >
+      <i
+        className="icon icon-metrics linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Widgets_5"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/widgets"
+    >
+      <i
+        className="icon icon-widgets linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="Forms_6"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/forms"
+    >
+      <i
+        className="icon icon-forms linkIcon"
+      />
+    </Link>
+  </li>
+  <li
+    key="App Views_7"
+  >
+    <Link
+      className="link"
+      replace={false}
+      to="/app-views"
+    >
+      <i
+        className="icon icon-app-views linkIcon"
+      />
+    </Link>
+  </li>
+</nav>
+`;
