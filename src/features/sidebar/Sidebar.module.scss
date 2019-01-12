@@ -1,15 +1,30 @@
 @import "~styles/variables";
 
+.sidebar {
+  width: $sidebar-width;
+}
+
+.sidebarOpen {
+  width: $sidebar-open-width;
+}
+
 .nav {
   list-style: none;
 }
 
 .link {
-  width: 70px;
-  height: 60px;
+  width: $sidebar-width;
+  min-height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  color: map-get($gray, '1000');
+  text-decoration: none;
+  background-color: $sidebar;
+}
+
+.linkOpen {
+  width: $sidebar-open-width;
 }
 
 .linkIcon {
@@ -19,6 +34,7 @@
 
 .active {
   background-color: $sidebar-active;
+  color: map-get($gray, '1500');
 
   &:before {
     content: '';

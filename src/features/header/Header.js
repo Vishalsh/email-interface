@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Button from 'components/button/Button';
 import classes from './Header.module.scss';
 
-const Header = () => {
+const Header = ({ onClickHamburger }) => {
   return (
     <header className={classes.header}>
       <div className="row">
         <div className="col-xs-6">
           <div className="row middle-xs">
-            <Button type="primary" onClick={() => alert('clicked')}>
+            <Button type="primary" onClick={onClickHamburger}>
               <i className="icon icon-hamburger"/>
             </Button>
             <input className={classes.search} placeholder="Search for something..."/>
@@ -30,6 +31,10 @@ const Header = () => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  onClickHamburger: PropTypes.func.isRequired,
 };
 
 export default Header;

@@ -15,7 +15,7 @@ exports[`Header should render the component 1`] = `
       >
         <Button
           disabled={false}
-          onClick={[Function]}
+          onClick={[MockFunction]}
           type="primary"
         >
           <i

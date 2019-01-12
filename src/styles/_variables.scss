@@ -7,7 +7,8 @@ $gray: (
         '1500': #ffffff,
         '1530': #f3f3f3,
         '1420': #e2e2e2,
-        '666': #666666
+        '1000': #a1acbc,
+        '666': #666666,
 );
 
 //typography
@@ -17,3 +18,6 @@ $fontSizes: (
         '14': 1.4rem,
         '16': 1.6rem
 );
+
+$sidebar-width: 70px;
+$sidebar-open-width: 200px;

@@ -1,120 +1,295 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Sidebar should render the component 1`] = `
-<nav
-  className="nav"
+exports[`Sidebar should render the component in closed state 1`] = `
+<div
+  className="sidebar "
 >
-  <li
-    key="Dashboard_0"
+  <nav
+    className="nav"
   >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/dashboard"
+    <li
+      key="Dashboard_0"
     >
-      <i
-        className="icon icon-dashboard linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Layouts_1"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/dashboard"
+      >
+        <i
+          className="icon icon-dashboard linkIcon"
+        />
+        <span>
+          Dashboard
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Layouts_1"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/layouts"
+      >
+        <i
+          className="icon icon-layouts linkIcon"
+        />
+        <span>
+          Layouts
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Graphs_2"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/graphs"
+      >
+        <i
+          className="icon icon-graphs linkIcon"
+        />
+        <span>
+          Graphs
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Mailbox_3"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/mailbox"
+      >
+        <i
+          className="icon icon-mailbox linkIcon"
+        />
+        <span>
+          Mailbox
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Metrics_4"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/metrics"
+      >
+        <i
+          className="icon icon-metrics linkIcon"
+        />
+        <span>
+          Metrics
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Widgets_5"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/widgets"
+      >
+        <i
+          className="icon icon-widgets linkIcon"
+        />
+        <span>
+          Widgets
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Forms_6"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/forms"
+      >
+        <i
+          className="icon icon-forms linkIcon"
+        />
+        <span>
+          Forms
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="App Views_7"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link "
+        to="/app-views"
+      >
+        <i
+          className="icon icon-app-views linkIcon"
+        />
+        <span>
+          App Views
+        </span>
+      </NavLink>
+    </li>
+  </nav>
+</div>
+`;
+
+exports[`Sidebar should render the component in open state 1`] = `
+<div
+  className="sidebar sidebarOpen"
+>
+  <nav
+    className="nav"
   >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/layouts"
+    <li
+      key="Dashboard_0"
     >
-      <i
-        className="icon icon-layouts linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Graphs_2"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/graphs"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/dashboard"
+      >
+        <i
+          className="icon icon-dashboard linkIcon"
+        />
+        <span>
+          Dashboard
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Layouts_1"
     >
-      <i
-        className="icon icon-graphs linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Mailbox_3"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/mailbox"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/layouts"
+      >
+        <i
+          className="icon icon-layouts linkIcon"
+        />
+        <span>
+          Layouts
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Graphs_2"
     >
-      <i
-        className="icon icon-mailbox linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Metrics_4"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/metrics"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/graphs"
+      >
+        <i
+          className="icon icon-graphs linkIcon"
+        />
+        <span>
+          Graphs
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Mailbox_3"
     >
-      <i
-        className="icon icon-metrics linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Widgets_5"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/widgets"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/mailbox"
+      >
+        <i
+          className="icon icon-mailbox linkIcon"
+        />
+        <span>
+          Mailbox
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Metrics_4"
     >
-      <i
-        className="icon icon-widgets linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="Forms_6"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/forms"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/metrics"
+      >
+        <i
+          className="icon icon-metrics linkIcon"
+        />
+        <span>
+          Metrics
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Widgets_5"
     >
-      <i
-        className="icon icon-forms linkIcon"
-      />
-    </NavLink>
-  </li>
-  <li
-    key="App Views_7"
-  >
-    <NavLink
-      activeClassName="active"
-      aria-current="page"
-      className="link"
-      to="/app-views"
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/widgets"
+      >
+        <i
+          className="icon icon-widgets linkIcon"
+        />
+        <span>
+          Widgets
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="Forms_6"
     >
-      <i
-        className="icon icon-app-views linkIcon"
-      />
-    </NavLink>
-  </li>
-</nav>
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/forms"
+      >
+        <i
+          className="icon icon-forms linkIcon"
+        />
+        <span>
+          Forms
+        </span>
+      </NavLink>
+    </li>
+    <li
+      key="App Views_7"
+    >
+      <NavLink
+        activeClassName="active"
+        aria-current="page"
+        className="link linkOpen"
+        to="/app-views"
+      >
+        <i
+          className="icon icon-app-views linkIcon"
+        />
+        <span>
+          App Views
+        </span>
+      </NavLink>
+    </li>
+  </nav>
+</div>
 `;

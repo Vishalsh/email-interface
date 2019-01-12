@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 
 import routes from 'constants/routes';
@@ -38,20 +39,30 @@ const links = [{
   routeTo: routes.APP_VIEWS
 }];
 
-const Sidebar = () => {
+const Sidebar = (props) => {
+  const { isOpen } = props;
+
   return (
-    <nav className={classes.nav}>
-      {
-        links.map((link, index) => (
-          <li key={`${link.name}_${index}`}>
-            <NavLink className={classes.link} to={link.routeTo} activeClassName={classes.active}>
-              <i className={`icon icon-${link.icon} ${classes.linkIcon}`} />
-            </NavLink>
-          </li>
-        ))
-      }
-    </nav>
+    <div className={`${classes.sidebar} ${isOpen ? classes.sidebarOpen : ''}`}>
+      <nav className={classes.nav}>
+        {
+          links.map((link, index) => (
+            <li key={`${link.name}_${index}`}>
+              <NavLink className={`${classes.link} ${isOpen ? classes.linkOpen : ''}`} to={link.routeTo}
+                       activeClassName={classes.active}>
+                <i className={`icon icon-${link.icon} ${classes.linkIcon}`}/>
+                <span>{link.name}</span>
+              </NavLink>
+            </li>
+          ))
+        }
+      </nav>
+    </div>
   )
+};
+
+Sidebar.propTypes = {
+  isOpen: PropTypes.bool.isRequired
 };
 
 export default Sidebar;

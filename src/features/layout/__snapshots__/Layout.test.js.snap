@@ -1,59 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Layout should render the component 1`] = `
-<Fragment>
+<div
+  className="wrapper"
+>
+  <Sidebar
+    isOpen={false}
+  />
   <div
-    className="header"
+    className="right"
   >
-    <Header />
+    <Header
+      onClickHamburger={[Function]}
+    />
+    <main
+      className="main"
+    >
+      <Switch>
+        <Route
+          component={[Function]}
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={[Function]}
+          path="/dashboard"
+        />
+        <Route
+          component={[Function]}
+          path="/layouts"
+        />
+        <Route
+          component={[Function]}
+          path="/graphs"
+        />
+        <Route
+          component={[Function]}
+          path="/mailbox"
+        />
+        <Route
+          component={[Function]}
+          path="/metrics"
+        />
+        <Route
+          component={[Function]}
+          path="/widgets"
+        />
+        <Route
+          component={[Function]}
+          path="/forms"
+        />
+        <Route
+          component={[Function]}
+          path="/app-views"
+        />
+      </Switch>
+    </main>
   </div>
-  <div
-    className="sidebar"
-  >
-    <Sidebar />
-  </div>
-  <main
-    className="main"
-  >
-    <Switch>
-      <Route
-        component={[Function]}
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={[Function]}
-        path="/dashboard"
-      />
-      <Route
-        component={[Function]}
-        path="/layouts"
-      />
-      <Route
-        component={[Function]}
-        path="/graphs"
-      />
-      <Route
-        component={[Function]}
-        path="/mailbox"
-      />
-      <Route
-        component={[Function]}
-        path="/metrics"
-      />
-      <Route
-        component={[Function]}
-        path="/widgets"
-      />
-      <Route
-        component={[Function]}
-        path="/forms"
-      />
-      <Route
-        component={[Function]}
-        path="/app-views"
-      />
-    </Switch>
-  </main>
-</Fragment>
+</div>
 `;

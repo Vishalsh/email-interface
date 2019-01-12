@@ -3,9 +3,20 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import Layout from './Layout';
+import Header from 'features/header/Header';
+import Sidebar from 'features/sidebar/Sidebar';
 
 describe('Layout', () => {
+  const component = shallow(<Layout/>);
+
   it('should render the component', () => {
-    expect(toJson(shallow(<Layout/>))).toMatchSnapshot();
-  })
+    expect(toJson(component)).toMatchSnapshot();
+  });
+
+  it('should toggle the sidebar', () => {
+    component.find(Header).props().onClickHamburger();
+
+    expect(component.state().isSidebarOpen).toBeTruthy();
+    expect(component.find(Sidebar).props().isOpen).toBeTruthy();
+  });
 });
