@@ -1,4 +1,5 @@
 export default {
+  LOGIN: '/login',
   DASHBOARD: '/dashboard',
   LAYOUTS: '/layouts',
   GRAPHS: '/graphs',

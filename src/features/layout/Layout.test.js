@@ -7,7 +7,10 @@ import Header from 'features/header/Header';
 import Sidebar from 'features/sidebar/Sidebar';
 
 describe('Layout', () => {
-  const component = shallow(<Layout/>);
+  const props = {
+    children: <div className="routes"/>
+  };
+  const component = shallow(<Layout {...props}/>);
 
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();
