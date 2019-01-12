@@ -12,19 +12,25 @@ exports[`MailboxAside should render the component 1`] = `
     Compose Mail
   </Button>
   <section>
-    <h4>
+    <h4
+      className="heading"
+    >
       FOLDERS
     </h4>
     <Folders />
   </section>
   <section>
-    <h4>
+    <h4
+      className="heading"
+    >
       CATEGORIES
     </h4>
     <Categories />
   </section>
   <section>
-    <h4>
+    <h4
+      className="heading"
+    >
       LABELS
     </h4>
     <Labels />

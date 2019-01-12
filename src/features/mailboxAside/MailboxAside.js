@@ -14,17 +14,17 @@ const MailboxAside = () => {
       </Button>
 
       <section>
-        <h4>FOLDERS</h4>
+        <h4 className={classes.heading}>FOLDERS</h4>
         <Folders />
       </section>
 
       <section>
-        <h4>CATEGORIES</h4>
+        <h4 className={classes.heading}>CATEGORIES</h4>
         <Categories />
       </section>
 
       <section>
-        <h4>LABELS</h4>
+        <h4 className={classes.heading}>LABELS</h4>
         <Labels />
       </section>
     </section>

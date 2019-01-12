@@ -4,7 +4,9 @@ exports[`MailboxAside should render the component 1`] = `
 <ul
   className="list"
 >
-  <li>
+  <li
+    className="listItem"
+  >
     <Link
       className="link"
       replace={false}
@@ -18,7 +20,9 @@ exports[`MailboxAside should render the component 1`] = `
       </span>
     </Link>
   </li>
-  <li>
+  <li
+    className="listItem"
+  >
     <Link
       className="link"
       replace={false}
@@ -32,7 +36,9 @@ exports[`MailboxAside should render the component 1`] = `
       </span>
     </Link>
   </li>
-  <li>
+  <li
+    className="listItem"
+  >
     <Link
       className="link"
       replace={false}
@@ -46,7 +52,9 @@ exports[`MailboxAside should render the component 1`] = `
       </span>
     </Link>
   </li>
-  <li>
+  <li
+    className="listItem"
+  >
     <Link
       className="link"
       replace={false}
@@ -60,7 +68,9 @@ exports[`MailboxAside should render the component 1`] = `
       </span>
     </Link>
   </li>
-  <li>
+  <li
+    className="listItem"
+  >
     <Link
       className="link"
       replace={false}

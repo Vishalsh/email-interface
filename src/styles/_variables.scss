@@ -2,7 +2,6 @@
 $primary: #19a689;
 $sidebar: #2f4050;
 $sidebar-active: #293846;
-
 $mountain-meadow: #1bb394;
 $flamingo: #ef5352;
 $pelorous: #1c84c6;
@@ -11,10 +10,10 @@ $texas-rose: #f8ac59;
 
 $gray: (
         '1500': #ffffff,
-        '1530': #f3f3f3,
-        '1420': #e2e2e2,
+        '1400': #f3f3f3,
+        '1300': #e2e2e2,
         '1000': #a1acbc,
-        '666': #666666,
+        '600': #666666,
 );
 
 //typography
@@ -22,7 +21,8 @@ $fontSizes: (
         '10': 1rem,
         '12': 1.2rem,
         '14': 1.4rem,
-        '16': 1.6rem
+        '16': 1.6rem,
+        '24': 2.4rem
 );
 
 $sidebar-width: 70px;

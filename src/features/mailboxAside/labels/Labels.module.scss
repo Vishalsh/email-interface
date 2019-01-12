@@ -11,7 +11,8 @@
   margin: 0 1rem 1rem 0;
   background-color: map-get($gray, '1500');
   padding: 0.2rem 0.5rem;
-  border-bottom: 1px solid map_get($gray, '1420');
+  border-bottom: 1px solid map_get($gray, '1300');
+  font-size: map-get($fontSizes, '12');
 }
 
 .align {
