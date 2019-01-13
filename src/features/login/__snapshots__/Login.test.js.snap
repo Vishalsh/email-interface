@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Login should render the component 1`] = `
+<section
+  className="login"
+>
+  <form>
+    <InputWithLabel
+      inputType="text"
+      label="email"
+      onChange={[Function]}
+      value=""
+    />
+    <InputWithLabel
+      inputType="password"
+      label="password"
+      onChange={[Function]}
+      value=""
+    />
+    <Button
+      disabled={true}
+      onClick={[Function]}
+      type="primary"
+    >
+      Compose Mail
+    </Button>
+  </form>
+</section>
+`;

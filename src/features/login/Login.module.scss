@@ -1,0 +1,9 @@
+@import "~styles/variables";
+
+.login {
+  width: 30%;
+  padding: 3rem;
+  background-color: map-get($gray, '1500');
+  border: 1px solid map_get($gray, '1300');
+  border-radius: 0.5rem;
+}

@@ -1,0 +1,28 @@
+@import "~styles/variables";
+
+.inputWithLabel {
+  margin-bottom: 2rem;
+}
+
+.label {
+  display: block;
+  font-size: map-get($fontSizes, '12');
+  margin-bottom: 0.5rem;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  line-height: 1.5;
+  background-color: map-get($gray, '1500');
+  border: 1px solid map-get($gray, '1300');
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out;
+  box-sizing: border-box;
+
+  &:focus {
+    border-color: $primary;
+    outline: 0;
+  }
+}

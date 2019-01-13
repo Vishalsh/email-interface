@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputWithLabel should render the component 1`] = `
+<div
+  className="inputWithLabel"
+>
+  <label
+    className="label"
+    htmlFor="foo"
+  >
+    FOO
+  </label>
+  <input
+    className="input"
+    id="foo"
+    name="foo"
+    onChange={[MockFunction]}
+    type="text"
+    value="bar"
+  />
+</div>
+`;
