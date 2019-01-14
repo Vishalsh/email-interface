@@ -4,7 +4,7 @@ exports[`Layout should render the component 1`] = `
 <div
   className="wrapper"
 >
-  <Sidebar
+  <Connect(Sidebar)
     isOpen={false}
   />
   <div

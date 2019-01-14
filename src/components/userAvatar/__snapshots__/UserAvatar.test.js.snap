@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserAvatar should render the component 1`] = `
+<div
+  className="avatar"
+>
+  <img
+    alt="MS Dhoni"
+    className="avatarImage"
+    src="http://s.ndtvimg.com/images/entities/120/ms-dhoni-700.png"
+  />
+  <p
+    className="name"
+  >
+    MS Dhoni
+  </p>
+  <p
+    className="role"
+  >
+    <span>
+      Wicket Keeper
+    </span>
+    <i
+      className="icon icon-arrow-down"
+    />
+  </p>
+</div>
+`;

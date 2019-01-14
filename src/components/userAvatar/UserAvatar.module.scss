@@ -1,0 +1,21 @@
+@import "~styles/variables";
+
+.avatar {
+  padding: 3rem 2rem;
+  background-color: $sidebar-active;
+  color: map-get($gray, '1500');
+}
+
+.avatarImage {
+  width: 7rem;
+}
+
+.name {
+  padding: 0.5rem 0;
+}
+
+.role {
+  color: map-get($gray, '1000');
+  display: flex;
+  align-items: center;
+}

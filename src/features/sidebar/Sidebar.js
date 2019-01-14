@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
+import UserAvatar from 'components/userAvatar/UserAvatar';
 import SidebarLink from './sidebarLink/SidebarLink';
 import routes from 'constants/routes';
 import classes from './Sidebar.module.scss';
@@ -56,13 +58,19 @@ const links = [{
   routeTo: routes.APP_VIEWS
 }];
 
-const Sidebar = (props) => {
-  const { isOpen } = props;
+export const Sidebar = (props) => {
+  const { isOpen, user } = props;
+  const { name, role, avatar } = user;
 
   return (
     <div className={`${classes.sidebar} ${isOpen ? classes.sidebarOpen : ''}`}>
       <nav className={classes.nav}>
-        <SidebarLink link={links[0]}/>
+        {
+          isOpen ?
+            <UserAvatar name={name} role={role} avatar={avatar}/>
+            :
+            <SidebarLink link={links[0]}/>
+        }
         <SidebarLink link={links[1]}/>
         <SidebarLink link={links[2]}/>
         <SidebarLink link={links[3]}/>
@@ -79,4 +87,8 @@ Sidebar.propTypes = {
   isOpen: PropTypes.bool.isRequired
 };
 
-export default Sidebar;
+const mapStateToProps = (store) => ({
+  user: store.user.data
+});
+
+export default connect(mapStateToProps)(Sidebar);

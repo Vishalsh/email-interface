@@ -116,15 +116,10 @@ exports[`Sidebar should render the component in open state 1`] = `
   <nav
     className="nav"
   >
-    <SidebarLink
-      isSidebarOpen={false}
-      link={
-        Object {
-          "icon": "logo",
-          "name": "logo",
-          "routeTo": "none",
-        }
-      }
+    <UserAvatar
+      avatar="http://s.ndtvimg.com/images/entities/120/ms-dhoni-700.png"
+      name="MS Dhoni"
+      role="Wicket Keeper"
     />
     <SidebarLink
       isSidebarOpen={false}
