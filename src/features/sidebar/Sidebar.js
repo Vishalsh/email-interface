@@ -67,7 +67,9 @@ export const Sidebar = (props) => {
       <nav className={classes.nav}>
         {
           isOpen ?
-            <UserAvatar name={name} role={role} avatar={avatar}/>
+            <div className={`${classes.avatar} ${isOpen ? classes.avatarOpen : ''}`}>
+              <UserAvatar name={name} role={role} avatar={avatar}/>
+            </div>
             :
             <SidebarLink link={links[0]}/>
         }
