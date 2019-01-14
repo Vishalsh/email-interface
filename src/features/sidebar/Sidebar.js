@@ -1,11 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { NavLink } from 'react-router-dom';
 
+import SidebarLink from './sidebarLink/SidebarLink';
 import routes from 'constants/routes';
 import classes from './Sidebar.module.scss';
 
 const links = [{
+  name: 'logo',
+  icon: 'logo',
+  routeTo: 'none'
+}, {
   name: 'Dashboard',
   icon: 'dashboard',
   routeTo: routes.DASHBOARD
@@ -20,7 +24,20 @@ const links = [{
 }, {
   name: 'Mailbox',
   icon: 'mailbox',
-  routeTo: routes.MAILBOX
+  routeTo: routes.MAILBOX,
+  links: [{
+    name: 'Inbox',
+    routeTo: routes.MAILBOX + routes.INBOX
+  }, {
+    name: 'Email view',
+    routeTo: routes.MAILBOX + routes.EMAIL_VIEW
+  }, {
+    name: 'Compose Email',
+    routeTo: routes.MAILBOX + routes.COMPOSE_EMAIL
+  }, {
+    name: 'Email templates',
+    routeTo: routes.MAILBOX + routes.EMAIL_TEMPLATES
+  }]
 }, {
   name: 'Metrics',
   icon: 'metrics',
@@ -45,20 +62,14 @@ const Sidebar = (props) => {
   return (
     <div className={`${classes.sidebar} ${isOpen ? classes.sidebarOpen : ''}`}>
       <nav className={classes.nav}>
-        {
-          links.map((link, index) => (
-            <li key={`${link.name}_${index}`}>
-              <NavLink className={classes.link} to={link.routeTo} activeClassName={classes.active}>
-                <div className={classes.linkIcon}>
-                  <i className={`icon icon-${link.icon} ${classes.icon}`}/>
-                </div>
-                <div className={classes.linkContent}>
-                  <span>{link.name}</span>
-                </div>
-              </NavLink>
-            </li>
-          ))
-        }
+        <SidebarLink link={links[0]}/>
+        <SidebarLink link={links[1]}/>
+        <SidebarLink link={links[2]}/>
+        <SidebarLink link={links[3]}/>
+        <SidebarLink link={links[4]} isSidebarOpen={isOpen}/>
+        <SidebarLink link={links[5]}/>
+        <SidebarLink link={links[6]}/>
+        <SidebarLink link={links[7]}/>
       </nav>
     </div>
   )

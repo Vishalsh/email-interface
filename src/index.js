@@ -3,6 +3,8 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { HashRouter } from 'react-router-dom';
 
+import 'mock/mockData'; // setting data to local storage;
+
 import './styles/index.scss';
 import store from './store';
 import Routes from './Routes';

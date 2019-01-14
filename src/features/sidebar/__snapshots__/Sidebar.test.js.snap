@@ -7,206 +7,104 @@ exports[`Sidebar should render the component in closed state 1`] = `
   <nav
     className="nav"
   >
-    <li
-      key="Dashboard_0"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/dashboard"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-dashboard icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Dashboard
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Layouts_1"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/layouts"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-layouts icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Layouts
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Graphs_2"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/graphs"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-graphs icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Graphs
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Mailbox_3"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/mailbox"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-mailbox icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Mailbox
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Metrics_4"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/metrics"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-metrics icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Metrics
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Widgets_5"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/widgets"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-widgets icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Widgets
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Forms_6"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/forms"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-forms icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Forms
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="App Views_7"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/app-views"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-app-views icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            App Views
-          </span>
-        </div>
-      </NavLink>
-    </li>
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "logo",
+          "name": "logo",
+          "routeTo": "none",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "dashboard",
+          "name": "Dashboard",
+          "routeTo": "/dashboard",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "layouts",
+          "name": "Layouts",
+          "routeTo": "/layouts",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "graphs",
+          "name": "Graphs",
+          "routeTo": "/graphs",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "mailbox",
+          "links": Array [
+            Object {
+              "name": "Inbox",
+              "routeTo": "/mailbox/inbox",
+            },
+            Object {
+              "name": "Email view",
+              "routeTo": "/mailbox/email-view",
+            },
+            Object {
+              "name": "Compose Email",
+              "routeTo": "/mailbox/compose-email",
+            },
+            Object {
+              "name": "Email templates",
+              "routeTo": "/mailbox/email-templates",
+            },
+          ],
+          "name": "Mailbox",
+          "routeTo": "/mailbox",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "metrics",
+          "name": "Metrics",
+          "routeTo": "/metrics",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "widgets",
+          "name": "Widgets",
+          "routeTo": "/widgets",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "forms",
+          "name": "Forms",
+          "routeTo": "/forms",
+        }
+      }
+    />
   </nav>
 </div>
 `;
@@ -218,206 +116,104 @@ exports[`Sidebar should render the component in open state 1`] = `
   <nav
     className="nav"
   >
-    <li
-      key="Dashboard_0"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/dashboard"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-dashboard icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Dashboard
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Layouts_1"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/layouts"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-layouts icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Layouts
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Graphs_2"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/graphs"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-graphs icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Graphs
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Mailbox_3"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/mailbox"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-mailbox icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Mailbox
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Metrics_4"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/metrics"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-metrics icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Metrics
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Widgets_5"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/widgets"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-widgets icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Widgets
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="Forms_6"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/forms"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-forms icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            Forms
-          </span>
-        </div>
-      </NavLink>
-    </li>
-    <li
-      key="App Views_7"
-    >
-      <NavLink
-        activeClassName="active"
-        aria-current="page"
-        className="link"
-        to="/app-views"
-      >
-        <div
-          className="linkIcon"
-        >
-          <i
-            className="icon icon-app-views icon"
-          />
-        </div>
-        <div
-          className="linkContent"
-        >
-          <span>
-            App Views
-          </span>
-        </div>
-      </NavLink>
-    </li>
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "logo",
+          "name": "logo",
+          "routeTo": "none",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "dashboard",
+          "name": "Dashboard",
+          "routeTo": "/dashboard",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "layouts",
+          "name": "Layouts",
+          "routeTo": "/layouts",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "graphs",
+          "name": "Graphs",
+          "routeTo": "/graphs",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={true}
+      link={
+        Object {
+          "icon": "mailbox",
+          "links": Array [
+            Object {
+              "name": "Inbox",
+              "routeTo": "/mailbox/inbox",
+            },
+            Object {
+              "name": "Email view",
+              "routeTo": "/mailbox/email-view",
+            },
+            Object {
+              "name": "Compose Email",
+              "routeTo": "/mailbox/compose-email",
+            },
+            Object {
+              "name": "Email templates",
+              "routeTo": "/mailbox/email-templates",
+            },
+          ],
+          "name": "Mailbox",
+          "routeTo": "/mailbox",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "metrics",
+          "name": "Metrics",
+          "routeTo": "/metrics",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "widgets",
+          "name": "Widgets",
+          "routeTo": "/widgets",
+        }
+      }
+    />
+    <SidebarLink
+      isSidebarOpen={false}
+      link={
+        Object {
+          "icon": "forms",
+          "name": "Forms",
+          "routeTo": "/forms",
+        }
+      }
+    />
   </nav>
 </div>
 `;

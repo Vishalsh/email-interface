@@ -1,0 +1,109 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarLink should render the component when sidebar is closed 1`] = `
+<li
+  className="list"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="link"
+    to="mailbox"
+  >
+    <div
+      className="linkIcon"
+    >
+      <i
+        className="icon icon-mailbox icon"
+      />
+    </div>
+    <div
+      className="linkContent"
+    >
+      <span>
+        Mailbox
+      </span>
+    </div>
+  </NavLink>
+</li>
+`;
+
+exports[`SidebarLink should render the component when sidebar is open 1`] = `
+<li
+  className="list"
+>
+  <NavLink
+    activeClassName="active"
+    aria-current="page"
+    className="link"
+    to="mailbox"
+  >
+    <div
+      className="linkIcon"
+    >
+      <i
+        className="icon icon-mailbox icon"
+      />
+    </div>
+    <div
+      className="linkContent"
+    >
+      <span>
+        Mailbox
+      </span>
+    </div>
+  </NavLink>
+  <nav
+    className="nestedNav"
+  >
+    <li
+      key="Inbox_0"
+    >
+      <NavLink
+        activeClassName="nestedLinkActive"
+        aria-current="page"
+        className="link nestedLink"
+        to="inbox"
+      >
+        Inbox
+      </NavLink>
+    </li>
+    <li
+      key="Email view_1"
+    >
+      <NavLink
+        activeClassName="nestedLinkActive"
+        aria-current="page"
+        className="link nestedLink"
+        to="email-view"
+      >
+        Email view
+      </NavLink>
+    </li>
+    <li
+      key="Compose Email_2"
+    >
+      <NavLink
+        activeClassName="nestedLinkActive"
+        aria-current="page"
+        className="link nestedLink"
+        to="compose-email"
+      >
+        Compose Email
+      </NavLink>
+    </li>
+    <li
+      key="Email templates_3"
+    >
+      <NavLink
+        activeClassName="nestedLinkActive"
+        aria-current="page"
+        className="link nestedLink"
+        to="email-templates"
+      >
+        Email templates
+      </NavLink>
+    </li>
+  </nav>
+</li>
+`;

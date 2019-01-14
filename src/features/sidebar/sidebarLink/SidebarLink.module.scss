@@ -1,0 +1,64 @@
+@import "~styles/variables";
+
+.list {
+  position: relative;
+}
+
+.nestedNav {
+  padding-left: $sidebar-width;
+
+  li:last-child .nestedLink {
+    padding-bottom: 1.5rem;
+  }
+}
+
+.link {
+  height: 6rem;
+  width: $sidebar-open-width;
+  display: flex;
+  align-items: center;
+  color: map-get($gray, '1000');
+  text-decoration: none;
+}
+
+.nestedLink {
+  height: 4rem;
+}
+
+.nestedLinkActive {
+  color: map-get($gray, '1500');
+}
+
+.linkIcon {
+  width: $sidebar-width;
+  text-align: center;
+  padding-top: 0.5rem;
+}
+
+.icon {
+  height: 3rem;
+  width: 3rem;
+}
+
+.active {
+  background-color: $sidebar-active;
+  color: map-get($gray, '1500');
+
+  &:before {
+    content: '';
+    width: 0.5rem;
+    height: 100%;
+    background-color: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.active + nav {
+  background-color: $sidebar-active;
+}
+
+.linkContent {
+  flex: 1;
+}
