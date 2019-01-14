@@ -12,7 +12,7 @@ exports[`Categories should render the component 1`] = `
       className="icon"
       style={
         Object {
-          "background-color": "#1bb394",
+          "background": "#1bb394",
         }
       }
     />
@@ -28,7 +28,7 @@ exports[`Categories should render the component 1`] = `
       className="icon"
       style={
         Object {
-          "background-color": "#ef5352",
+          "background": "#ef5352",
         }
       }
     />
@@ -44,7 +44,7 @@ exports[`Categories should render the component 1`] = `
       className="icon"
       style={
         Object {
-          "background-color": "#1c84c6",
+          "background": "#1c84c6",
         }
       }
     />
@@ -60,7 +60,7 @@ exports[`Categories should render the component 1`] = `
       className="icon"
       style={
         Object {
-          "background-color": "#23c6c8",
+          "background": "#23c6c8",
         }
       }
     />
@@ -76,7 +76,7 @@ exports[`Categories should render the component 1`] = `
       className="icon"
       style={
         Object {
-          "background-color": "#f8ac59",
+          "background": "#f8ac59",
         }
       }
     />

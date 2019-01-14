@@ -4,6 +4,6 @@ exports[`Login should render the component 1`] = `
 <section
   className="loginContainer"
 >
-  <Login />
+  <Connect(Login) />
 </section>
 `;

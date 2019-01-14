@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
 import InputWithLabel from 'components/inputWithLabel/InputWithLabel';
 import Button from 'components/button/Button';
 import { isEmailValid } from 'utilities/formValidators';
+import userActions from 'features/user/user.actions'
 import classes from './Login.module.scss';
 
-class Login extends Component {
+export class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -21,14 +24,14 @@ class Login extends Component {
 
     this.setState({
       [name]: value
-    })
+    });
   };
 
   submit = (event) => {
     const { email, password } = this.state;
     event.preventDefault();
 
-    this.props.login(email, password);
+    this.props.login({ email, password });
   };
 
   isFormValid = () => {
@@ -59,4 +62,8 @@ Login.propTypes = {
   login: PropTypes.func.isRequired,
 };
 
-export default Login;
+const mapDispatchToProps = dispatch => bindActionCreators({
+  login: userActions.login
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(Login);

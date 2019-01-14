@@ -25,7 +25,7 @@ const Categories = () => {
       {
         categories.map((category) => (
           <li key={category.name} className={classes.listItem}>
-            <i className={classes.icon} style={{'background-color': category.color}} />
+            <i className={classes.icon} style={{'background': category.color}} />
             <span>{category.name}</span>
           </li>
         ))

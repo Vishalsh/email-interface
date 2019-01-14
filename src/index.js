@@ -1,13 +1,17 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 
 import './styles/index.scss';
+import store from './store';
 import Routes from './Routes';
 
 render(
-  <BrowserRouter>
-    <Routes/>
-  </BrowserRouter>,
+  <Provider store={store}>
+    <HashRouter>
+      <Routes/>
+    </HashRouter>
+  </Provider>,
   document.getElementById('root')
 );
