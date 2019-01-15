@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { Routes } from './Routes';
+import { Routes } from '../Routes';
 
 describe('Routes', () => {
   it('should render all the routes when user is logged in', () => {

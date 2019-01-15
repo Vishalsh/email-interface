@@ -4,7 +4,7 @@ import toJson from 'enzyme-to-json';
 
 import InputWithLabel from 'components/inputWithLabel/InputWithLabel';
 import Button from 'components/button/Button';
-import { Login } from './Login';
+import { Login } from '../Login';
 
 describe('Login', () => {
   const email = 'foo@bar.com';

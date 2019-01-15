@@ -2,9 +2,9 @@ import loadingStates from 'constants/loadingStates';
 import {
   USER_LOGIN_SUCCESSFUL,
   USER_LOGIN_FAILED
-} from "./user.actionTypes";
+} from "../user.actionTypes";
 
-import userReducer from './user.reducer';
+import userReducer from '../user.reducer';
 
 describe('userReducer', () => {
   const initialState = {

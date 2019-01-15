@@ -2,10 +2,10 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Folders from './Folders';
+import Labels from '../Labels';
 
-describe('MailboxAside', () => {
-  const component = shallow(<Folders />);
+describe('Labels', () => {
+  const component = shallow(<Labels />);
 
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();

@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import Login from './Login';
+import Login from '../Login';
 
 describe('Login', () => {
   it('should render the component', () => {

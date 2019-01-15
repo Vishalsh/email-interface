@@ -6,7 +6,7 @@ import apiEndPoints from 'constants/apiEndPoints';
 import {
   USER_LOGIN_SUCCESSFUL,
   USER_LOGIN_FAILED
-} from "./user.actionTypes";
+} from "../user.actionTypes";
 
 jest.mock("react-router-redux", () => {
   return {
@@ -14,7 +14,7 @@ jest.mock("react-router-redux", () => {
   };
 });
 
-import userActions from './user.actions';
+import userActions from '../user.actions';
 
 describe('userActions', () => {
   const middleWares = [thunkMiddleware];

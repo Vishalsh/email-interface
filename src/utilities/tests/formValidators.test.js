@@ -1,4 +1,4 @@
-import { isEmailValid } from './formValidators';
+import { isEmailValid } from '../formValidators';
 
 describe('formValidators', () => {
   it('should validates the email', () => {

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { NavLink } from 'react-router-dom';
 
-import SidebarLink from './SidebarLink';
+import SidebarLink from '../SidebarLink';
 
 describe('SidebarLink', () => {
   const link = {

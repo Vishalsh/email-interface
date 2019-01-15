@@ -2,15 +2,15 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import InputWithLabel from './InputWithLabel';
+import Button from '../Button';
 
-describe('InputWithLabel', () => {
+describe('Button', () => {
   const props = {
-    label: 'foo',
-    value: 'bar',
-    onChange: jest.fn()
+    type: 'primary',
+    onClick: jest.fn(),
+    children: <div className="Button-child"/>
   };
-  const component = shallow(<InputWithLabel {...props} />);
+  const component = shallow(<Button {...props} />);
 
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();

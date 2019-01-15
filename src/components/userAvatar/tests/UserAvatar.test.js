@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import UserAvatar from './UserAvatar';
+import UserAvatar from '../UserAvatar';
 
 describe('UserAvatar', () => {
   const props = {
