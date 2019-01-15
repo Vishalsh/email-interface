@@ -29,16 +29,16 @@ const links = [{
   routeTo: routes.MAILBOX,
   links: [{
     name: 'Inbox',
-    routeTo: routes.MAILBOX + routes.INBOX
+    routeTo: routes.INBOX
   }, {
     name: 'Email view',
-    routeTo: routes.MAILBOX + routes.EMAIL_VIEW
+    routeTo: routes.EMAIL_VIEW
   }, {
     name: 'Compose Email',
-    routeTo: routes.MAILBOX + routes.COMPOSE_EMAIL
+    routeTo: routes.COMPOSE_EMAIL
   }, {
     name: 'Email templates',
-    routeTo: routes.MAILBOX + routes.EMAIL_TEMPLATES
+    routeTo: routes.EMAIL_TEMPLATES
   }]
 }, {
   name: 'Metrics',
@@ -73,6 +73,7 @@ export const Sidebar = (props) => {
             :
             <SidebarLink link={links[0]}/>
         }
+
         <SidebarLink link={links[1]}/>
         <SidebarLink link={links[2]}/>
         <SidebarLink link={links[3]}/>
@@ -93,4 +94,6 @@ const mapStateToProps = (store) => ({
   user: store.user.data
 });
 
-export default connect(mapStateToProps)(Sidebar);
+// the { pure: false } parameter is used to fix the active link with react-redux
+// https://github.com/ReactTraining/react-router/issues/3536
+export default connect(mapStateToProps, null, null, { pure: false })(Sidebar);

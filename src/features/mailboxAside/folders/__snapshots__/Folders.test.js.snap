@@ -10,7 +10,7 @@ exports[`MailboxAside should render the component 1`] = `
     <Link
       className="link"
       replace={false}
-      to="/mailbox"
+      to="/mailbox/inbox"
     >
       <i
         className="icon icon-inbox icon"
@@ -26,7 +26,7 @@ exports[`MailboxAside should render the component 1`] = `
     <Link
       className="link"
       replace={false}
-      to="/mailbox"
+      to="/mailbox/sent"
     >
       <i
         className="icon icon-send-mail icon"
@@ -42,7 +42,7 @@ exports[`MailboxAside should render the component 1`] = `
     <Link
       className="link"
       replace={false}
-      to="/mailbox"
+      to="/mailbox/important"
     >
       <i
         className="icon icon-important icon"
@@ -58,7 +58,7 @@ exports[`MailboxAside should render the component 1`] = `
     <Link
       className="link"
       replace={false}
-      to="/mailbox"
+      to="/mailbox/drafts"
     >
       <i
         className="icon icon-drafts icon"
@@ -74,7 +74,7 @@ exports[`MailboxAside should render the component 1`] = `
     <Link
       className="link"
       replace={false}
-      to="/mailbox"
+      to="/mailbox/trash"
     >
       <i
         className="icon icon-trash icon"

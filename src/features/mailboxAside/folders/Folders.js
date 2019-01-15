@@ -8,31 +8,31 @@ const Folders = () => {
   return (
     <ul className={classes.list}>
       <li className={classes.listItem}>
-        <Link className={classes.link} to={routes.MAILBOX}>
+        <Link className={classes.link} to={routes.INBOX}>
           <i className={`icon icon-inbox ${classes.icon}`}/>
           <span>Inbox</span>
         </Link>
       </li>
       <li className={classes.listItem}>
-        <Link className={classes.link} to={routes.MAILBOX}>
+        <Link className={classes.link} to={routes.SENT}>
           <i className={`icon icon-send-mail ${classes.icon}`}/>
           <span>Send Mail</span>
         </Link>
       </li>
       <li className={classes.listItem}>
-        <Link className={classes.link} to={routes.MAILBOX}>
+        <Link className={classes.link} to={routes.IMPORTANT}>
           <i className={`icon icon-important ${classes.icon}`}/>
           <span>Important</span>
         </Link>
       </li>
       <li className={classes.listItem}>
-        <Link className={classes.link} to={routes.MAILBOX}>
+        <Link className={classes.link} to={routes.DRAFTS}>
           <i className={`icon icon-drafts ${classes.icon}`}/>
           <span>Drafts</span>
         </Link>
       </li>
       <li className={classes.listItem}>
-        <Link className={classes.link} to={routes.MAILBOX}>
+        <Link className={classes.link} to={routes.TRASH}>
           <i className={`icon icon-trash ${classes.icon}`}/>
           <span>Trash</span>
         </Link>

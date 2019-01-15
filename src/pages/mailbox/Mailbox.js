@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
+import routes from 'constants/routes';
 import MailboxAside from 'features/mailboxAside/MailboxAside';
 
 class Mailbox extends Component {
   render() {
+    const { match } = this.props;
+
     return (
       <div className="row">
         <div className="col-sm-3">
           <MailboxAside />
         </div>
         <div className="col-sm-9">
-          <h1>Inbox</h1>
+          <Switch>
+            <Redirect exact from={routes.MAILBOX} to={routes.INBOX} />
+            <Route path={`${match.url}/:mailbox`} component={({ match }) => <h1>{match.params.mailbox}</h1>}/>
+          </Switch>
         </div>
       </div>
     );

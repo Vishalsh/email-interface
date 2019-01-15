@@ -12,9 +12,28 @@ exports[`Mailbox should render the component 1`] = `
   <div
     className="col-sm-9"
   >
-    <h1>
-      Inbox
-    </h1>
+    <Switch>
+      <Route
+        component={[Function]}
+        path="/mailbox/inbox"
+      />
+      <Route
+        component={[Function]}
+        path="/mailbox/sent"
+      />
+      <Route
+        component={[Function]}
+        path="/mailbox/important"
+      />
+      <Route
+        component={[Function]}
+        path="/mailbox/drafts"
+      />
+      <Route
+        component={[Function]}
+        path="/mailbox/trash"
+      />
+    </Switch>
   </div>
 </div>
 `;
