@@ -1,0 +1,15 @@
+@import "~styles/variables";
+
+.mailbox {
+  background-color: map-get($gray, '1500');
+  border: 1px solid map-get($gray, '1300');
+  margin: 0 1rem;
+}
+
+.header {
+  padding: 3rem 2rem 2rem;
+}
+
+.name {
+  text-transform: capitalize;
+}

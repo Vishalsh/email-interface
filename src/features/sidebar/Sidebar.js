@@ -32,13 +32,15 @@ const links = [{
     routeTo: routes.INBOX
   }, {
     name: 'Email view',
-    routeTo: routes.EMAIL_VIEW
+    routeTo: routes.EMAIL_VIEW,
+    disabled: true
   }, {
     name: 'Compose Email',
     routeTo: routes.COMPOSE_EMAIL
   }, {
     name: 'Email templates',
-    routeTo: routes.EMAIL_TEMPLATES
+    routeTo: routes.EMAIL_TEMPLATES,
+    disabled: true
   }]
 }, {
   name: 'Metrics',

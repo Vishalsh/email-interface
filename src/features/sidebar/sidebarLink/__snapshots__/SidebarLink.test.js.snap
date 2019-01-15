@@ -63,6 +63,7 @@ exports[`SidebarLink should render the component when sidebar is open 1`] = `
         activeClassName="nestedLinkActive"
         aria-current="page"
         className="link nestedLink"
+        onClick={[Function]}
         to="inbox"
       >
         Inbox
@@ -75,6 +76,7 @@ exports[`SidebarLink should render the component when sidebar is open 1`] = `
         activeClassName="nestedLinkActive"
         aria-current="page"
         className="link nestedLink"
+        onClick={[Function]}
         to="email-view"
       >
         Email view
@@ -87,6 +89,7 @@ exports[`SidebarLink should render the component when sidebar is open 1`] = `
         activeClassName="nestedLinkActive"
         aria-current="page"
         className="link nestedLink"
+        onClick={[Function]}
         to="compose-email"
       >
         Compose Email
@@ -99,6 +102,7 @@ exports[`SidebarLink should render the component when sidebar is open 1`] = `
         activeClassName="nestedLinkActive"
         aria-current="page"
         className="link nestedLink"
+        onClick={[Function]}
         to="email-templates"
       >
         Email templates

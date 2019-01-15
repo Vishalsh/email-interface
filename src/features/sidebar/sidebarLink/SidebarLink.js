@@ -7,6 +7,14 @@ import classes from './SidebarLink.module.scss';
 const SidebarLink = (props) => {
   const { link, isSidebarOpen } = props;
 
+  const handleDisable = (disabled) => {
+    return (event) => {
+      if (disabled) {
+        event.preventDefault();
+      }
+    }
+  };
+
   return (
     <li className={classes.list}>
       <NavLink className={classes.link}
@@ -28,7 +36,8 @@ const SidebarLink = (props) => {
               <li key={`${nestedLink.name}_${index}`}>
                 <NavLink className={`${classes.link} ${classes.nestedLink}`}
                          to={nestedLink.routeTo}
-                         activeClassName={classes.nestedLinkActive}>
+                         activeClassName={classes.nestedLinkActive}
+                         onClick={handleDisable(nestedLink.disabled)}>
                   {nestedLink.name}
                 </NavLink>
               </li>

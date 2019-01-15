@@ -7,11 +7,14 @@ import Mailbox from './Mailbox';
 describe('Mailbox', () => {
   const props = {
     match: {
-      url: 'mailbox'
+      params: {
+        mailbox: 'inbox'
+      }
     }
   };
+  const component = shallow(<Mailbox {...props} />);
 
   it('should render the component', () => {
-    expect(toJson(shallow(<Mailbox {...props}/>))).toMatchSnapshot();
+    expect(toJson(component)).toMatchSnapshot();
   })
 });

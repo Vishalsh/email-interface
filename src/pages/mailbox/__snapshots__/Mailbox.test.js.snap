@@ -13,25 +13,15 @@ exports[`Mailbox should render the component 1`] = `
     className="col-sm-9"
   >
     <Switch>
-      <Route
-        component={[Function]}
-        path="/mailbox/inbox"
+      <Redirect
+        exact={true}
+        from="/mailbox"
+        push={false}
+        to="/mailbox/inbox"
       />
       <Route
         component={[Function]}
-        path="/mailbox/sent"
-      />
-      <Route
-        component={[Function]}
-        path="/mailbox/important"
-      />
-      <Route
-        component={[Function]}
-        path="/mailbox/drafts"
-      />
-      <Route
-        component={[Function]}
-        path="/mailbox/trash"
+        path="mailbox/:mailbox"
       />
     </Switch>
   </div>
