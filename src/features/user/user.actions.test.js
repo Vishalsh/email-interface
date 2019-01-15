@@ -2,7 +2,7 @@ import configureStore from 'redux-mock-store';
 import thunkMiddleware from 'redux-thunk';
 
 import http from 'utilities/http';
-import apiPaths from 'constants/apiPaths';
+import apiEndPoints from 'constants/apiEndPoints';
 import {
   USER_LOGIN_SUCCESSFUL,
   USER_LOGIN_FAILED
@@ -29,7 +29,7 @@ describe('userActions', () => {
     store = mockStore({})
   });
 
-  it('should dispatch USER_LOGIN_SUCCESSFUL user login succeed', () => {
+  it('should dispatch USER_LOGIN_SUCCESSFUL if user login succeed', () => {
     const user = {
       id: 1,
       name: 'MSD'
@@ -43,22 +43,24 @@ describe('userActions', () => {
 
     return store.dispatch(userActions.login(loginDetails))
       .then(() => {
-        expect(http.post).toHaveBeenCalledWith(apiPaths.LOGIN, loginDetails);
+        expect(http.post).toHaveBeenCalledWith(apiEndPoints.login(), loginDetails);
         expect(store.getActions()).toEqual(expectedActions);
       });
   });
 
-  it('should dispatch USER_LOGIN_FAILED user login failed', () => {
+  it('should dispatch USER_LOGIN_FAILED if user login failed', () => {
     const error = 'something went wrong';
 
     spyOn(http, 'post').and.returnValue(Promise.reject(error));
 
+    const expectedActions = [{
+      type: USER_LOGIN_FAILED,
+    }];
+
     return store.dispatch(userActions.login(loginDetails))
       .then(() => {
-        expect(http.post).toHaveBeenCalledWith(apiPaths.LOGIN, loginDetails);
-        expect(store.getActions()).toEqual([{
-          type: USER_LOGIN_FAILED,
-        }]);
+        expect(http.post).toHaveBeenCalledWith(apiEndPoints.login(), loginDetails);
+        expect(store.getActions()).toEqual(expectedActions);
       });
   });
 });

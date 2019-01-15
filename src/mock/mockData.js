@@ -1,7 +1,7 @@
 const users = [{
   id: 1,
   name: 'MS Dhoni',
-  email: 'msd@bcci.com',
+  email: 'msDhoni@bcci.com',
   password: '!abcd1234',
   role: 'Wicket Keeper',
   avatar: 'http://s.ndtvimg.com/images/entities/120/ms-dhoni-700.png'
@@ -48,7 +48,7 @@ const mailboxes = [{
   emails: [{
     id: 1,
     from: 'vkohli@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 1',
     body: 'hi, how are you ?',
     status: 'UNREAD',
@@ -56,14 +56,14 @@ const mailboxes = [{
   }, {
     id: 2,
     from: 'rkharma@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 3,
     from: 'jynks@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD',
@@ -71,14 +71,14 @@ const mailboxes = [{
   }, {
     id: 4,
     from: 'bhuvi@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 5,
     from: 'rkharma@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD',
@@ -87,21 +87,21 @@ const mailboxes = [{
   }, {
     id: 6,
     from: 'jynks@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 7,
     from: 'rkharma@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 8,
     from: 'bhuvi@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD',
@@ -109,62 +109,63 @@ const mailboxes = [{
   }, {
     id: 9,
     from: 'jynks@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 10,
     from: 'jynks@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 11,
     from: 'rkharma@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 12,
     from: 'bhuvi@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 13,
     from: 'bhuvi@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 14,
     from: 'jynks@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 15,
     from: 'bhuvi@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 16,
     from: 'rkharma@bcci.com',
-    to: 'msd@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'UNREAD'
   }, {
     id: 17,
     from: 'bhuvi@bcci.com',
+    to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
     status: 'READ'
@@ -173,7 +174,20 @@ const mailboxes = [{
   id: 2,
   name: "sent",
   emails: []
+}, {
+  id: 3,
+  name: "important",
+  emails: []
+}, {
+  id: 4,
+  name: "drafts",
+  emails: []
+}, {
+  id: 4,
+  name: "trash",
+  emails: []
 }];
 
 
 localStorage.setItem('users', JSON.stringify(users));
+localStorage.setItem('mailboxes', JSON.stringify(mailboxes));

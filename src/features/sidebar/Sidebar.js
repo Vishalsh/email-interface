@@ -89,7 +89,8 @@ export const Sidebar = (props) => {
 };
 
 Sidebar.propTypes = {
-  isOpen: PropTypes.bool.isRequired
+  isOpen: PropTypes.bool.isRequired,
+  user: PropTypes.object.isRequired
 };
 
 const mapStateToProps = (store) => ({

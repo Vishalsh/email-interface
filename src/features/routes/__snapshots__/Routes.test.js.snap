@@ -1,6 +1,24 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Routes should render the component 1`] = `
+exports[`Routes should not render the protected routes when user is not logged in 1`] = `
+<Switch>
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/"
+  />
+  <Route
+    component={[Function]}
+    path="/login"
+  />
+  <Redirect
+    push={false}
+    to="/login"
+  />
+</Switch>
+`;
+
+exports[`Routes should render all the routes when user is logged in 1`] = `
 <Switch>
   <Route
     component={[Function]}

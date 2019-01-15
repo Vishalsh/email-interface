@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailList should render the component 1`] = `
+<ul>
+  <EmailListItem
+    email={
+      Object {
+        "from": "MS Dhoni",
+        "id": 1,
+        "subject": "subject 1",
+      }
+    }
+    key="1"
+  />
+  <EmailListItem
+    email={
+      Object {
+        "from": "Virat Kohli",
+        "id": 1,
+        "subject": "subject 2",
+      }
+    }
+    key="1"
+  />
+</ul>
+`;

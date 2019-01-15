@@ -7,7 +7,7 @@ import 'mock/mockData'; // setting data to local storage;
 
 import './styles/index.scss';
 import store from './store';
-import Routes from './Routes';
+import Routes from './features/routes/Routes';
 
 render(
   <Provider store={store}>

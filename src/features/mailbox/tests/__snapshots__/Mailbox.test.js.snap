@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Mailbox should render the component 1`] = `
+<section
+  className="mailbox"
+>
+  <header
+    className="header"
+  >
+    <h1
+      className="name"
+    >
+      inbox
+    </h1>
+  </header>
+  <EmailList
+    emails={
+      Array [
+        Object {
+          "from": "MS Dhoni",
+          "id": 1,
+          "subject": "subject 1",
+        },
+        Object {
+          "from": "Virat Kohli",
+          "id": 1,
+          "subject": "subject 2",
+        },
+      ]
+    }
+  />
+</section>
+`;
