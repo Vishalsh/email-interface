@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import EmailListItem from 'features/mailbox/emailListItem/EmailListItem';
+import classes from './EmailList.module.scss';
 
 const EmailList = (props) => {
   const {
@@ -9,7 +10,7 @@ const EmailList = (props) => {
   } = props;
 
   return (
-    <ul>
+    <ul className={classes.emailList}>
       {
         emails.map((email) => (
           <EmailListItem key={email.id} email={email}/>

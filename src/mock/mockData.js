@@ -52,123 +52,140 @@ const mailboxes = [{
     subject: 'Subject 1',
     body: 'hi, how are you ?',
     status: 'UNREAD',
-    attachments: ['attachment 1', 'attachment 2'],
+    dateTime: '6.10 AM'
   }, {
     id: 2,
     from: 'rkharma@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'UNREAD',
+    dateTime: '8.22 AM'
   }, {
     id: 3,
     from: 'jynks@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD',
-    category: 'clients'
+    status: 'READ',
+    category: 'clients',
+    dateTime: '13 Jan'
   }, {
     id: 4,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '13 Jan'
   }, {
     id: 5,
     from: 'rkharma@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD',
+    status: 'READ',
     attachments: ['attachment 3'],
     category: 'documents',
+    dateTime: '13 Jan'
   }, {
     id: 6,
     from: 'jynks@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '11 Jan'
   }, {
     id: 7,
     from: 'rkharma@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '11 Jan'
   }, {
     id: 8,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD',
-    category: 'advertising'
+    status: 'READ',
+    category: 'advertising',
+    attachments: ['attachment 1', 'attachment 2'],
+    dateTime: '11 Jan'
   }, {
     id: 9,
     from: 'jynks@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '11 Jan'
   }, {
     id: 10,
     from: 'jynks@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '10 Jan'
   }, {
     id: 11,
     from: 'rkharma@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '9 Jan'
   }, {
     id: 12,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '9 Jan'
   }, {
     id: 13,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '5 Jan'
   }, {
     id: 14,
     from: 'jynks@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '5 Jan'
   }, {
     id: 15,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '3 Jan'
   }, {
     id: 16,
     from: 'rkharma@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD'
+    status: 'READ',
+    dateTime: '2 Jan'
   }, {
     id: 17,
     from: 'bhuvi@bcci.com',
     to: 'msDhoni@bcci.com',
     subject: 'Subject 2',
     body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ'
+    status: 'READ',
+    dateTime: '1 Jan'
   }]
 }, {
   id: 2,

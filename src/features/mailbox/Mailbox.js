@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux'
 import mailboxActions from './mailbox.actions';
 import loadingStates from 'constants/loadingStates';
 import EmailList from './emailList/EmailList';
+import NoEmail from './noEmail/NoEmail';
 import classes from './Mailbox.module.scss';
 
 export class Mailbox extends Component {
@@ -34,7 +35,12 @@ export class Mailbox extends Component {
           <h1 className={classes.name}>{match.params.mailbox}</h1>
         </header>
 
-        <EmailList emails={mailbox.emails}/>
+        {
+          mailbox.emails.length > 0 ?
+            <EmailList emails={mailbox.emails}/>
+            :
+            <NoEmail />
+        }
       </section>
     );
   }

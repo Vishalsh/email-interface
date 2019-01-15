@@ -5,7 +5,7 @@
   background-color: $sidebar;
   height: 100vh;
   transition: width 0.5s;
-  overflow: hidden;
+  overflow-y: scroll;
 }
 
 .sidebarOpen {
