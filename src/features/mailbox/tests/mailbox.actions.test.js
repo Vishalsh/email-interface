@@ -7,6 +7,10 @@ import {
   GET_EMAILS_SUCCESSFUL,
   GET_EMAILS_FAILED
 } from "../mailbox.actionTypes";
+import {
+  ADD_EMAILS,
+} from "features/emails/emails.actionTypes";
+
 import mailboxActions from '../mailbox.actions';
 
 describe('mailboxActions', () => {
@@ -29,7 +33,7 @@ describe('mailboxActions', () => {
       id: 1,
       subject: 'subject 1'
     }, {
-      id: 1,
+      id: 2,
       subject: 'subject 2'
     }];
 
@@ -37,7 +41,22 @@ describe('mailboxActions', () => {
       spyOn(http, 'get').and.returnValue(Promise.resolve(emails));
 
       const expectedActions = [
-        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox, emails } },
+        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2] } },
+        {
+          type: ADD_EMAILS,
+          payload: {
+            emails: {
+              1: {
+                id: 1,
+                subject: 'subject 1'
+              },
+              2: {
+                id: 2,
+                subject: 'subject 2'
+              }
+            }
+          }
+        },
       ];
 
       return store.dispatch(mailboxActions.getEmails(mailbox))

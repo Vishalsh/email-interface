@@ -2,9 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import EmailList from '../EmailList';
+import { Emails } from '../Emails';
 
-describe('EmailList', () => {
+describe('Emails', () => {
   const props = {
     emails: [{
       id: 1,
@@ -16,7 +16,7 @@ describe('EmailList', () => {
       from: 'Virat Kohli'
     }]
   };
-  const component = shallow(<EmailList {...props} />);
+  const component = shallow(<Emails {...props} />);
 
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();

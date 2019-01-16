@@ -13,19 +13,11 @@ exports[`Mailbox should render the component 1`] = `
       inbox
     </h1>
   </header>
-  <EmailList
-    emails={
+  <Connect(Emails)
+    ids={
       Array [
-        Object {
-          "from": "MS Dhoni",
-          "id": 1,
-          "subject": "subject 1",
-        },
-        Object {
-          "from": "Virat Kohli",
-          "id": 1,
-          "subject": "subject 2",
-        },
+        1,
+        2,
       ]
     }
   />

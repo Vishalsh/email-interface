@@ -6,7 +6,7 @@ import {
 
 const initialState = {};
 
-const user = (state = initialState, action) => {
+const mailboxReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_EMAILS_SUCCESSFUL: {
       const { mailbox, emails } = action.payload;
@@ -36,4 +36,4 @@ const user = (state = initialState, action) => {
   }
 };
 
-export default user;
+export default mailboxReducer;

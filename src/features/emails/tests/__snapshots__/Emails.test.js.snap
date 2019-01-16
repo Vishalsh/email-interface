@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmailList should render the component 1`] = `
-<ul>
+exports[`Emails should render the component 1`] = `
+<ul
+  className="emailList"
+>
   <EmailListItem
     email={
       Object {

@@ -14,15 +14,7 @@ describe('Mailbox', () => {
       }
     },
     mailbox: {
-      emails: [{
-        id: 1,
-        subject: 'subject 1',
-        from: 'MS Dhoni'
-      }, {
-        id: 1,
-        subject: 'subject 2',
-        from: 'Virat Kohli'
-      }],
+      emails: [1, 2],
       loadingState: loadingStates.LOADED
     },
     getEmails: getEmailsMock
@@ -54,15 +46,7 @@ describe('Mailbox', () => {
         }
       },
       mailbox: {
-        emails: [{
-          id: 1,
-          subject: 'subject 1',
-          from: 'MS Dhoni'
-        }, {
-          id: 1,
-          subject: 'subject 2',
-          from: 'Virat Kohli'
-        }],
+        emails: [1, 2],
         loadingState: loadingStates.LOADED
       },
     });
@@ -76,15 +60,7 @@ describe('Mailbox', () => {
         }
       },
       mailbox: {
-        emails: [{
-          id: 1,
-          subject: 'subject 1',
-          from: 'MS Dhoni'
-        }, {
-          id: 1,
-          subject: 'subject 2',
-          from: 'Virat Kohli'
-        }],
+        emails: [1, 2],
         loadingState: loadingStates.LOADED
       },
     });

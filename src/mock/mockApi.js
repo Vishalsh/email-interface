@@ -1,5 +1,6 @@
 const getUsers = () => JSON.parse(localStorage.getItem('users'));
 const getMailboxes = () => JSON.parse(localStorage.getItem('mailboxes'));
+const getEmails = () => JSON.parse(localStorage.getItem('emails'));
 
 const login = (user) => {
   const users = getUsers();
@@ -22,17 +23,19 @@ const login = (user) => {
   })
 };
 
-const getEmails = (url) => {
+const getMailboxEmails = (url) => {
   const users = getUsers();
   const mailboxes = getMailboxes();
+  const emails = getEmails();
 
   const userId = parseInt(url.split('/')[2]);
-  const mailboxName = url.split('=')[1];
+  const mailboxName = url.split('/')[4];
 
   const receiverEmail = users.find(user => user.id === userId).email;
-  const emails = mailboxes
-    .find(mailbox => mailbox.name === mailboxName).emails
-    .filter(email => email.to === receiverEmail)
+  const mailboxEmails = mailboxes
+    .find(mailbox => mailbox.name === mailboxName).emails;
+
+  const emailList = emails.filter(email => email.to === receiverEmail && mailboxEmails.includes(email.id))
     .map(email => ({
       ...email,
       sender: {
@@ -44,7 +47,7 @@ const getEmails = (url) => {
   return new Promise((resolve) => {
     resolve({
       status: 200,
-      data: emails
+      data: emailList
     });
   });
 };
@@ -54,8 +57,8 @@ const fetch = (url, data) => {
     return login(data);
   }
 
-  if (url.includes('users') && url.includes('emails') && url.includes('mailbox')) {
-    return getEmails(url);
+  if (url.includes('users') && url.includes('mailboxes') && url.includes('emails')) {
+    return getMailboxEmails(url);
   }
 };
 

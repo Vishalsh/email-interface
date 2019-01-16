@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NoEmail should render the component 1`] = `
+<p
+  className="noEmail"
+>
+  There are no conversations with this label.
+</p>
+`;

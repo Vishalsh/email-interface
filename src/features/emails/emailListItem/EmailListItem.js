@@ -22,7 +22,7 @@ const EmailListItem = (props) => {
             {email.category}
           </span>
         </p>
-        <p className="col-sm-5">{email.body}</p>
+        <p className="col-sm-5">{email.subject}</p>
         <span className="col-sm-1 center-sm">
           {
             email.attachments && email.attachments.length > 0 &&

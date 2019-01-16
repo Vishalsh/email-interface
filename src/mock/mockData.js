@@ -42,151 +42,153 @@ const users = [{
   avatar: 'http://s.ndtvimg.com/images/entities/120/ms-dhoni-700.png'
 }];
 
+const emails = [{
+  id: 1,
+  from: 'vkohli@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'hi, how are you ?',
+  status: 'UNREAD',
+  dateTime: '6.10 AM'
+}, {
+  id: 2,
+  from: 'rkharma@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Hey MS, How are you ?',
+  status: 'UNREAD',
+  dateTime: '8.22 AM'
+}, {
+  id: 3,
+  from: 'jynks@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  category: 'clients',
+  dateTime: '13 Jan'
+}, {
+  id: 4,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '13 Jan'
+}, {
+  id: 5,
+  from: 'rkharma@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  attachments: ['attachment 3'],
+  category: 'documents',
+  dateTime: '13 Jan'
+}, {
+  id: 6,
+  from: 'jynks@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '11 Jan'
+}, {
+  id: 7,
+  from: 'rkharma@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '11 Jan'
+}, {
+  id: 8,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  category: 'advertising',
+  attachments: ['attachment 1', 'attachment'],
+  dateTime: '11 Jan'
+}, {
+  id: 9,
+  from: 'jynks@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '11 Jan'
+}, {
+  id: 10,
+  from: 'jynks@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '10 Jan'
+}, {
+  id: 11,
+  from: 'rkharma@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '9 Jan'
+}, {
+  id: 12,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '9 Jan'
+}, {
+  id: 13,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '5 Jan'
+}, {
+  id: 14,
+  from: 'jynks@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '5 Jan'
+}, {
+  id: 15,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '3 Jan'
+}, {
+  id: 16,
+  from: 'rkharma@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '2 Jan'
+}, {
+  id: 17,
+  from: 'bhuvi@bcci.com',
+  to: 'msDhoni@bcci.com',
+  body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
+  subject: 'Lorem ipsum dolor sit amet.',
+  status: 'READ',
+  dateTime: '1 Jan'
+}];
+
 const mailboxes = [{
   id: 1,
   name: "inbox",
-  emails: [{
-    id: 1,
-    from: 'vkohli@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 1',
-    body: 'hi, how are you ?',
-    status: 'UNREAD',
-    dateTime: '6.10 AM'
-  }, {
-    id: 2,
-    from: 'rkharma@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'UNREAD',
-    dateTime: '8.22 AM'
-  }, {
-    id: 3,
-    from: 'jynks@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    category: 'clients',
-    dateTime: '13 Jan'
-  }, {
-    id: 4,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '13 Jan'
-  }, {
-    id: 5,
-    from: 'rkharma@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    attachments: ['attachment 3'],
-    category: 'documents',
-    dateTime: '13 Jan'
-  }, {
-    id: 6,
-    from: 'jynks@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '11 Jan'
-  }, {
-    id: 7,
-    from: 'rkharma@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '11 Jan'
-  }, {
-    id: 8,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    category: 'advertising',
-    attachments: ['attachment 1', 'attachment 2'],
-    dateTime: '11 Jan'
-  }, {
-    id: 9,
-    from: 'jynks@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '11 Jan'
-  }, {
-    id: 10,
-    from: 'jynks@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '10 Jan'
-  }, {
-    id: 11,
-    from: 'rkharma@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '9 Jan'
-  }, {
-    id: 12,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '9 Jan'
-  }, {
-    id: 13,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '5 Jan'
-  }, {
-    id: 14,
-    from: 'jynks@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '5 Jan'
-  }, {
-    id: 15,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '3 Jan'
-  }, {
-    id: 16,
-    from: 'rkharma@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '2 Jan'
-  }, {
-    id: 17,
-    from: 'bhuvi@bcci.com',
-    to: 'msDhoni@bcci.com',
-    subject: 'Subject 2',
-    body: 'Lorem ipsum dolor sit amet.',
-    status: 'READ',
-    dateTime: '1 Jan'
-  }]
+  emails: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
 }, {
   id: 2,
   name: "sent",
@@ -208,3 +210,4 @@ const mailboxes = [{
 
 localStorage.setItem('users', JSON.stringify(users));
 localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
+localStorage.setItem('emails', JSON.stringify(emails));

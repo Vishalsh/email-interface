@@ -6,66 +6,54 @@ exports[`Categories should render the component 1`] = `
 >
   <li
     className="listItem"
-    key="Work"
+    key="work"
   >
     <i
-      className="icon"
-      style={
-        Object {
-          "background": "#1bb394",
-        }
-      }
+      className="icon work"
     />
-    <span>
-      Work
+    <span
+      className="name"
+    >
+      work
     </span>
   </li>
   <li
     className="listItem"
-    key="Documents"
+    key="documents"
   >
     <i
-      className="icon"
-      style={
-        Object {
-          "background": "#ef5352",
-        }
-      }
+      className="icon documents"
     />
-    <span>
-      Documents
+    <span
+      className="name"
+    >
+      documents
     </span>
   </li>
   <li
     className="listItem"
-    key="Social"
+    key="social"
   >
     <i
-      className="icon"
-      style={
-        Object {
-          "background": "#1c84c6",
-        }
-      }
+      className="icon social"
     />
-    <span>
-      Social
+    <span
+      className="name"
+    >
+      social
     </span>
   </li>
   <li
     className="listItem"
-    key="Advertising"
+    key="advertising"
   >
     <i
-      className="icon"
-      style={
-        Object {
-          "background": "#23c6c8",
-        }
-      }
+      className="icon advertising"
     />
-    <span>
-      Advertising
+    <span
+      className="name"
+    >
+      advertising
     </span>
   </li>
   <li
@@ -73,14 +61,11 @@ exports[`Categories should render the component 1`] = `
     key="clients"
   >
     <i
-      className="icon"
-      style={
-        Object {
-          "background": "#f8ac59",
-        }
-      }
+      className="icon clients"
     />
-    <span>
+    <span
+      className="name"
+    >
       clients
     </span>
   </li>

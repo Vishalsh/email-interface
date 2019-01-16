@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EmailListItem should render the component 1`] = `
+<li
+  className="listItem"
+>
+  <article
+    className="row middle-xs emailRow "
+  >
+    <span
+      className="col-sm-2"
+    >
+      MS Dhoni
+    </span>
+    <p
+      className="col-sm-2 end-sm"
+    >
+      <span
+        className="category undefined"
+      />
+    </p>
+    <p
+      className="col-sm-5"
+    >
+      subject 1
+    </p>
+    <span
+      className="col-sm-1 center-sm"
+    >
+      <i
+        className="icon icon-attachment icon"
+      />
+    </span>
+    <span
+      className="col-sm-2 end-sm"
+    >
+      15 Jan
+    </span>
+  </article>
+</li>
+`;
