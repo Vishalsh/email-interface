@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
+import { Route } from 'react-router-dom';
 
 import mailboxActions from './mailbox.actions';
 import loadingStates from 'constants/loadingStates';
 import Emails from 'features/emails/Emails';
 import NoEmail from 'features/emails/noEmail/NoEmail';
 import classes from './Mailbox.module.scss';
+import EmailDetails from 'features/emails/emailDetails/EmailDetails';
 
 export class Mailbox extends Component {
   componentDidMount() {
@@ -37,10 +39,12 @@ export class Mailbox extends Component {
 
         {
           mailbox.emails.length > 0 ?
-            <Emails ids={mailbox.emails}/>
+            <Emails mailbox={match.params.mailbox} ids={mailbox.emails}/>
             :
             <NoEmail />
         }
+
+        <Route path={`${match.url}/:id`} component={EmailDetails}/>
       </section>
     );
   }

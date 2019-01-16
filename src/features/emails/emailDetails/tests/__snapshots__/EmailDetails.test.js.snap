@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Emails should render the component 1`] = `
+<section
+  className="emailDetails"
+>
+  <div
+    className="row middle-sm"
+  >
+    <h1>
+      subject 1
+    </h1>
+    <div>
+      <span
+        className="category documents"
+      >
+        documents
+      </span>
+    </div>
+  </div>
+  <div
+    className="detailRow row"
+  >
+    <div
+      className="col-sm-6"
+    >
+      <span
+        className="label"
+      >
+        From: 
+      </span>
+      <span>
+        MS Dhoni &lt;msDhoni@bcci.com&gt;
+      </span>
+    </div>
+    <div
+      className="col-sm-6 end-sm"
+    >
+      <span>
+        25 Dec
+      </span>
+    </div>
+  </div>
+  <p>
+    Lorem ipsum dolor sit amet.
+  </p>
+</section>
+`;

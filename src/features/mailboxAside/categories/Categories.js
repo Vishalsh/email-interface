@@ -20,7 +20,7 @@ const Categories = () => {
       {
         categories.map((category) => (
           <li key={category.name} className={classes.listItem}>
-            <i className={`${classes.icon} ${classes[category.name]}`}/>
+            <i className={`${classes.icon} ${category.name}`}/>
             <span className={classes.name}>{category.name}</span>
           </li>
         ))

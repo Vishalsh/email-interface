@@ -13,6 +13,7 @@ exports[`Emails should render the component 1`] = `
       }
     }
     key="1"
+    mailbox="inbox"
   />
   <EmailListItem
     email={
@@ -23,6 +24,7 @@ exports[`Emails should render the component 1`] = `
       }
     }
     key="1"
+    mailbox="inbox"
   />
 </ul>
 `;

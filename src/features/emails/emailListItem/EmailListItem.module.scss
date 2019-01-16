@@ -7,6 +7,8 @@
 .emailRow {
   padding: 0 2rem;
   height: 4rem;
+  color: map-get($gray, '600');
+  text-decoration: none;
 }
 
 .unread {
@@ -20,26 +22,6 @@
   font-size: map-get($fontSizes, '10');
   border-radius: 0.3rem;
   margin-right: 1rem;
-}
-
-.work {
-  background-color: $mountain-meadow;
-}
-
-.documents {
-  background-color: $flamingo;
-}
-
-.social {
-  background-color: $pelorous;
-}
-
-.advertising {
-  background-color: $egg-blue;
-}
-
-.clients {
-  background-color: $texas-rose;
 }
 
 .icon {

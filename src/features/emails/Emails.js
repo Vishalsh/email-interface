@@ -7,6 +7,7 @@ import classes from './Emails.module.scss';
 
 export const Emails = (props) => {
   const {
+    mailbox,
     emails
   } = props;
 
@@ -14,7 +15,7 @@ export const Emails = (props) => {
     <ul className={classes.emailList}>
       {
         emails.map((email) => (
-          <EmailListItem key={email.id} email={email}/>
+          <EmailListItem key={email.id} mailbox= {mailbox} email={email}/>
         ))
       }
     </ul>
@@ -22,6 +23,7 @@ export const Emails = (props) => {
 };
 
 Emails.propTypes = {
+  mailbox: PropTypes.string.isRequired,
   emails: PropTypes.array.isRequired
 };
 

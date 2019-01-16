@@ -14,7 +14,8 @@ describe('Emails', () => {
       id: 1,
       subject: 'subject 2',
       from: 'Virat Kohli'
-    }]
+    }],
+    mailbox: 'inbox'
   };
   const component = shallow(<Emails {...props} />);
 

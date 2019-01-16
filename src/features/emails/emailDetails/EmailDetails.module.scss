@@ -1,0 +1,27 @@
+@import "~styles/variables";
+
+.emailDetails {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 3rem 2rem 2rem;
+  background: map-get($gray, '1500');;
+}
+
+.detailRow {
+  padding: 2rem 0;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.category {
+  padding: 0.2rem 1rem 0.3rem;
+  color: map-get($gray, '1500');
+  font-size: map-get($fontSizes, '10');
+  border-radius: 0.3rem;
+  margin-right: 1rem;
+}

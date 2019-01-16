@@ -11,7 +11,8 @@ describe('Mailbox', () => {
     match: {
       params: {
         mailbox: 'inbox'
-      }
+      },
+      url: '/mailbox/inbox'
     },
     mailbox: {
       emails: [1, 2],

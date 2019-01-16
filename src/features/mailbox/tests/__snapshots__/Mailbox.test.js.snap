@@ -20,6 +20,11 @@ exports[`Mailbox should render the component 1`] = `
         2,
       ]
     }
+    mailbox="inbox"
+  />
+  <Route
+    component={[Function]}
+    path="/mailbox/inbox/:id"
   />
 </section>
 `;

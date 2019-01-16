@@ -4,8 +4,10 @@ exports[`EmailListItem should render the component 1`] = `
 <li
   className="listItem"
 >
-  <article
+  <Link
     className="row middle-xs emailRow "
+    replace={false}
+    to="/mailbox/inbox/1"
   >
     <span
       className="col-sm-2"
@@ -36,6 +38,6 @@ exports[`EmailListItem should render the component 1`] = `
     >
       15 Jan
     </span>
-  </article>
+  </Link>
 </li>
 `;
