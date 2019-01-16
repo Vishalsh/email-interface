@@ -13,3 +13,5 @@ exports[`InboxEmailsCount should render the component when showReadMailsCount is
   label="7/10"
 />
 `;
+
+exports[`InboxEmailsCount should render the component when unreadEmailsCount is 0 1`] = `""`;

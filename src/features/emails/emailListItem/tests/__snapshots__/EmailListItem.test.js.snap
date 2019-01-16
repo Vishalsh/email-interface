@@ -6,6 +6,7 @@ exports[`EmailListItem should render the component 1`] = `
 >
   <Link
     className="row middle-xs emailRow "
+    onClick={[Function]}
     replace={false}
     to="/mailbox/inbox/1"
   >

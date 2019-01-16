@@ -1,1 +1,2 @@
 export const ADD_EMAILS = 'ADD_EMAILS';
+export const UPDATE_EMAIL_STATUS = 'UPDATE_EMAIL_STATUS';

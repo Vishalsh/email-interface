@@ -1,6 +1,8 @@
 import {
   ADD_EMAILS,
+  UPDATE_EMAIL_STATUS
 } from "../emails.actionTypes";
+import { status } from 'constants/emails';
 
 import emailsReducer from '../emails.reducer';
 
@@ -38,5 +40,36 @@ describe('emailsReducer', () => {
       ...currentState,
       ...emails
     });
+  });
+
+  it('should handle UPDATE_EMAIL_STATUS', () => {
+    const currentState = {
+      1: {
+        id: 1,
+        subject: 'subject 1',
+        status: status.UNREAD
+      },
+      2: {
+        id: 2,
+        subject: 'subject 2',
+        status: status.READ
+      }
+    };
+
+    const expectedState = {
+      1: {
+        id: 1,
+        subject: 'subject 1',
+        status: status.READ
+      },
+      2: {
+        id: 2,
+        subject: 'subject 2',
+        status: status.READ
+      }
+    };
+
+    expect(emailsReducer(currentState, { type: UPDATE_EMAIL_STATUS, payload: { id: 1 } }))
+      .toEqual(expectedState);
   });
 });

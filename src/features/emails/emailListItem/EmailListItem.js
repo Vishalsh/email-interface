@@ -10,13 +10,21 @@ import classes from './EmailListItem.module.scss';
 const EmailListItem = (props) => {
   const {
     mailbox,
-    email
+    email,
+    onClickEmail
   } = props;
+
+  const onClickLink = () => {
+    if (email.status === status.UNREAD) {
+      onClickEmail({ id: email.id });
+    }
+  };
 
   return (
     <li className={classes.listItem}>
       <Link className={`row middle-xs ${classes.emailRow} ${email.status === status.UNREAD ? classes.unread : ''}`}
-            to={`${routes.MAILBOX}/${mailbox}/${email.id}`}>
+            to={`${routes.MAILBOX}/${mailbox}/${email.id}`}
+            onClick={onClickLink}>
         <span className="col-sm-2">{email.sender.name}</span>
         <p className="col-sm-2 end-sm">
           <span className={classes.category}>
@@ -38,7 +46,8 @@ const EmailListItem = (props) => {
 
 EmailListItem.propTypes = {
   email: PropTypes.object.isRequired,
-  mailbox: PropTypes.string.isRequired
+  mailbox: PropTypes.string.isRequired,
+  onClickEmail: PropTypes.func.isRequired
 };
 
 export default EmailListItem;

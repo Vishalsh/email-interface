@@ -16,7 +16,7 @@ export const InboxEmailsCount = (props) => {
   const label = showReadMailsCount ? `${unreadEmailsCount}/${readEmailsCount}` : unreadEmailsCount;
 
   return (
-    <Badge className={classes.inboxEmailsCount} label={label} />
+    unreadEmailsCount!== 0 && <Badge className={classes.inboxEmailsCount} label={label} />
   );
 };
 

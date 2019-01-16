@@ -15,7 +15,8 @@ describe('Emails', () => {
       subject: 'subject 2',
       from: 'Virat Kohli'
     }],
-    mailbox: 'inbox'
+    mailbox: 'inbox',
+    updateEmailStatus: jest.fn()
   };
   const component = shallow(<Emails {...props} />);
 

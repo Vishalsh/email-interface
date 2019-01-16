@@ -26,4 +26,15 @@ describe('InboxEmailsCount', () => {
 
     expect(toJson(component)).toMatchSnapshot();
   });
+
+  it('should render the component when unreadEmailsCount is 0', () => {
+    const props = {
+      readEmailsCount: 10,
+      unreadEmailsCount: 0,
+      showReadMailsCount: false
+    };
+    const component = shallow(<InboxEmailsCount {...props} />);
+
+    expect(toJson(component)).toMatchSnapshot();
+  });
 });
