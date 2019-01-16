@@ -62,7 +62,8 @@ const updateEmail = (email) => {
   const emails = getEmails();
   const emailsCopy = emails.slice(0);
 
-  emailsCopy.find(e => e.id === email.id).status = 'READ';
+  const emailToUpdate = emailsCopy.find(e => e.id === email.id);
+  emailsCopy[emailsCopy.indexOf(emailToUpdate)] = email;
 
   localStorage.setItem('emails', JSON.stringify(emailsCopy));
 

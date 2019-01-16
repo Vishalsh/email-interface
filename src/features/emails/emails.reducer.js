@@ -23,8 +23,7 @@ const emailsReducer = (state = initialState, action) => {
       return {
         ...state,
         [email.id]: {
-          ...email,
-          status: status.READ
+          ...email
         }
       };
     }

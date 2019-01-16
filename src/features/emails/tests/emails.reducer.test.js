@@ -69,7 +69,7 @@ describe('emailsReducer', () => {
     const email = {
       id: 1,
       subject: 'subject 1',
-      status: status.UNREAD
+      status: status.READ
     };
 
     expect(emailsReducer(currentState, { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email } }))

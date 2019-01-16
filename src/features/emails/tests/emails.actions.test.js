@@ -43,16 +43,20 @@ describe('emailsActions', () => {
       subject: 'subject 1',
       status: status.UNREAD
     };
+    const updatedEmail = {
+      ...email,
+      status: status.READ
+    };
 
     spyOn(http, 'put').and.returnValue(Promise.resolve());
 
     const expectedActions = [
-      { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email } },
+      { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email: updatedEmail } },
     ];
 
     return store.dispatch(emailsActions.updateEmailStatus(email))
       .then(() => {
-        expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), email);
+        expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), updatedEmail);
         expect(store.getActions()).toEqual(expectedActions);
       });
   });
