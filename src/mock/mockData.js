@@ -207,7 +207,18 @@ const mailboxes = [{
   emails: []
 }];
 
+// if (!localStorage.getItem('users')) {
+//   localStorage.setItem('users', JSON.stringify(users));
+// }
+// if (!localStorage.getItem('mailboxes')) {
+//   localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
+// }
+// if (!localStorage.getItem('emails')) {
+//   localStorage.setItem('emails', JSON.stringify(emails));
+// }
 
-localStorage.setItem('users', JSON.stringify(users));
-localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
-localStorage.setItem('emails', JSON.stringify(emails));
+(function reset() {
+  localStorage.setItem('users', JSON.stringify(users));
+  localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
+  localStorage.setItem('emails', JSON.stringify(emails));
+})();

@@ -1,6 +1,6 @@
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS
+  UPDATE_EMAIL_STATUS_SUCCESSFUL
 } from "./emails.actionTypes";
 import { status } from 'constants/emails';
 
@@ -17,13 +17,13 @@ const emailsReducer = (state = initialState, action) => {
       };
     }
 
-    case UPDATE_EMAIL_STATUS: {
-      const { id } = action.payload;
+    case UPDATE_EMAIL_STATUS_SUCCESSFUL: {
+      const { email } = action.payload;
 
       return {
         ...state,
-        [id]: {
-          ...state[id],
+        [email.id]: {
+          ...email,
           status: status.READ
         }
       };

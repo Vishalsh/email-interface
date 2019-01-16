@@ -2,6 +2,12 @@ const getUsers = () => JSON.parse(localStorage.getItem('users'));
 const getMailboxes = () => JSON.parse(localStorage.getItem('mailboxes'));
 const getEmails = () => JSON.parse(localStorage.getItem('emails'));
 
+const methods = {
+  GET: 'GET',
+  POST: 'POST',
+  PUT: 'PUT'
+};
+
 const login = (user) => {
   const users = getUsers();
   const matchingUser = users.find(u => u.email === user.email && u.password === user.password);
@@ -52,13 +58,32 @@ const getMailboxEmails = (url) => {
   });
 };
 
-const fetch = (url, data) => {
+const updateEmail = (email) => {
+  const emails = getEmails();
+  const emailsCopy = emails.slice(0);
+
+  emailsCopy.find(e => e.id === email.id).status = 'READ';
+
+  localStorage.setItem('emails', JSON.stringify(emailsCopy));
+
+  return new Promise((resolve) => {
+    resolve({
+      status: 200
+    });
+  });
+};
+
+const fetch = (url, { method }, data) => {
   if (url.includes('login')) {
     return login(data);
   }
 
   if (url.includes('users') && url.includes('mailboxes') && url.includes('emails')) {
     return getMailboxEmails(url);
+  }
+
+  if (method === methods.PUT && url.includes('emails')) {
+    return updateEmail(data);
   }
 };
 

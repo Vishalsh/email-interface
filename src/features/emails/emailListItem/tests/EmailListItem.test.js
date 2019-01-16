@@ -47,6 +47,6 @@ describe('EmailListItem', () => {
 
     componentWithUnreadEmail.find(Link).props().onClick();
 
-    expect(props.onClickEmail).toHaveBeenCalledWith({ id: 1 });
+    expect(props.onClickEmail).toHaveBeenCalledWith(propsWithUnreadEmail.email);
   });
 });

@@ -8,7 +8,6 @@ import {
 } from "./mailbox.actionTypes";
 import emailActions from "features/emails/emails.actions";
 
-
 const getEmailSuccessful = createAction(GET_EMAILS_SUCCESSFUL);
 const getEmailFailed = createAction(GET_EMAILS_FAILED);
 

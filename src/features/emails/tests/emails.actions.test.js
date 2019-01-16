@@ -1,11 +1,13 @@
 import configureStore from 'redux-mock-store';
 import thunkMiddleware from 'redux-thunk';
 
+import http from 'utilities/http';
+import apiEndPoints from 'constants/apiEndPoints';
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS
+  UPDATE_EMAIL_STATUS_SUCCESSFUL
 } from "../emails.actionTypes";
-
+import { status } from 'constants/emails';
 import emailsActions from '../emails.actions';
 
 describe('emailsActions', () => {
@@ -35,13 +37,23 @@ describe('emailsActions', () => {
     expect(store.getActions()).toEqual(expectedActions);
   });
 
-  it('should dispatch UPDATE_EMAIL_STATUS', () => {
+  it('should dispatch UPDATE_EMAIL_STATUS_SUCCESSFUL if update email is successful', () => {
+    const email = {
+      id: 1,
+      subject: 'subject 1',
+      status: status.UNREAD
+    };
+
+    spyOn(http, 'put').and.returnValue(Promise.resolve());
+
     const expectedActions = [
-      { type: UPDATE_EMAIL_STATUS, payload: { id: 2 } },
+      { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email } },
     ];
 
-    store.dispatch(emailsActions.updateEmailStatus({ id: 2 }));
-
-    expect(store.getActions()).toEqual(expectedActions);
+    return store.dispatch(emailsActions.updateEmailStatus(email))
+      .then(() => {
+        expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), email);
+        expect(store.getActions()).toEqual(expectedActions);
+      });
   });
 });

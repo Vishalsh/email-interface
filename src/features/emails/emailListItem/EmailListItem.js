@@ -16,7 +16,7 @@ const EmailListItem = (props) => {
 
   const onClickLink = () => {
     if (email.status === status.UNREAD) {
-      onClickEmail({ id: email.id });
+      onClickEmail(email);
     }
   };
 

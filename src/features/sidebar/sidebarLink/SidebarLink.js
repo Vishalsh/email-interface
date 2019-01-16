@@ -19,7 +19,8 @@ const SidebarLink = (props) => {
     <li className={classes.list}>
       <NavLink className={classes.link}
                to={link.routeTo}
-               activeClassName={classes.active}>
+               activeClassName={classes.active}
+               onClick={handleDisable(link.disabled)}>
         <div className={classes.linkIcon}>
           <i className={`icon icon-${link.icon} ${classes.icon}`}/>
         </div>

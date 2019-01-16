@@ -1,6 +1,6 @@
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS
+  UPDATE_EMAIL_STATUS_SUCCESSFUL
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 
@@ -24,7 +24,6 @@ describe('emailsReducer', () => {
         subject: 'subject 2'
       }
     };
-
     const emails = {
       1: {
         id: 1,
@@ -42,7 +41,7 @@ describe('emailsReducer', () => {
     });
   });
 
-  it('should handle UPDATE_EMAIL_STATUS', () => {
+  it('should handle UPDATE_EMAIL_STATUS_SUCCESSFUL', () => {
     const currentState = {
       1: {
         id: 1,
@@ -55,7 +54,6 @@ describe('emailsReducer', () => {
         status: status.READ
       }
     };
-
     const expectedState = {
       1: {
         id: 1,
@@ -68,8 +66,13 @@ describe('emailsReducer', () => {
         status: status.READ
       }
     };
+    const email = {
+      id: 1,
+      subject: 'subject 1',
+      status: status.UNREAD
+    };
 
-    expect(emailsReducer(currentState, { type: UPDATE_EMAIL_STATUS, payload: { id: 1 } }))
+    expect(emailsReducer(currentState, { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email } }))
       .toEqual(expectedState);
   });
 });

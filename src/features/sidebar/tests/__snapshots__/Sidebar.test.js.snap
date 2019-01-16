@@ -11,9 +11,10 @@ exports[`Sidebar should render the component in closed state 1`] = `
       isSidebarOpen={false}
       link={
         Object {
+          "disabled": true,
           "icon": "logo",
           "name": "logo",
-          "routeTo": "none",
+          "routeTo": "",
         }
       }
       rightNode=""

@@ -11,7 +11,8 @@ import classes from './Sidebar.module.scss';
 const links = [{
   name: 'logo',
   icon: 'logo',
-  routeTo: 'none'
+  routeTo: '',
+  disabled: true
 }, {
   name: 'Dashboard',
   icon: 'dashboard',
