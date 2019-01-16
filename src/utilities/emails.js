@@ -1,0 +1,1 @@
+export const hasEmails = (emails) => Object.keys(emails).length > 0;

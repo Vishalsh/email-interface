@@ -3,12 +3,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import routes from 'constants/routes';
 
+import { status } from 'constants/emails';
+import Badge from 'components/badge/Badge';
 import classes from './EmailListItem.module.scss';
-
-const emailStatus = {
-  READ: 'READ',
-  UNREAD: 'UNREAD'
-};
 
 const EmailListItem = (props) => {
   const {
@@ -18,12 +15,12 @@ const EmailListItem = (props) => {
 
   return (
     <li className={classes.listItem}>
-      <Link className={`row middle-xs ${classes.emailRow} ${email.status === emailStatus.UNREAD ? classes.unread : ''}`}
+      <Link className={`row middle-xs ${classes.emailRow} ${email.status === status.UNREAD ? classes.unread : ''}`}
             to={`${routes.MAILBOX}/${mailbox}/${email.id}`}>
         <span className="col-sm-2">{email.sender.name}</span>
         <p className="col-sm-2 end-sm">
-          <span className={`${classes.category} ${email.category}`}>
-            {email.category}
+          <span className={classes.category}>
+            <Badge className={email.category} label={email.category}/>
           </span>
         </p>
         <p className="col-sm-5">{email.subject}</p>

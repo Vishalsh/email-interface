@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import routes from 'constants/routes';
+import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
 import classes from './Folders.module.scss';
 
 const Folders = () => {
@@ -11,6 +12,9 @@ const Folders = () => {
         <Link className={classes.link} to={routes.INBOX}>
           <i className={`icon icon-inbox ${classes.icon}`}/>
           <span>Inbox</span>
+          <div className={classes.count}>
+            <InboxEmailsCount />
+          </div>
         </Link>
       </li>
       <li className={classes.listItem}>

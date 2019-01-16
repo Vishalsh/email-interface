@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
 import UserAvatar from 'components/userAvatar/UserAvatar';
 import SidebarLink from './sidebarLink/SidebarLink';
 import routes from 'constants/routes';
@@ -79,7 +80,9 @@ export const Sidebar = (props) => {
         <SidebarLink link={links[1]}/>
         <SidebarLink link={links[2]}/>
         <SidebarLink link={links[3]}/>
-        <SidebarLink link={links[4]} isSidebarOpen={isOpen}/>
+        <SidebarLink link={links[4]}
+                     isSidebarOpen={isOpen}
+                     rightNode={<InboxEmailsCount showReadMailsCount />}/>
         <SidebarLink link={links[5]}/>
         <SidebarLink link={links[6]}/>
         <SidebarLink link={links[7]}/>

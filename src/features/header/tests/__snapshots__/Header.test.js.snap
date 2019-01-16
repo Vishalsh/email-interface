@@ -32,6 +32,7 @@ exports[`Header should render the component 1`] = `
         <i
           className="icon icon-email-solid"
         />
+        <Connect(InboxEmailsCount) />
         <div
           onClick={[Function]}
         >

@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './SidebarLink.module.scss';
 
 const SidebarLink = (props) => {
-  const { link, isSidebarOpen } = props;
+  const { link, isSidebarOpen, rightNode } = props;
 
   const handleDisable = (disabled) => {
     return (event) => {
@@ -25,6 +25,9 @@ const SidebarLink = (props) => {
         </div>
         <div className={classes.linkContent}>
           <span>{link.name}</span>
+        </div>
+        <div className={classes.rightNode}>
+          {rightNode}
         </div>
       </NavLink>
 
@@ -50,7 +53,8 @@ const SidebarLink = (props) => {
 };
 
 SidebarLink.defaultProps = {
-  isSidebarOpen: false
+  isSidebarOpen: false,
+  rightNode: ''
 };
 
 SidebarLink.propTypes = {
@@ -60,7 +64,8 @@ SidebarLink.propTypes = {
     routeTo: PropTypes.string.isRequired,
     links: PropTypes.array
   }).isRequired,
-  isSidebarOpen: PropTypes.bool
+  isSidebarOpen: PropTypes.bool,
+  rightNode: PropTypes.node
 };
 
 export default SidebarLink;

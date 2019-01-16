@@ -18,6 +18,11 @@ exports[`MailboxAside should render the component 1`] = `
       <span>
         Inbox
       </span>
+      <div
+        className="count"
+      >
+        <Connect(InboxEmailsCount) />
+      </div>
     </Link>
   </li>
   <li

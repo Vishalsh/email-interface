@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InboxEmailsCount should render the component when showReadMailsCount is false 1`] = `
+<Badge
+  className="inboxEmailsCount"
+  label={7}
+/>
+`;
+
+exports[`InboxEmailsCount should render the component when showReadMailsCount is true 1`] = `
+<Badge
+  className="inboxEmailsCount"
+  label="7/10"
+/>
+`;

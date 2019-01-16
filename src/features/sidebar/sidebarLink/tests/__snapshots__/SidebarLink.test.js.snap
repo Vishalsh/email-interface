@@ -24,6 +24,9 @@ exports[`SidebarLink should render the component when sidebar is closed 1`] = `
         Mailbox
       </span>
     </div>
+    <div
+      className="rightNode"
+    />
   </NavLink>
 </li>
 `;
@@ -52,6 +55,9 @@ exports[`SidebarLink should render the component when sidebar is open 1`] = `
         Mailbox
       </span>
     </div>
+    <div
+      className="rightNode"
+    />
   </NavLink>
   <nav
     className="nestedNav"

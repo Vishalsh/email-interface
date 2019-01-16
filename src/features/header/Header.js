@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
 import classes from './Header.module.scss';
 
 const Header = ({ onClickHamburger }) => {
@@ -17,6 +18,7 @@ const Header = ({ onClickHamburger }) => {
         <div className="col-xs-6">
           <div className="row end-xs middle-xs">
             <i className="icon icon-email-solid"/>
+            <InboxEmailsCount />
             <div onClick={() => alert('logout')}>
               <i className="icon icon-logout"/>
               <span>Log out</span>

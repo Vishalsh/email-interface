@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import Badge from 'components/badge/Badge';
 import classes from './EmailDetails.module.scss';
 
 export const EmailDetails = (props) => {
@@ -14,7 +15,7 @@ export const EmailDetails = (props) => {
       <div className="row middle-sm">
         <h1>{email.subject}</h1>
         <div>
-          <span className={`${classes.category} ${email.category}`}>{email.category}</span>
+          <Badge className={email.category} label={email.category}/>
         </div>
       </div>
 

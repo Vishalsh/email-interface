@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { hasEmails } from 'utilities/emails';
 import EmailListItem from 'features/emails/emailListItem/EmailListItem';
 import classes from './Emails.module.scss';
 
@@ -28,8 +29,7 @@ Emails.propTypes = {
 };
 
 const mapStateToProps = (store, ownProps) => ({
-  emails: Object.keys(store.emails).length > 0 ?
-    ownProps.ids.map(id => store.emails[id]) : []
+  emails: hasEmails(store.emails) ? ownProps.ids.map(id => store.emails[id]) : []
 });
 
 export default connect(mapStateToProps)(Emails);

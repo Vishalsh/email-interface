@@ -8,7 +8,7 @@ import {
   GET_EMAILS_FAILED
 } from "../mailbox.actionTypes";
 import {
-  ADD_EMAILS,
+  ADD_EMAILS
 } from "features/emails/emails.actionTypes";
 
 import mailboxActions from '../mailbox.actions';

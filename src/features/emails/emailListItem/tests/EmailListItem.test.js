@@ -14,7 +14,8 @@ describe('EmailListItem', () => {
         email: 'msDhoni@bcci.com'
       },
       attachments: ['attachment 1', 'attachment 1'],
-      dateTime: '15 Jan'
+      dateTime: '15 Jan',
+      category: 'documents'
     },
     mailbox: 'inbox'
   };

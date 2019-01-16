@@ -11,11 +11,10 @@ exports[`Emails should render the component 1`] = `
       subject 1
     </h1>
     <div>
-      <span
-        className="category documents"
-      >
-        documents
-      </span>
+      <Badge
+        className="documents"
+        label="documents"
+      />
     </div>
   </div>
   <div

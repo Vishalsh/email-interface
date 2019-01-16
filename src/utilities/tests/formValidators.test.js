@@ -11,5 +11,5 @@ describe('formValidators', () => {
     expect(isEmailValid('a@b.com')).toBeTruthy();
     expect(isEmailValid('foo@bar.com')).toBeTruthy();
     expect(isEmailValid('foo@bar.in')).toBeTruthy();
-  })
+  });
 });
