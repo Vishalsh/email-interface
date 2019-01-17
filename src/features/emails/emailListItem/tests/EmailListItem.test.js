@@ -21,7 +21,8 @@ describe('EmailListItem', () => {
       status: status.READ
     },
     mailbox: 'inbox',
-    onClickEmail: jest.fn()
+    onClickEmail: jest.fn(),
+    onChangeCheckbox: jest.fn()
   };
   const component = shallow(<EmailListItem {...props} />);
 
@@ -48,5 +49,11 @@ describe('EmailListItem', () => {
     componentWithUnreadEmail.find(Link).props().onClick();
 
     expect(props.onClickEmail).toHaveBeenCalledWith(propsWithUnreadEmail.email);
+  });
+
+  it('should trigger onChangeCheckbox', () => {
+    component.find('input').props().onChange({ target: { checked: true } });
+
+    expect(props.onChangeCheckbox).toHaveBeenCalledWith({ id: props.email.id, checked: true });
   });
 });

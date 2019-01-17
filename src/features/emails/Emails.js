@@ -12,7 +12,8 @@ export const Emails = (props) => {
   const {
     mailbox,
     emails,
-    updateEmailStatus
+    updateEmailStatus,
+    toggleEmailSelection
   } = props;
 
   return (
@@ -22,7 +23,8 @@ export const Emails = (props) => {
           <EmailListItem key={email.id}
                          mailbox={mailbox}
                          email={email}
-                         onClickEmail={updateEmailStatus}/>
+                         onClickEmail={updateEmailStatus}
+                         onChangeCheckbox={toggleEmailSelection}/>
         ))
       }
     </ul>
@@ -40,7 +42,8 @@ const mapStateToProps = (store, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  updateEmailStatus: emailsActions.updateEmailStatus
+  updateEmailStatus: emailsActions.updateEmailStatus,
+  toggleEmailSelection: emailsActions.toggleEmailSelection
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Emails);

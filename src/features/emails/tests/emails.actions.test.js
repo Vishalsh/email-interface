@@ -5,7 +5,8 @@ import http from 'utilities/http';
 import apiEndPoints from 'constants/apiEndPoints';
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS_SUCCESSFUL
+  UPDATE_EMAIL_STATUS_SUCCESSFUL,
+  TOGGLE_EMAIL_SELECTION
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 import emailsActions from '../emails.actions';
@@ -59,5 +60,15 @@ describe('emailsActions', () => {
         expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), updatedEmail);
         expect(store.getActions()).toEqual(expectedActions);
       });
+  });
+
+  it('should dispatch TOGGLE_EMAIL_SELECTION', () => {
+    const expectedActions = [
+      { type: TOGGLE_EMAIL_SELECTION, payload: { id: 2, checked: true } },
+    ];
+
+    store.dispatch(emailsActions.toggleEmailSelection({ id: 2, checked: true }));
+
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });

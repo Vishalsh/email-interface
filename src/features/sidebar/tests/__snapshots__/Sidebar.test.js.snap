@@ -14,7 +14,7 @@ exports[`Sidebar should render the component in closed state 1`] = `
           "disabled": true,
           "icon": "logo",
           "name": "logo",
-          "routeTo": "",
+          "routeTo": "none",
         }
       }
       rightNode=""

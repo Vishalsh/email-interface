@@ -11,7 +11,8 @@ const EmailListItem = (props) => {
   const {
     mailbox,
     email,
-    onClickEmail
+    onClickEmail,
+    onChangeCheckbox
   } = props;
 
   const onClickLink = () => {
@@ -20,9 +21,15 @@ const EmailListItem = (props) => {
     }
   };
 
+  const onChange = (event) => {
+    onChangeCheckbox({ id: email.id, checked: event.target.checked })
+  };
+
   return (
-    <li className={classes.listItem}>
-      <Link className={`row middle-xs ${classes.emailRow} ${email.status === status.UNREAD ? classes.unread : ''}`}
+    <li className={`${classes.listItem} ${email.status === status.UNREAD ? classes.unread : ''}`}>
+      <input type="checkbox" onChange={onChange}/>
+
+      <Link className={`row middle-xs ${classes.emailRow}`}
             to={`${routes.MAILBOX}/${mailbox}/${email.id}`}
             onClick={onClickLink}>
         <span className="col-sm-2">{email.sender.name}</span>
@@ -47,7 +54,8 @@ const EmailListItem = (props) => {
 EmailListItem.propTypes = {
   email: PropTypes.object.isRequired,
   mailbox: PropTypes.string.isRequired,
-  onClickEmail: PropTypes.func.isRequired
+  onClickEmail: PropTypes.func.isRequired,
+  onChangeCheckbox: PropTypes.func.isRequired
 };
 
 export default EmailListItem;

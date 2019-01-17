@@ -1,6 +1,7 @@
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS_SUCCESSFUL
+  UPDATE_EMAIL_STATUS_SUCCESSFUL,
+  TOGGLE_EMAIL_SELECTION
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 
@@ -74,5 +75,42 @@ describe('emailsReducer', () => {
 
     expect(emailsReducer(currentState, { type: UPDATE_EMAIL_STATUS_SUCCESSFUL, payload: { email } }))
       .toEqual(expectedState);
+  });
+
+  it('should handle TOGGLE_EMAIL_SELECTION', () => {
+    expect(emailsReducer(
+      initialState,
+      {
+        type: TOGGLE_EMAIL_SELECTION,
+        payload: { id: 2, checked: true }
+      })).toEqual(
+      {
+        selectedEmails: [2]
+      }
+    );
+
+    expect(emailsReducer({
+        selectedEmails: [1, 2, 3]
+      },
+      {
+        type: TOGGLE_EMAIL_SELECTION,
+        payload: { id: 7, checked: true }
+      })).toEqual(
+      {
+        selectedEmails: [1, 2, 3, 7]
+      }
+    );
+
+    expect(emailsReducer({
+        selectedEmails: [1, 2, 3, 7]
+      },
+      {
+        type: TOGGLE_EMAIL_SELECTION,
+        payload: { id: 3, checked: false }
+      })).toEqual(
+      {
+        selectedEmails: [1, 2, 7]
+      }
+    );
   });
 });

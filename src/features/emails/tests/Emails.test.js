@@ -16,7 +16,8 @@ describe('Emails', () => {
       from: 'Virat Kohli'
     }],
     mailbox: 'inbox',
-    updateEmailStatus: jest.fn()
+    updateEmailStatus: jest.fn(),
+    toggleEmailSelection: jest.fn()
   };
   const component = shallow(<Emails {...props} />);
 

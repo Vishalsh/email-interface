@@ -5,11 +5,13 @@ import http from 'utilities/http';
 import apiEndPoints from 'constants/apiEndPoints';
 import {
   ADD_EMAILS,
-  UPDATE_EMAIL_STATUS_SUCCESSFUL
+  UPDATE_EMAIL_STATUS_SUCCESSFUL,
+  TOGGLE_EMAIL_SELECTION
 } from "./emails.actionTypes";
 
 const addEmails = createAction(ADD_EMAILS);
 const updateEmailStatusSuccessful = createAction(UPDATE_EMAIL_STATUS_SUCCESSFUL);
+const toggleEmailSelection = createAction(TOGGLE_EMAIL_SELECTION);
 
 const updateEmailStatus = (email) => (dispatch) => {
   const updatedEmail = { ...email, status: status.READ };
@@ -24,5 +26,6 @@ const updateEmailStatus = (email) => (dispatch) => {
 
 export default {
   addEmails,
-  updateEmailStatus
+  updateEmailStatus,
+  toggleEmailSelection
 };
