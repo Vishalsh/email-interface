@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
+import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import Badge from 'components/badge/Badge';
 import classes from './Header.module.scss';
 
@@ -25,7 +25,7 @@ const Header = ({ onClickHamburger }) => {
             <div className={classes.rightIcon}>
               <i className="icon icon-email-solid"/>
               <div className={classes.badge}>
-                <InboxEmailsCount />
+                <InboxUnreadEmailsCount />
               </div>
             </div>
             <div className={classes.rightIcon}>

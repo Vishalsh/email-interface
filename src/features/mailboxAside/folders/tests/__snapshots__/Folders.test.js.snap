@@ -21,7 +21,7 @@ exports[`MailboxAside should render the component 1`] = `
       <div
         className="count"
       >
-        <Connect(InboxEmailsCount) />
+        <Connect(InboxUnreadEmailsCount) />
       </div>
     </Link>
   </li>

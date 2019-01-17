@@ -8,8 +8,9 @@ import mailboxActions from './mailbox.actions';
 import loadingStates from 'constants/loadingStates';
 import Emails from 'features/emails/Emails';
 import NoEmail from 'features/emails/noEmail/NoEmail';
-import classes from './Mailbox.module.scss';
+import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import EmailDetails from 'features/emails/emailDetails/EmailDetails';
+import classes from './Mailbox.module.scss';
 
 export class Mailbox extends Component {
   componentDidMount() {
@@ -34,7 +35,10 @@ export class Mailbox extends Component {
     return (
       <section className={classes.mailbox}>
         <header className={classes.header}>
-          <h1 className={classes.name}>{match.params.mailbox}</h1>
+          <h1 className={classes.name}>
+            {match.params.mailbox}
+            (<InboxUnreadEmailsCount showBadge={false} />)
+          </h1>
         </header>
 
         {

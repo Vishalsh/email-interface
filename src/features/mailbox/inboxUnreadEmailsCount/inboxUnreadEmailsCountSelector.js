@@ -6,7 +6,7 @@ import { hasEmails } from 'utilities/emails';
 const inboxSelector = store => store.mailbox.inbox;
 const emailsSelector = store => store.emails;
 
-const inboxEmailsCountSelector = createSelector(
+const inboxUnreadEmailsCountSelector = createSelector(
   inboxSelector,
   emailsSelector,
   (inbox, emails) => {
@@ -22,4 +22,4 @@ const inboxEmailsCountSelector = createSelector(
   }
 );
 
-export default inboxEmailsCountSelector;
+export default inboxUnreadEmailsCountSelector;

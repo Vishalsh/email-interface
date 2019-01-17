@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
+import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import Badge from 'components/badge/Badge';
 import UserAvatar from 'components/userAvatar/UserAvatar';
 import SidebarLink from './sidebarLink/SidebarLink';
@@ -86,7 +86,7 @@ export const Sidebar = (props) => {
                      rightNode={<i className="icon icon-arrow-left"/>}/>
         <SidebarLink link={links[4]}
                      isSidebarOpen={isOpen}
-                     rightNode={<InboxEmailsCount showReadMailsCount/>}/>
+                     rightNode={<InboxUnreadEmailsCount showReadMailsCount/>}/>
         <SidebarLink link={links[5]}/>
         <SidebarLink link={links[6]}
                      rightNode={<i className="icon icon-arrow-left"/>}/>

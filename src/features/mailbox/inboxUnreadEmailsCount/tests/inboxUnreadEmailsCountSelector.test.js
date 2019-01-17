@@ -1,13 +1,13 @@
 import { status } from 'constants/emails';
-import inboxEmailsCountSelector from '../inboxEmailsCountSelector';
+import inboxUnreadEmailsCountSelector from '../inboxUnreadEmailsCountSelector';
 
-describe('inboxEmailsCountSelector', () => {
+describe('inboxUnreadEmailsCountSelector', () => {
   it('should return 0 when there is no input mailbox', () => {
     const store = {
       mailbox: {}
     };
 
-    expect(inboxEmailsCountSelector(store)).toEqual(0);
+    expect(inboxUnreadEmailsCountSelector(store)).toEqual(0);
   });
 
   it('should return 0 when there are no mails', () => {
@@ -20,7 +20,7 @@ describe('inboxEmailsCountSelector', () => {
       emails: {}
     };
 
-    expect(inboxEmailsCountSelector(store)).toEqual(0);
+    expect(inboxUnreadEmailsCountSelector(store)).toEqual(0);
   });
 
   it('should return 0 when there are no unread mails in inbox', () => {
@@ -47,7 +47,7 @@ describe('inboxEmailsCountSelector', () => {
       emails
     };
 
-    expect(inboxEmailsCountSelector(store)).toEqual(0);
+    expect(inboxUnreadEmailsCountSelector(store)).toEqual(0);
   });
 
   it('should return the number of unread emails in inbox', () => {
@@ -78,6 +78,6 @@ describe('inboxEmailsCountSelector', () => {
       emails
     };
 
-    expect(inboxEmailsCountSelector(store)).toEqual(1);
+    expect(inboxUnreadEmailsCountSelector(store)).toEqual(1);
   });
 });

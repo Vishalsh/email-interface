@@ -2,8 +2,9 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import { Link } from 'react-router-dom';
-import { status } from 'constants/emails';
 
+import { status } from 'constants/emails';
+import Checkbox from 'components/checkbox/Checkbox';
 import EmailListItem from '../EmailListItem';
 
 describe('EmailListItem', () => {
@@ -52,7 +53,7 @@ describe('EmailListItem', () => {
   });
 
   it('should trigger onChangeCheckbox', () => {
-    component.find('input').props().onChange({ target: { checked: true } });
+    component.find(Checkbox).props().onChange({ target: { checked: true } });
 
     expect(props.onChangeCheckbox).toHaveBeenCalledWith({ id: props.email.id, checked: true });
   });

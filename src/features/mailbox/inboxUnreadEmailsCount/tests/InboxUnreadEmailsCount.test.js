@@ -2,16 +2,16 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-import { InboxEmailsCount } from '../InboxEmailsCount';
+import { InboxUnreadEmailsCount } from '../InboxUnreadEmailsCount';
 
-describe('InboxEmailsCount', () => {
+describe('InboxUnreadEmailsCount', () => {
   it('should render the component when showReadMailsCount is false', () => {
     const props = {
       readEmailsCount: 10,
       unreadEmailsCount: 7,
       showReadMailsCount: false
     };
-    const component = shallow(<InboxEmailsCount {...props} />);
+    const component = shallow(<InboxUnreadEmailsCount {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('InboxEmailsCount', () => {
       unreadEmailsCount: 7,
       showReadMailsCount: true
     };
-    const component = shallow(<InboxEmailsCount {...props} />);
+    const component = shallow(<InboxUnreadEmailsCount {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
   });
@@ -33,7 +33,18 @@ describe('InboxEmailsCount', () => {
       unreadEmailsCount: 0,
       showReadMailsCount: false
     };
-    const component = shallow(<InboxEmailsCount {...props} />);
+    const component = shallow(<InboxUnreadEmailsCount {...props} />);
+
+    expect(toJson(component)).toMatchSnapshot();
+  });
+
+  it('should render the component when showBadge is false', () => {
+    const props = {
+      readEmailsCount: 10,
+      unreadEmailsCount: 5,
+      showBadge: false
+    };
+    const component = shallow(<InboxUnreadEmailsCount {...props} />);
 
     expect(toJson(component)).toMatchSnapshot();
   });

@@ -66,7 +66,7 @@ const emails = [{
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
   category: 'clients',
-  dateTime: '13 Jan'
+  dateTime: 'Jan 13'
 }, {
   id: 4,
   from: 'bhuvi@bcci.com',
@@ -74,7 +74,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '13 Jan'
+  dateTime: 'Jan 13'
 }, {
   id: 5,
   from: 'rkharma@bcci.com',
@@ -84,7 +84,7 @@ const emails = [{
   status: 'READ',
   attachments: ['attachment 3'],
   category: 'documents',
-  dateTime: '13 Jan'
+  dateTime: 'Jan 13'
 }, {
   id: 6,
   from: 'jynks@bcci.com',
@@ -92,7 +92,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '11 Jan'
+  dateTime: 'Jan 11'
 }, {
   id: 7,
   from: 'rkharma@bcci.com',
@@ -100,7 +100,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '11 Jan'
+  dateTime: 'Jan 11'
 }, {
   id: 8,
   from: 'bhuvi@bcci.com',
@@ -110,7 +110,7 @@ const emails = [{
   status: 'READ',
   category: 'advertising',
   attachments: ['attachment 1', 'attachment'],
-  dateTime: '11 Jan'
+  dateTime: 'Jan 11'
 }, {
   id: 9,
   from: 'jynks@bcci.com',
@@ -118,7 +118,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '11 Jan'
+  dateTime: 'Jan 11'
 }, {
   id: 10,
   from: 'jynks@bcci.com',
@@ -126,7 +126,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '10 Jan'
+  dateTime: 'Jan 10'
 }, {
   id: 11,
   from: 'rkharma@bcci.com',
@@ -134,7 +134,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '9 Jan'
+  dateTime: 'Jan 9'
 }, {
   id: 12,
   from: 'bhuvi@bcci.com',
@@ -142,7 +142,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '9 Jan'
+  dateTime: 'Jan 9'
 }, {
   id: 13,
   from: 'bhuvi@bcci.com',
@@ -150,7 +150,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '5 Jan'
+  dateTime: 'Jan 5'
 }, {
   id: 14,
   from: 'jynks@bcci.com',
@@ -158,7 +158,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '5 Jan'
+  dateTime: 'Jan 5'
 }, {
   id: 15,
   from: 'bhuvi@bcci.com',
@@ -166,7 +166,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '3 Jan'
+  dateTime: 'Jan 3'
 }, {
   id: 16,
   from: 'rkharma@bcci.com',
@@ -174,7 +174,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '2 Jan'
+  dateTime: 'Jan 2'
 }, {
   id: 17,
   from: 'bhuvi@bcci.com',
@@ -182,7 +182,7 @@ const emails = [{
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
-  dateTime: '1 Jan'
+  dateTime: 'Jan 1'
 }];
 
 const mailboxes = [{

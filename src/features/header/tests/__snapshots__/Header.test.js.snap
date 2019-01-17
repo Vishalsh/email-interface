@@ -38,7 +38,7 @@ exports[`Header should render the component 1`] = `
           <div
             className="badge"
           >
-            <Connect(InboxEmailsCount) />
+            <Connect(InboxUnreadEmailsCount) />
           </div>
         </div>
         <div

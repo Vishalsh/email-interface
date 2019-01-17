@@ -4,9 +4,10 @@ exports[`EmailListItem should render the component 1`] = `
 <li
   className="listItem "
 >
-  <input
+  <Checkbox
+    labelClass="checkbox"
+    labelFor="1"
     onChange={[Function]}
-    type="checkbox"
   />
   <Link
     className="row middle-xs emailRow"

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import routes from 'constants/routes';
-import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
+import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import classes from './Folders.module.scss';
 
 const Folders = () => {
@@ -13,7 +13,7 @@ const Folders = () => {
           <i className={`icon icon-inbox ${classes.icon}`}/>
           <span>Inbox</span>
           <div className={classes.count}>
-            <InboxEmailsCount />
+            <InboxUnreadEmailsCount />
           </div>
         </Link>
       </li>

@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InboxUnreadEmailsCount should render the component when showBadge is false 1`] = `
+<Fragment>
+  5
+</Fragment>
+`;
+
+exports[`InboxUnreadEmailsCount should render the component when showReadMailsCount is false 1`] = `
+<Fragment>
+  <Badge
+    className="inboxUnreadEmailsCount"
+    label={7}
+  />
+</Fragment>
+`;
+
+exports[`InboxUnreadEmailsCount should render the component when showReadMailsCount is true 1`] = `
+<Fragment>
+  <Badge
+    className="inboxUnreadEmailsCount"
+    label="7/10"
+  />
+</Fragment>
+`;
+
+exports[`InboxUnreadEmailsCount should render the component when unreadEmailsCount is 0 1`] = `""`;
