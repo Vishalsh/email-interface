@@ -11,7 +11,7 @@
   flex: 1;
   color: map-get($gray, '600');
   text-decoration: none;
-  height: 4rem;
+  height: 4.5rem;
 }
 
 .unread {
@@ -26,4 +26,8 @@
 .icon {
   height: 3rem;
   width: 3rem;
+}
+
+.checkbox {
+  margin-right: 2rem;
 }

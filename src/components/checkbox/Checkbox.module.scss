@@ -1,0 +1,18 @@
+@import "~styles/variables";
+
+.input {
+  display: none;
+}
+
+.label {
+  width: 20px;
+  height: 20px;
+  background: map-get($gray, '1500');
+  border: 1px solid map-get($gray, '1300');
+}
+
+.input:checked + label {
+  background: url('../../assets/images/checkbox-checked.png');
+  background-size: contain;
+}
+

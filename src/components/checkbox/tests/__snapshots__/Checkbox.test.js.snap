@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Checkbox should render the component 1`] = `
+<Fragment>
+  <input
+    className="input"
+    id="checkbox_1"
+    onChange={[MockFunction]}
+    type="checkbox"
+  />
+  <label
+    className="label labelClass"
+    htmlFor="checkbox_1"
+  />
+</Fragment>
+`;

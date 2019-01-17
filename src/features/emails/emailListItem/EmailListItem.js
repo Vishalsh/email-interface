@@ -5,6 +5,7 @@ import routes from 'constants/routes';
 
 import { status } from 'constants/emails';
 import Badge from 'components/badge/Badge';
+import Checkbox from 'components/checkbox/Checkbox';
 import classes from './EmailListItem.module.scss';
 
 const EmailListItem = (props) => {
@@ -27,7 +28,9 @@ const EmailListItem = (props) => {
 
   return (
     <li className={`${classes.listItem} ${email.status === status.UNREAD ? classes.unread : ''}`}>
-      <input type="checkbox" onChange={onChange}/>
+      <Checkbox labelFor={`${email.id}`}
+                labelClass={classes.checkbox}
+                onChange={onChange}/>
 
       <Link className={`row middle-xs ${classes.emailRow}`}
             to={`${routes.MAILBOX}/${mailbox}/${email.id}`}
