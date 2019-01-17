@@ -3,7 +3,6 @@ import {
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
   TOGGLE_EMAIL_SELECTION
 } from "./emails.actionTypes";
-import { status } from 'constants/emails';
 
 const initialState = {};
 

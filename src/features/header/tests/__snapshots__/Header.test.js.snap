@@ -27,17 +27,41 @@ exports[`Header should render the component 1`] = `
       className="col-xs-6"
     >
       <div
-        className="row end-xs middle-xs"
+        className="row end-xs middle-xs rightIconsRow"
       >
-        <i
-          className="icon icon-email-solid"
-        />
-        <Connect(InboxEmailsCount) />
         <div
+          className="rightIcon"
+        >
+          <i
+            className="icon icon-email-solid"
+          />
+          <div
+            className="badge"
+          >
+            <Connect(InboxEmailsCount) />
+          </div>
+        </div>
+        <div
+          className="rightIcon"
+        >
+          <i
+            className="icon icon-bell"
+          />
+          <div
+            className="badge"
+          >
+            <Badge
+              className="bellBadge"
+              label={8}
+            />
+          </div>
+        </div>
+        <div
+          className="row middle-xs"
           onClick={[Function]}
         >
           <i
-            className="icon icon-logout"
+            className="icon icon-logout logoutIcon"
           />
           <span>
             Log out
