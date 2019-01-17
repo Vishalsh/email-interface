@@ -13,6 +13,7 @@ jest.mock("react-router-redux", () => {
     push: () => ({ type: 'push' })
   };
 });
+global.alert = jest.fn();
 
 import userActions from '../user.actions';
 
@@ -61,6 +62,7 @@ describe('userActions', () => {
       .then(() => {
         expect(http.post).toHaveBeenCalledWith(apiEndPoints.login(), loginDetails);
         expect(store.getActions()).toEqual(expectedActions);
+        expect(global.alert).toHaveBeenCalledWith('something went wrong');
       });
   });
 });

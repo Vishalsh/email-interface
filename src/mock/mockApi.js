@@ -24,7 +24,7 @@ const login = (user) => {
   return new Promise((resolve) => {
     resolve({
       status: 401,
-      error: 'please enter a matching email and password'
+      error: 'please enter a valid email and password.'
     });
   })
 };

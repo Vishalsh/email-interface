@@ -18,8 +18,9 @@ const login = (user) => (dispatch) => {
       dispatch(userLoginSuccessful(data));
       dispatch(push(routes.MAILBOX));
     })
-    .catch(() => {
+    .catch((error) => {
       dispatch(userLoginFailed());
+      window.alert(error);
     });
 };
 
