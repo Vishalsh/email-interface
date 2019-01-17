@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import InboxEmailsCount from 'features/mailbox/inboxEmailsCount/InboxEmailsCount';
+import Badge from 'components/badge/Badge';
 import UserAvatar from 'components/userAvatar/UserAvatar';
 import SidebarLink from './sidebarLink/SidebarLink';
 import routes from 'constants/routes';
@@ -78,15 +79,19 @@ export const Sidebar = (props) => {
             <SidebarLink link={links[0]}/>
         }
 
-        <SidebarLink link={links[1]}/>
+        <SidebarLink link={links[1]}
+                     rightNode={<i className="icon icon-arrow-left"/>}/>
         <SidebarLink link={links[2]}/>
-        <SidebarLink link={links[3]}/>
+        <SidebarLink link={links[3]}
+                     rightNode={<i className="icon icon-arrow-left"/>}/>
         <SidebarLink link={links[4]}
                      isSidebarOpen={isOpen}
-                     rightNode={<InboxEmailsCount showReadMailsCount />}/>
+                     rightNode={<InboxEmailsCount showReadMailsCount/>}/>
         <SidebarLink link={links[5]}/>
-        <SidebarLink link={links[6]}/>
-        <SidebarLink link={links[7]}/>
+        <SidebarLink link={links[6]}
+                     rightNode={<i className="icon icon-arrow-left"/>}/>
+        <SidebarLink link={links[7]}
+                     rightNode={<Badge className={classes.appViewBadge} label={'special'.toUpperCase()} />}/>
       </nav>
     </div>
   )

@@ -28,7 +28,11 @@ exports[`Sidebar should render the component in closed state 1`] = `
           "routeTo": "/dashboard",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={false}
@@ -50,7 +54,11 @@ exports[`Sidebar should render the component in closed state 1`] = `
           "routeTo": "/graphs",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={false}
@@ -107,7 +115,11 @@ exports[`Sidebar should render the component in closed state 1`] = `
           "routeTo": "/widgets",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={false}
@@ -118,7 +130,12 @@ exports[`Sidebar should render the component in closed state 1`] = `
           "routeTo": "/forms",
         }
       }
-      rightNode=""
+      rightNode={
+        <Badge
+          className="appViewBadge"
+          label="SPECIAL"
+        />
+      }
     />
   </nav>
 </div>
@@ -149,7 +166,11 @@ exports[`Sidebar should render the component in open state 1`] = `
           "routeTo": "/dashboard",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={false}
@@ -171,7 +192,11 @@ exports[`Sidebar should render the component in open state 1`] = `
           "routeTo": "/graphs",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={true}
@@ -228,7 +253,11 @@ exports[`Sidebar should render the component in open state 1`] = `
           "routeTo": "/widgets",
         }
       }
-      rightNode=""
+      rightNode={
+        <i
+          className="icon icon-arrow-left"
+        />
+      }
     />
     <SidebarLink
       isSidebarOpen={false}
@@ -239,7 +268,12 @@ exports[`Sidebar should render the component in open state 1`] = `
           "routeTo": "/forms",
         }
       }
-      rightNode=""
+      rightNode={
+        <Badge
+          className="appViewBadge"
+          label="SPECIAL"
+        />
+      }
     />
   </nav>
 </div>
