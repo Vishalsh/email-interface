@@ -57,7 +57,7 @@ exports[`Header should render the component 1`] = `
           </div>
         </div>
         <div
-          className="row middle-xs"
+          className="row middle-xs logout"
           onClick={[Function]}
         >
           <i

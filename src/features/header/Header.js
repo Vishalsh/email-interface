@@ -6,6 +6,10 @@ import Badge from 'components/badge/Badge';
 import classes from './Header.module.scss';
 
 const Header = ({ onClickHamburger }) => {
+  const logout = () => {
+    window.location.href = '/'
+  };
+
   return (
     <header className={classes.header}>
       <div className="row">
@@ -30,7 +34,7 @@ const Header = ({ onClickHamburger }) => {
                 <Badge className={classes.bellBadge} label={8}/>
               </div>
             </div>
-            <div className="row middle-xs" onClick={() => alert('logout')}>
+            <div className={`row middle-xs ${classes.logout}`} onClick={logout}>
               <i className={`icon icon-logout ${classes.logoutIcon}`}/>
               <span>Log out</span>
             </div>

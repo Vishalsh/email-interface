@@ -21,4 +21,10 @@ describe('Header', () => {
 
     expect(props.onClickHamburger).toHaveBeenCalled();
   });
+
+  it('should logout the user', () => {
+    component.find('.logout').props().onClick();
+
+    expect(window.location.href).toEqual('http://localhost/');
+  });
 });
