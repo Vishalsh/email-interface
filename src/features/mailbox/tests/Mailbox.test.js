@@ -3,6 +3,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import loadingStates from 'constants/loadingStates';
 
+import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import { Mailbox } from '../Mailbox';
 
 describe('Mailbox', () => {
@@ -35,6 +36,23 @@ describe('Mailbox', () => {
     shallow(<Mailbox {...propsWithoutEmails} />);
 
     expect(getEmailsMock).toHaveBeenCalled();
+  });
+
+  it('should unread emails count only for Inbox', () => {
+    expect(component.find(InboxUnreadEmailsCount)).toHaveLength(1);
+
+    const propWithSentMailbox = {
+      ...props,
+      match: {
+        params: {
+          mailbox: 'sent'
+        },
+        url: '/mailbox/sent'
+      }
+    };
+    const componentWithSentMailbox = shallow(<Mailbox {...propWithSentMailbox} />);
+
+    expect(componentWithSentMailbox.find(InboxUnreadEmailsCount)).toHaveLength(0);
   });
 
   it('should trigger getEmails on change of mailbox when already not present', () => {

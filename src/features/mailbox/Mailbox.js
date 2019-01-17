@@ -6,6 +6,8 @@ import { Route } from 'react-router-dom';
 
 import mailboxActions from './mailbox.actions';
 import loadingStates from 'constants/loadingStates';
+import { INBOX } from 'constants/mailbox';
+import Button from 'components/button/Button';
 import Emails from 'features/emails/Emails';
 import NoEmail from 'features/emails/noEmail/NoEmail';
 import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
@@ -35,10 +37,40 @@ export class Mailbox extends Component {
     return (
       <section className={classes.mailbox}>
         <header className={classes.header}>
-          <h1 className={classes.name}>
-            {match.params.mailbox}
-            (<InboxUnreadEmailsCount showBadge={false} />)
-          </h1>
+          <div className="row">
+            <h1 className={`${classes.name} col-sm-6`}>
+              {match.params.mailbox}
+              {
+                match.params.mailbox === INBOX &&
+                <>(<InboxUnreadEmailsCount showBadge={false}/>)</>
+              }
+            </h1>
+          </div>
+          <div className={`${classes.mailboxActions} row`}>
+            <div className="col-sm-8 flex">
+              <Button type="default" className={classes.actionButton}>
+                <i className={`icon icon-refresh ${classes.iconRefresh}`}/>
+                <span>Refresh</span>
+              </Button>
+              <Button type="default" className={classes.actionButton}>
+                <i className="icon icon-eye"/>
+              </Button>
+              <Button type="default" className={classes.actionButton}>
+                <i className="icon icon-bang"/>
+              </Button>
+              <Button type="default" className={classes.actionButton}>
+                <i className="icon icon-delete"/>
+              </Button>
+            </div>
+            <div className="col-sm-4 end-xs flex">
+              <Button type="default">
+                <i className="icon icon-left"/>
+              </Button>
+              <Button type="default" className={classes.paginationRightButton}>
+                <i className="icon icon-right"/>
+              </Button>
+            </div>
+          </div>
         </header>
 
         {

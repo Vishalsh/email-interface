@@ -5,6 +5,7 @@ exports[`MailboxAside should render the component 1`] = `
   className="mailboxAside"
 >
   <Button
+    className=""
     disabled={false}
     onClick={[Function]}
     type="primary"

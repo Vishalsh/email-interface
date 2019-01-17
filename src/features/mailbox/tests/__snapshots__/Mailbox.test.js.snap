@@ -7,12 +7,89 @@ exports[`Mailbox should render the component 1`] = `
   <header
     className="header"
   >
-    <h1
-      className="name"
+    <div
+      className="row"
     >
-      inbox
-      <Connect(InboxUnreadEmailsCount) />
-    </h1>
+      <h1
+        className="name col-sm-6"
+      >
+        inbox
+        (
+        <Connect(InboxUnreadEmailsCount)
+          showBadge={false}
+        />
+        )
+      </h1>
+    </div>
+    <div
+      className="mailboxActions row"
+    >
+      <div
+        className="col-sm-8 flex"
+      >
+        <Button
+          className="actionButton"
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-refresh iconRefresh"
+          />
+          <span>
+            Refresh
+          </span>
+        </Button>
+        <Button
+          className="actionButton"
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-eye"
+          />
+        </Button>
+        <Button
+          className="actionButton"
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-bang"
+          />
+        </Button>
+        <Button
+          className="actionButton"
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-delete"
+          />
+        </Button>
+      </div>
+      <div
+        className="col-sm-4 end-xs flex"
+      >
+        <Button
+          className=""
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-left"
+          />
+        </Button>
+        <Button
+          className="paginationRightButton"
+          disabled={false}
+          type="default"
+        >
+          <i
+            className="icon icon-right"
+          />
+        </Button>
+      </div>
+    </div>
   </header>
   <Connect(Emails)
     ids={

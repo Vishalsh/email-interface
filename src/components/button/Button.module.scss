@@ -4,7 +4,9 @@
   border: none;
   box-sizing: border-box;
   cursor: pointer;
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 4rem;
   text-align: center;
   text-decoration: none;
@@ -12,13 +14,21 @@
   white-space: nowrap;
   zoom: 1;
   font-size: map_get($fontSizes, '14');
-  padding: 0.6rem 1.2rem;
+  padding: 0 0.5rem;
   border-radius: 0.2rem;
   width: 100%;
+  color: map-get($gray, '600');
 
   &:disabled {
     background-color: map_get($gray, '1300');
   }
+}
+
+.default {
+  background-color: map_get($gray, '1500');
+  border: 1px solid map_get($gray, '1300');
+  width: auto;
+  height: 3.5rem;
 }
 
 .primary {

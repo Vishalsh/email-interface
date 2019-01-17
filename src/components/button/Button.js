@@ -9,11 +9,12 @@ const Button = (props) => {
     type,
     onClick,
     disabled,
+    className,
     ...others
   } = props;
 
   return (
-    <button className={`${classes.button} ${classes[type]}`} onClick={ onClick } disabled={disabled} { ...others }>
+    <button className={`${classes.button} ${classes[type]} ${className}`} onClick={ onClick } disabled={disabled} { ...others }>
       { children }
     </button>
   );
@@ -22,13 +23,15 @@ const Button = (props) => {
 Button.propTypes = {
   type: PropTypes.string,
   disabled: PropTypes.bool,
+  className: PropTypes.string,
   children: PropTypes.node.isRequired,
-  onClick: PropTypes.func.isRequired,
+  onClick: PropTypes.func,
 };
 
 Button.defaultProps = {
   type: 'default',
-  disabled: false
+  disabled: false,
+  className: ''
 };
 
 export default Button;

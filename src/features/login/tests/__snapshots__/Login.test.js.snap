@@ -18,6 +18,7 @@ exports[`Login should render the component 1`] = `
       value=""
     />
     <Button
+      className=""
       disabled={true}
       onClick={[Function]}
       type="primary"
