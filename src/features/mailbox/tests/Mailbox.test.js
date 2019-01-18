@@ -1,13 +1,15 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import loadingStates from 'constants/loadingStates';
 
+import loadingStates from 'constants/loadingStates';
+import Button from 'components/button/Button';
 import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import { Mailbox } from '../Mailbox';
 
 describe('Mailbox', () => {
   const getEmailsMock = jest.fn();
+  const deleteEmailsMock = jest.fn();
   const props = {
     match: {
       params: {
@@ -19,7 +21,8 @@ describe('Mailbox', () => {
       emails: [1, 2],
       loadingState: loadingStates.LOADED
     },
-    getEmails: getEmailsMock
+    getEmails: getEmailsMock,
+    deleteEmails: deleteEmailsMock
   };
   const component = shallow(<Mailbox {...props} />);
 
@@ -36,6 +39,12 @@ describe('Mailbox', () => {
     shallow(<Mailbox {...propsWithoutEmails} />);
 
     expect(getEmailsMock).toHaveBeenCalled();
+  });
+
+  it('should trigger deleteEmails', () => {
+    component.find(Button).get(3).props.onClick();
+
+    expect(deleteEmailsMock).toHaveBeenCalledWith('inbox');
   });
 
   it('should unread emails count only for Inbox', () => {

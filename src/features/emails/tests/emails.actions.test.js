@@ -6,7 +6,8 @@ import apiEndPoints from 'constants/apiEndPoints';
 import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
-  TOGGLE_EMAIL_SELECTION
+  TOGGLE_EMAIL_SELECTION,
+  CLEAR_SELECTED_EMAILS
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 import emailsActions from '../emails.actions';
@@ -68,6 +69,14 @@ describe('emailsActions', () => {
     ];
 
     store.dispatch(emailsActions.toggleEmailSelection({ id: 2, checked: true }));
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
+
+  it('should dispatch CLEAR_SELECTED_EMAILS', () => {
+    const expectedActions = [{ type: CLEAR_SELECTED_EMAILS }];
+
+    store.dispatch(emailsActions.clearSelectedEmails());
 
     expect(store.getActions()).toEqual(expectedActions);
   });

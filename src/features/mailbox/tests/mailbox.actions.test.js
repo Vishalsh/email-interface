@@ -5,11 +5,14 @@ import http from 'utilities/http';
 import apiEndPoints from 'constants/apiEndPoints';
 import {
   GET_EMAILS_SUCCESSFUL,
-  GET_EMAILS_FAILED
+  GET_EMAILS_FAILED,
+  DELETE_EMAILS_SUCCESSFUL
 } from "../mailbox.actionTypes";
 import {
-  ADD_EMAILS
+  ADD_EMAILS,
+  CLEAR_SELECTED_EMAILS
 } from "features/emails/emails.actionTypes";
+import { TRASH } from 'constants/mailbox';
 
 import mailboxActions from '../mailbox.actions';
 
@@ -78,6 +81,37 @@ describe('mailboxActions', () => {
       return store.dispatch(mailboxActions.getEmails(mailbox))
         .then(() => {
           expect(http.get).toHaveBeenCalledWith(apiEndPoints.getEmails(1, mailbox));
+          expect(store.getActions()).toEqual(expectedActions);
+        });
+    });
+  });
+
+
+  describe('deleteEmails', () => {
+    beforeEach(() => {
+      store = mockStore({
+        emails: { selectedEmails: [3, 5, 7] },
+        mailbox: {
+          inbox: {
+            emails: [1, 2, 3, 4, 5, 6, 7]
+          }
+        }
+      })
+    });
+
+    it('should delete Emails', () => {
+      const mailbox = 'inbox';
+      spyOn(http, 'delete').and.returnValue(Promise.resolve());
+
+      const expectedActions = [
+        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2, 4, 6] } },
+        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [3, 5, 7] } },
+        { type: CLEAR_SELECTED_EMAILS }
+      ];
+
+      return store.dispatch(mailboxActions.deleteEmails(mailbox))
+        .then(() => {
+          expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [3, 5, 7]);
           expect(store.getActions()).toEqual(expectedActions);
         });
     });

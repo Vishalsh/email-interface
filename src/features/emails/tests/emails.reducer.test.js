@@ -1,7 +1,8 @@
 import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
-  TOGGLE_EMAIL_SELECTION
+  TOGGLE_EMAIL_SELECTION,
+  CLEAR_SELECTED_EMAILS
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 
@@ -110,6 +111,19 @@ describe('emailsReducer', () => {
       })).toEqual(
       {
         selectedEmails: [1, 2, 7]
+      }
+    );
+  });
+
+  it('should handle TOGGLE_EMAIL_SELECTION', () => {
+    expect(emailsReducer({
+        selectedEmails: [1, 2, 3]
+      },
+      {
+        type: CLEAR_SELECTED_EMAILS
+      })).toEqual(
+      {
+        selectedEmails: []
       }
     );
   });

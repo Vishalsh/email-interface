@@ -113,4 +113,41 @@ describe('http', () => {
         });
     });
   });
+
+  describe('delete', () => {
+    const deleteUrl = '/some-delete-url';
+    const deleteData = [1, 2, 3];
+
+    it('should handle the success response of a delete request', (done) => {
+      spyOn(mockApi, 'default').and.returnValue(new Promise((resolve) => {
+        resolve({
+          status: 200,
+          data: 'some data'
+        })
+      }));
+
+      http.delete(deleteUrl, deleteData)
+        .then((data) => {
+          expect(mockApi.default).toHaveBeenCalledWith(deleteUrl, { method: 'DELETE' }, deleteData);
+          expect(data).toEqual('some data');
+          done();
+        });
+    });
+
+    it('should handle the failure response of a delete request', (done) => {
+      spyOn(mockApi, 'default').and.returnValue(new Promise((resolve) => {
+        resolve({
+          status: 401,
+          error: 'some error'
+        })
+      }));
+
+      http.delete(deleteUrl, deleteData)
+        .catch((error) => {
+          expect(mockApi.default).toHaveBeenCalledWith(deleteUrl, { method: 'DELETE' }, deleteData);
+          expect(error).toEqual('some error');
+          done();
+        });
+    });
+  });
 });

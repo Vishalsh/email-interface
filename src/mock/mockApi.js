@@ -5,7 +5,8 @@ const getEmails = () => JSON.parse(localStorage.getItem('emails'));
 const methods = {
   GET: 'GET',
   POST: 'POST',
-  PUT: 'PUT'
+  PUT: 'PUT',
+  DELETE: 'DELETE'
 };
 
 const login = (user) => {
@@ -74,6 +75,34 @@ const updateEmail = (email) => {
   });
 };
 
+const deleteEmails = (url, emailIds) => {
+  const mailboxName = url.split('/')[2];
+
+  const mailboxes = getMailboxes();
+  const mailboxesCopy = mailboxes.slice(0);
+  const mailboxEmails = mailboxesCopy.find(mailbox => mailbox.name === mailboxName).emails;
+  const trashEmails = mailboxesCopy.find(mailbox => mailbox.name === 'trash').emails;
+
+  emailIds.forEach((id) => {
+    const mailboxEmailIndex = mailboxEmails.indexOf(id);
+    mailboxEmails.splice(mailboxEmailIndex, 1);
+    trashEmails.push(id);
+  });
+
+  const mailboxIndex = mailboxesCopy.indexOf(mailboxesCopy.find(mailbox => mailbox.name === mailboxName));
+
+  mailboxesCopy[mailboxIndex].emails = mailboxEmails;
+  mailboxesCopy[4].emails = trashEmails;
+
+  localStorage.setItem('mailboxes', JSON.stringify(mailboxesCopy));
+
+  return new Promise((resolve) => {
+    resolve({
+      status: 200
+    });
+  });
+};
+
 const fetch = (url, { method }, data) => {
   if (url.includes('login')) {
     return login(data);
@@ -85,6 +114,10 @@ const fetch = (url, { method }, data) => {
 
   if (method === methods.PUT && url.includes('emails')) {
     return updateEmail(data);
+  }
+
+  if (method === methods.DELETE && url.includes('mailboxes') && url.includes('emails')) {
+    return deleteEmails(url, data);
   }
 };
 

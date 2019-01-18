@@ -60,6 +60,7 @@ exports[`Mailbox should render the component 1`] = `
         <Button
           className="actionButton"
           disabled={false}
+          onClick={[Function]}
           type="default"
         >
           <i

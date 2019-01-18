@@ -20,6 +20,10 @@ const http = {
   put: (url, data) => {
     return fetch(url, { method: 'PUT' }, data)
       .then((response) => handleResponse(response));
+  },
+  delete: (url, data) => {
+    return fetch(url, { method: 'DELETE' }, data)
+      .then((response) => handleResponse(response));
   }
 };
 

@@ -1,7 +1,8 @@
 import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
-  TOGGLE_EMAIL_SELECTION
+  TOGGLE_EMAIL_SELECTION,
+  CLEAR_SELECTED_EMAILS
 } from "./emails.actionTypes";
 
 const initialState = {};
@@ -47,6 +48,13 @@ const emailsReducer = (state = initialState, action) => {
           ...state,
           selectedEmails: selectedEmailsCopy
         }
+      }
+    }
+
+    case CLEAR_SELECTED_EMAILS: {
+      return {
+        ...state,
+        selectedEmails: []
       }
     }
 

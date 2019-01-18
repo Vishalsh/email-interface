@@ -31,6 +31,12 @@ export class Mailbox extends Component {
     }
   }
 
+  onClickDeleteEmails = () => {
+    const { match, deleteEmails } = this.props;
+
+    deleteEmails(match.params.mailbox);
+  };
+
   render() {
     const { match, mailbox } = this.props;
 
@@ -58,7 +64,7 @@ export class Mailbox extends Component {
               <Button type="default" className={classes.actionButton}>
                 <i className="icon icon-bang"/>
               </Button>
-              <Button type="default" className={classes.actionButton}>
+              <Button type="default" onClick={this.onClickDeleteEmails} className={classes.actionButton}>
                 <i className="icon icon-delete"/>
               </Button>
             </div>
@@ -99,7 +105,8 @@ Mailbox.propTypes = {
     emails: PropTypes.array,
     loadingState: PropTypes.string,
   }),
-  getEmails: PropTypes.func.isRequired
+  getEmails: PropTypes.func.isRequired,
+  deleteEmails: PropTypes.func.isRequired
 };
 
 const mapStateToProps = (store, ownProps) => ({
@@ -107,7 +114,8 @@ const mapStateToProps = (store, ownProps) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  getEmails: mailboxActions.getEmails
+  getEmails: mailboxActions.getEmails,
+  deleteEmails: mailboxActions.deleteEmails
 }, dispatch);
 
 export default connect(mapStateToProps, mapDispatchToProps)(Mailbox);

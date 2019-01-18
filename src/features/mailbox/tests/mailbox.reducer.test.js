@@ -1,7 +1,8 @@
 import loadingStates from 'constants/loadingStates';
 import {
   GET_EMAILS_SUCCESSFUL,
-  GET_EMAILS_FAILED
+  GET_EMAILS_FAILED,
+  DELETE_EMAILS_SUCCESSFUL
 } from "../mailbox.actionTypes";
 
 import mailboxReducer from '../mailbox.reducer';
@@ -65,5 +66,25 @@ describe('mailboxReducer', () => {
         loadingState: loadingStates.FAILED
       }
     });
-  })
+  });
+
+  it('should handle DELETE_EMAILS_SUCCESSFUL', () => {
+    const mailbox = 'inbox';
+    const emails = [{
+      id: 1,
+      subject: 'subject 1'
+    }, {
+      id: 1,
+      subject: 'subject 2'
+    }];
+
+    const expectedState = mailboxReducer(initialState, { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox, emails } });
+
+    expect(expectedState).toEqual({
+      [mailbox]: {
+        emails,
+        loadingState: loadingStates.LOADED
+      }
+    });
+  });
 });
