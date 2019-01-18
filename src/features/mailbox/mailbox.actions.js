@@ -5,14 +5,16 @@ import apiEndPoints from 'constants/apiEndPoints';
 import {
   GET_EMAILS_SUCCESSFUL,
   GET_EMAILS_FAILED,
-  DELETE_EMAILS_SUCCESSFUL
+  DELETE_EMAILS_SUCCESSFUL,
+  ADD_EMAIL_TO_MAILBOX
 } from "./mailbox.actionTypes";
 import { TRASH } from 'constants/mailbox';
 import emailActions from "features/emails/emails.actions";
 
-const getEmailSuccessful = createAction(GET_EMAILS_SUCCESSFUL);
-const getEmailFailed = createAction(GET_EMAILS_FAILED);
+const getEmailsSuccessful = createAction(GET_EMAILS_SUCCESSFUL);
+const getEmailsFailed = createAction(GET_EMAILS_FAILED);
 const deleteEmailSuccessful = createAction(DELETE_EMAILS_SUCCESSFUL);
+const addEmailToMailbox = createAction(ADD_EMAIL_TO_MAILBOX);
 
 const getEmails = (mailbox) => (dispatch, getState) => {
   const { user } = getState();
@@ -27,12 +29,12 @@ const getEmails = (mailbox) => (dispatch, getState) => {
           }
         }, {})
       }));
-      dispatch(getEmailSuccessful({
+      dispatch(getEmailsSuccessful({
         mailbox, emails: emails.map(email => email.id)
       }));
     })
     .catch(() => {
-      dispatch(getEmailFailed({ mailbox }));
+      dispatch(getEmailsFailed({ mailbox }));
     });
 };
 
@@ -42,7 +44,7 @@ const deleteEmails = (mailboxName) => (dispatch, getState) => {
   return http.delete(apiEndPoints.deleteEmails(mailboxName), emails.selectedEmails)
     .then(() => {
       const mailboxEmails = mailbox[mailboxName].emails.slice(0);
-      let trashEmails = mailbox[TRASH] ? mailbox[TRASH].emails.slice(0) : [];
+      let trashEmails = mailbox[TRASH].emails.slice(0);
 
       emails.selectedEmails.forEach((id) => {
         const index = mailboxEmails.indexOf(id);
@@ -62,5 +64,6 @@ const deleteEmails = (mailboxName) => (dispatch, getState) => {
 
 export default {
   getEmails,
-  deleteEmails
+  deleteEmails,
+  addEmailToMailbox
 };

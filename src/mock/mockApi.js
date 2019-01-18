@@ -9,6 +9,12 @@ const methods = {
   DELETE: 'DELETE'
 };
 
+const mailbox = {
+  INBOX: 'inbox',
+  SENT: 'sent',
+  TRASH: 'trash'
+};
+
 const login = (user) => {
   const users = getUsers();
   const matchingUser = users.find(u => u.email === user.email && u.password === user.password);
@@ -59,6 +65,32 @@ const getMailboxEmails = (url) => {
   });
 };
 
+const createEmail = (email) => {
+  const emails = getEmails();
+
+  const newEmail = {
+    id: emails[emails.length - 1].id + 1,
+    ...email,
+    dateTime: 'Jan 1',
+    status: 'UNREAD',
+  };
+
+  const newEmails = [...emails, newEmail];
+
+  localStorage.setItem('emails', JSON.stringify(newEmails));
+
+  const mailboxes = getMailboxes();
+  const mailboxesCopy = mailboxes.slice(0);
+
+  const inputMailbox = mailboxesCopy.find(mb => mb.name === mailbox.INBOX);
+  inputMailbox.emails = [newEmail, ...inputMailbox.emails];
+
+  const sentMailbox = mailboxesCopy.find(mb => mb.name === mailbox.SENT);
+  sentMailbox.emails = [newEmail, ...inputMailbox.emails];
+
+  localStorage.setItem('mailboxes', JSON.stringify(mailboxesCopy));
+};
+
 const updateEmail = (email) => {
   const emails = getEmails();
   const emailsCopy = emails.slice(0);
@@ -81,7 +113,7 @@ const deleteEmails = (url, emailIds) => {
   const mailboxes = getMailboxes();
   const mailboxesCopy = mailboxes.slice(0);
   const mailboxEmails = mailboxesCopy.find(mailbox => mailbox.name === mailboxName).emails;
-  let trashEmails = mailboxesCopy.find(mailbox => mailbox.name === 'trash').emails;
+  let trashEmails = mailboxesCopy.find(mb => mb.name === mailbox.TRASH).emails;
 
   emailIds.forEach((id) => {
     const mailboxEmailIndex = mailboxEmails.indexOf(id);
@@ -111,6 +143,10 @@ const fetch = (url, { method }, data) => {
 
   if (url.includes('users') && url.includes('mailboxes') && url.includes('emails')) {
     return getMailboxEmails(url);
+  }
+
+  if (method === methods.POST && url.includes('emails')) {
+    return createEmail(data);
   }
 
   if (method === methods.PUT && url.includes('emails')) {

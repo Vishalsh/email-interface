@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CreateEmail should render the component 1`] = `
+<section
+  className="createEmail"
+>
+  <form>
+    <InputWithLabel
+      inputType="text"
+      label="to"
+      onChange={[Function]}
+      value=""
+    />
+    <InputWithLabel
+      inputType="text"
+      label="cc"
+      onChange={[Function]}
+      value=""
+    />
+    <InputWithLabel
+      inputType="text"
+      label="subject"
+      onChange={[Function]}
+      value=""
+    />
+    <InputWithLabel
+      inputType="text"
+      label="body"
+      onChange={[Function]}
+      value=""
+    />
+    <Button
+      className=""
+      disabled={true}
+      onClick={[Function]}
+      type="primary"
+    >
+      Compose Mail
+    </Button>
+  </form>
+</section>
+`;

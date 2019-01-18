@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 
-import { hasEmails } from 'utilities/emails';
 import EmailListItem from 'features/emails/emailListItem/EmailListItem';
 import emailsActions from './emails.actions';
 import classes from './Emails.module.scss';

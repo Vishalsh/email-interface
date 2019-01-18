@@ -12,6 +12,7 @@ import Emails from 'features/emails/Emails';
 import NoEmail from 'features/emails/noEmail/NoEmail';
 import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import EmailDetails from 'features/emails/emailDetails/EmailDetails';
+import CreateEmail from 'features/emails/createEmail/CreateEmail';
 import classes from './Mailbox.module.scss';
 
 export class Mailbox extends Component {

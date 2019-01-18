@@ -1,3 +1,5 @@
+@import "~styles/variables";
+
 .mailboxAside {
   margin: 1rem;
   height: calc(100vh - 12rem);
@@ -7,4 +9,10 @@
 .heading {
   margin: 2rem 0;
   font-weight: bold;
+}
+
+.link {
+  list-style: none;
+  text-decoration: none;
+  color: map-get($gray, '1500');
 }

@@ -1,9 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Button from 'components/button/Button';
 import Folders from 'features/mailboxAside/folders/Folders';
 import Categories from 'features/mailboxAside/categories/Categories';
 import Labels from 'features/mailboxAside/labels/Labels';
+import routes from 'constants/routes';
 import classes from './MailboxAside.module.scss';
 
 const MailboxAside = () => {

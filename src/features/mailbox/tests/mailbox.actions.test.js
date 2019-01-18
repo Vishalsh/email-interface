@@ -6,13 +6,14 @@ import apiEndPoints from 'constants/apiEndPoints';
 import {
   GET_EMAILS_SUCCESSFUL,
   GET_EMAILS_FAILED,
-  DELETE_EMAILS_SUCCESSFUL
+  DELETE_EMAILS_SUCCESSFUL,
+  ADD_EMAIL_TO_MAILBOX
 } from "../mailbox.actionTypes";
 import {
   ADD_EMAILS,
   CLEAR_SELECTED_EMAILS
 } from "features/emails/emails.actionTypes";
-import { TRASH } from 'constants/mailbox';
+import { INBOX, TRASH } from 'constants/mailbox';
 
 import mailboxActions from '../mailbox.actions';
 
@@ -118,5 +119,13 @@ describe('mailboxActions', () => {
           expect(store.getActions()).toEqual(expectedActions);
         });
     });
+  });
+
+  it('should dispatch ADD_EMAIL_TO_MAILBOX', () => {
+    const expectedActions = [{ type: ADD_EMAIL_TO_MAILBOX, payload: { mailbox: INBOX, id: 5 } }];
+
+    store.dispatch(mailboxActions.addEmailToMailbox({ mailbox: INBOX, id: 5 }));
+
+    expect(store.getActions()).toEqual(expectedActions);
   });
 });
