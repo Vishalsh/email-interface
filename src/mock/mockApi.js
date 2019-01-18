@@ -81,13 +81,14 @@ const deleteEmails = (url, emailIds) => {
   const mailboxes = getMailboxes();
   const mailboxesCopy = mailboxes.slice(0);
   const mailboxEmails = mailboxesCopy.find(mailbox => mailbox.name === mailboxName).emails;
-  const trashEmails = mailboxesCopy.find(mailbox => mailbox.name === 'trash').emails;
+  let trashEmails = mailboxesCopy.find(mailbox => mailbox.name === 'trash').emails;
 
   emailIds.forEach((id) => {
     const mailboxEmailIndex = mailboxEmails.indexOf(id);
     mailboxEmails.splice(mailboxEmailIndex, 1);
-    trashEmails.push(id);
   });
+
+  trashEmails = [...emailIds, ...trashEmails];
 
   const mailboxIndex = mailboxesCopy.indexOf(mailboxesCopy.find(mailbox => mailbox.name === mailboxName));
 

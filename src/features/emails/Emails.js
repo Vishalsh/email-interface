@@ -38,7 +38,7 @@ Emails.propTypes = {
 };
 
 const mapStateToProps = (store, ownProps) => ({
-  emails: hasEmails(store.emails) ? ownProps.ids.map(id => store.emails[id]) : []
+  emails: ownProps.ids.map(id => store.emails[id])
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

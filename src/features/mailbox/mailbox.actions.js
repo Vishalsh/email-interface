@@ -19,9 +19,6 @@ const getEmails = (mailbox) => (dispatch, getState) => {
 
   return http.get(apiEndPoints.getEmails(user.data.id, mailbox))
     .then((emails) => {
-      dispatch(getEmailSuccessful({
-        mailbox, emails: emails.map(email => email.id)
-      }));
       dispatch(emailActions.addEmails({
         emails: emails.reduce((emailsObject, email) => {
           return {
@@ -29,7 +26,10 @@ const getEmails = (mailbox) => (dispatch, getState) => {
             [email.id]: email
           }
         }, {})
-      }))
+      }));
+      dispatch(getEmailSuccessful({
+        mailbox, emails: emails.map(email => email.id)
+      }));
     })
     .catch(() => {
       dispatch(getEmailFailed({ mailbox }));
@@ -42,13 +42,14 @@ const deleteEmails = (mailboxName) => (dispatch, getState) => {
   return http.delete(apiEndPoints.deleteEmails(mailboxName), emails.selectedEmails)
     .then(() => {
       const mailboxEmails = mailbox[mailboxName].emails.slice(0);
-      const trashEmails = mailbox[TRASH] ? mailbox[TRASH].emails.slice(0) : [];
+      let trashEmails = mailbox[TRASH] ? mailbox[TRASH].emails.slice(0) : [];
 
       emails.selectedEmails.forEach((id) => {
         const index = mailboxEmails.indexOf(id);
         mailboxEmails.splice(index, 1);
-        trashEmails.push(id);
       });
+
+      trashEmails = [...emails.selectedEmails, ...trashEmails];
 
       dispatch(deleteEmailSuccessful({ mailbox: mailboxName, emails: mailboxEmails }));
       dispatch(deleteEmailSuccessful({ mailbox: TRASH, emails: trashEmails }));

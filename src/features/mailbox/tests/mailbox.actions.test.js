@@ -44,7 +44,6 @@ describe('mailboxActions', () => {
       spyOn(http, 'get').and.returnValue(Promise.resolve(emails));
 
       const expectedActions = [
-        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2] } },
         {
           type: ADD_EMAILS,
           payload: {
@@ -60,6 +59,7 @@ describe('mailboxActions', () => {
             }
           }
         },
+        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2] } }
       ];
 
       return store.dispatch(mailboxActions.getEmails(mailbox))
@@ -94,18 +94,21 @@ describe('mailboxActions', () => {
         mailbox: {
           inbox: {
             emails: [1, 2, 3, 4, 5, 6, 7]
+          },
+          trash: {
+            emails: [8, 9]
           }
         }
       })
     });
 
-    it('should delete Emails', () => {
+    it('should dispatch DELETE_EMAILS_SUCCESSFUL if deleting emails succeed', () => {
       const mailbox = 'inbox';
       spyOn(http, 'delete').and.returnValue(Promise.resolve());
 
       const expectedActions = [
         { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2, 4, 6] } },
-        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [3, 5, 7] } },
+        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [3, 5, 7, 8, 9] } },
         { type: CLEAR_SELECTED_EMAILS }
       ];
 
