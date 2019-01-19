@@ -1,5 +1,6 @@
 {
   "name": "email-interface",
+  "homepage": "https://github.com/Vishalsh/email-interface",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

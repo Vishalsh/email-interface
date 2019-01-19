@@ -201,6 +201,12 @@ const mailboxes = [{
   emails: []
 }];
 
+(function reset() {
+  localStorage.removeItem('users');
+  localStorage.removeItem('mailboxes');
+  localStorage.removeItem('emails');
+})();
+
 if (!localStorage.getItem('users')) {
   localStorage.setItem('users', JSON.stringify(users));
 }
@@ -210,9 +216,3 @@ if (!localStorage.getItem('mailboxes')) {
 if (!localStorage.getItem('emails')) {
   localStorage.setItem('emails', JSON.stringify(emails));
 }
-
-// (function reset() {
-//   localStorage.setItem('users', JSON.stringify(users));
-//   localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
-//   localStorage.setItem('emails', JSON.stringify(emails));
-// })();
