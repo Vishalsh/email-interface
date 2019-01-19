@@ -2,7 +2,7 @@
 
 exports[`SearchInput should render the component 1`] = `
 <div
-  className="row middle-xs"
+  className="flex middle-xs"
 >
   <div
     className="inputWithLabelContainer col-sm-8 col-md-9"

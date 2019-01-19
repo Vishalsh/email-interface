@@ -6,7 +6,7 @@ import classes from './SearchInput.module.scss';
 
 const SearchInput = () => {
   return (
-    <div className="row middle-xs">
+    <div className="flex middle-xs">
       <div className={`${classes.inputWithLabelContainer} col-sm-8 col-md-9`}>
         <InputWithLabel label={''}
                         onChange={() => {

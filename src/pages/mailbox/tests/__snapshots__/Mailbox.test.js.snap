@@ -25,5 +25,6 @@ exports[`Mailbox should render the component 1`] = `
       />
     </Switch>
   </div>
+  <SettingsCog />
 </div>
 `;

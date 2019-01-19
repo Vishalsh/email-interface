@@ -1,0 +1,15 @@
+@import "~styles/variables";
+
+.settingsCog {
+  position: fixed;
+  right: 0;
+  top: 9rem;
+  height: 4rem;
+  width: 4.5rem;
+  background: $primary;
+  display: flex;
+  border-top-left-radius: 2rem;
+  border-bottom-left-radius: 2rem;
+  align-items: center;
+  justify-content: center;
+}

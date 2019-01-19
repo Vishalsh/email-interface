@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 import routes from 'constants/routes';
+import SettingsCog from 'components/settingsCog/SettingsCog';
 import MailboxAside from 'features/mailboxAside/MailboxAside';
 import MailboxFeature from 'features/mailbox/Mailbox';
 
@@ -19,6 +20,7 @@ const Mailbox = (props) => {
           <Route path={`${match.url}/:mailbox`} component={MailboxFeature}/>
         </Switch>
       </div>
+      <SettingsCog />
     </div>
   );
 };
