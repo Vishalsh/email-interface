@@ -61,7 +61,7 @@ export class CreateEmail extends Component {
             <InputWithLabel label="to" value={to} onChange={this.onChange}/>
             <InputWithLabel label="cc" value={cc} onChange={this.onChange}/>
             <InputWithLabel label="subject" value={subject} onChange={this.onChange}/>
-            <InputWithLabel label="body" value={body} onChange={this.onChange}/>
+            <InputWithLabel textarea label="body" value={body} onChange={this.onChange}/>
 
             <div className="row">
               <div className="col-sm-6">

@@ -20,3 +20,23 @@ exports[`InputWithLabel should render the component 1`] = `
   />
 </div>
 `;
+
+exports[`InputWithLabel should render the component with textarea 1`] = `
+<div
+  className="inputWithLabel"
+>
+  <label
+    className="label"
+    htmlFor="foo"
+  >
+    FOO
+  </label>
+  <textarea
+    className="input textarea"
+    id="foo"
+    name="foo"
+    onChange={[MockFunction]}
+    value="bar"
+  />
+</div>
+`;

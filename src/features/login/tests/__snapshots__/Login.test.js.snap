@@ -9,12 +9,14 @@ exports[`Login should render the component 1`] = `
       inputType="text"
       label="email"
       onChange={[Function]}
+      textarea={false}
       value=""
     />
     <InputWithLabel
       inputType="password"
       label="password"
       onChange={[Function]}
+      textarea={false}
       value=""
     />
     <Button

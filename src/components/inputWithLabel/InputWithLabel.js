@@ -8,6 +8,7 @@ const InputWithLabel = (props) => {
     label,
     value,
     inputType,
+    textarea,
     onChange
   } = props;
 
@@ -17,24 +18,36 @@ const InputWithLabel = (props) => {
              htmlFor={label}>
         {label.toUpperCase()}
       </label>
-      <input id={label}
-             className={classes.input}
-             value={value}
-             name={label}
-             type={inputType}
-             onChange={onChange}/>
+      {
+        textarea ?
+          <textarea id={label}
+                    className={`${classes.input} ${classes.textarea}`}
+                    value={value}
+                    name={label}
+                    onChange={onChange}>
+          </textarea>
+          :
+          <input id={label}
+                 className={classes.input}
+                 value={value}
+                 name={label}
+                 type={inputType}
+                 onChange={onChange}/>
+      }
     </div>
   );
 };
 
 InputWithLabel.defaultProps = {
-  inputType: 'text'
+  inputType: 'text',
+  textarea: false
 };
 
 InputWithLabel.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   inputType: PropTypes.string,
+  textarea: PropTypes.bool,
   onChange: PropTypes.func.isRequired
 };
 

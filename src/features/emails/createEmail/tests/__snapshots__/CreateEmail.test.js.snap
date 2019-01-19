@@ -15,24 +15,28 @@ exports[`CreateEmail should render the component 1`] = `
         inputType="text"
         label="to"
         onChange={[Function]}
+        textarea={false}
         value=""
       />
       <InputWithLabel
         inputType="text"
         label="cc"
         onChange={[Function]}
+        textarea={false}
         value=""
       />
       <InputWithLabel
         inputType="text"
         label="subject"
         onChange={[Function]}
+        textarea={false}
         value=""
       />
       <InputWithLabel
         inputType="text"
         label="body"
         onChange={[Function]}
+        textarea={true}
         value=""
       />
       <div
