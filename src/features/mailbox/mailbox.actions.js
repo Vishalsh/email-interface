@@ -58,6 +58,7 @@ const deleteEmails = (mailboxName) => (dispatch, getState) => {
       dispatch(emailActions.clearSelectedEmails());
     })
     .catch(() => {
+      window.alert('Something went wrong while deleting the emails. Please try again');
     });
 };
 

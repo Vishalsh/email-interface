@@ -27,6 +27,7 @@ const updateEmailStatus = (email) => (dispatch) => {
       dispatch(updateEmailStatusSuccessful({ email: updatedEmail }))
     })
     .catch(() => {
+      window.alert('Something went wrong while updating the email status. Please try again');
     });
 };
 
@@ -42,8 +43,10 @@ const sendEmail = (email) => (dispatch, getState) => {
       }));
       dispatch(mailboxActions.addEmailToMailbox({ mailbox: SENT, id: email.id }));
       dispatch(toggleCreateEmailPopup());
+      window.alert('Email sent successfully');
     })
     .catch(() => {
+      window.alert('Something went wrong while sending the email. Please try again');
     });
 };
 

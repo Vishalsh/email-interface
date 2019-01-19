@@ -16,6 +16,7 @@ import {
 } from "features/mailbox/mailbox.actionTypes";
 import { status } from 'constants/emails';
 import emailsActions from '../emails.actions';
+global.alert = jest.fn();
 
 describe('emailsActions', () => {
   const middleWares = [thunkMiddleware];
@@ -51,17 +52,17 @@ describe('emailsActions', () => {
   });
 
   describe('updateEmailStatus', () => {
-    it('should dispatch UPDATE_EMAIL_STATUS_SUCCESSFUL if update email is successful', () => {
-      const email = {
-        id: 1,
-        subject: 'subject 1',
-        status: status.UNREAD
-      };
-      const updatedEmail = {
-        ...email,
-        status: status.READ
-      };
+    const email = {
+      id: 1,
+      subject: 'subject 1',
+      status: status.UNREAD
+    };
+    const updatedEmail = {
+      ...email,
+      status: status.READ
+    };
 
+    it('should dispatch UPDATE_EMAIL_STATUS_SUCCESSFUL if update email is successful', () => {
       spyOn(http, 'put').and.returnValue(Promise.resolve());
 
       const expectedActions = [
@@ -72,6 +73,17 @@ describe('emailsActions', () => {
         .then(() => {
           expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), updatedEmail);
           expect(store.getActions()).toEqual(expectedActions);
+        });
+    });
+
+    it('should alert if updating email failed', () => {
+      global.alert.mockReset();
+      spyOn(http, 'put').and.returnValue(Promise.reject());
+
+      return store.dispatch(emailsActions.updateEmailStatus(email))
+        .then(() => {
+          expect(http.put).toHaveBeenCalledWith(apiEndPoints.updateEmail(1), updatedEmail);
+          expect(global.alert).toHaveBeenCalledWith('Something went wrong while updating the email status. Please try again');
         });
     });
   });
@@ -95,12 +107,12 @@ describe('emailsActions', () => {
   });
 
   describe('sendEmail', () => {
-    it('should dispatch ADD_EMAILS, ADD_EMAIL_TO_MAILBOX if sending email is successful', () => {
-      const email = {
-        id: 1,
-        subject: 'subject 1'
-      };
+    const email = {
+      id: 1,
+      subject: 'subject 1'
+    };
 
+    it('should dispatch ADD_EMAILS, ADD_EMAIL_TO_MAILBOX if sending email is successful', () => {
       spyOn(http, 'post').and.returnValue(Promise.resolve(email));
 
       const expectedActions = [
@@ -113,6 +125,19 @@ describe('emailsActions', () => {
         .then(() => {
           expect(http.post).toHaveBeenCalledWith(apiEndPoints.sendEmail(), { ...email, from: 'msDhoni@bcci.com' });
           expect(store.getActions()).toEqual(expectedActions);
+          expect(global.alert).toHaveBeenCalledWith('Email sent successfully');
+        });
+    });
+
+    it('should alert if sending email failed', () => {
+      global.alert.mockReset();
+
+      spyOn(http, 'post').and.returnValue(Promise.reject());
+
+      return store.dispatch(emailsActions.sendEmail(email))
+        .then(() => {
+          expect(http.post).toHaveBeenCalledWith(apiEndPoints.sendEmail(), { ...email, from: 'msDhoni@bcci.com' });
+          expect(global.alert).toHaveBeenCalledWith('Something went wrong while sending the email. Please try again');
         });
     });
   });

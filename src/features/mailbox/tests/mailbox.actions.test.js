@@ -14,6 +14,7 @@ import {
   CLEAR_SELECTED_EMAILS
 } from "features/emails/emails.actionTypes";
 import { INBOX, TRASH, SENT } from 'constants/mailbox';
+global.alert = jest.fn();
 
 import mailboxActions from '../mailbox.actions';
 
@@ -88,6 +89,8 @@ describe('mailboxActions', () => {
 
 
   describe('deleteEmails', () => {
+    const mailbox = 'inbox';
+
     beforeEach(() => {
       store = mockStore({
         emails: { selectedEmails: [3, 5, 7] },
@@ -103,7 +106,6 @@ describe('mailboxActions', () => {
     });
 
     it('should dispatch DELETE_EMAILS_SUCCESSFUL if deleting emails succeed', () => {
-      const mailbox = 'inbox';
       spyOn(http, 'delete').and.returnValue(Promise.resolve());
 
       const expectedActions = [
@@ -116,6 +118,16 @@ describe('mailboxActions', () => {
         .then(() => {
           expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [3, 5, 7]);
           expect(store.getActions()).toEqual(expectedActions);
+        });
+    });
+
+    it('should alert if deleting email failed', () => {
+      spyOn(http, 'delete').and.returnValue(Promise.reject());
+
+      return store.dispatch(mailboxActions.deleteEmails(mailbox))
+        .then(() => {
+          expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [3, 5, 7]);
+          expect(global.alert).toHaveBeenCalledWith('Something went wrong while deleting the emails. Please try again');
         });
     });
   });
