@@ -3,8 +3,6 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
 import loadingStates from 'constants/loadingStates';
-import Button from 'components/button/Button';
-import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import CreateEmail from 'features/emails/createEmail/CreateEmail';
 import MailboxHeader from 'features/mailbox/mailboxHeader/MailboxHeader';
 import { Mailbox } from '../Mailbox';
@@ -55,8 +53,18 @@ describe('Mailbox', () => {
     expect(getEmailsMock).toHaveBeenCalled();
   });
 
-  it('should trigger deleteEmails', () => {
+  it('should trigger deleteEmails only when hasSelectedEmails are true', () => {
     component.find(MailboxHeader).props().onClickDeleteEmails();
+
+    expect(deleteEmailsMock).not.toHaveBeenCalled();
+
+    const propsWithSelectedEmails = {
+      ...props,
+      hasSelectedEmails: true
+    };
+    const componentWithSelectedEmails = shallow(<Mailbox {...propsWithSelectedEmails} />);
+
+    componentWithSelectedEmails.find(MailboxHeader).props().onClickDeleteEmails();
 
     expect(deleteEmailsMock).toHaveBeenCalledWith('inbox');
   });

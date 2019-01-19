@@ -31,9 +31,11 @@ export class Mailbox extends Component {
   }
 
   onClickDeleteEmails = () => {
-    const { match, deleteEmails } = this.props;
+    const { match, hasSelectedEmails, deleteEmails } = this.props;
 
-    deleteEmails(match.params.mailbox);
+    if (hasSelectedEmails) {
+      deleteEmails(match.params.mailbox);
+    }
   };
 
   render() {
@@ -66,7 +68,8 @@ Mailbox.defaultProps = {
     emails: [],
     loadingState: loadingStates.AT_REST
   },
-  isCreateEmailPopupOpen: false
+  isCreateEmailPopupOpen: false,
+  hasSelectedEmails: false
 };
 
 Mailbox.propTypes = {
@@ -76,13 +79,15 @@ Mailbox.propTypes = {
     loadingState: PropTypes.string,
   }),
   isCreateEmailPopupOpen: PropTypes.bool.isRequired,
+  hasSelectedEmails: PropTypes.bool,
   getEmails: PropTypes.func.isRequired,
   deleteEmails: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (store, ownProps) => ({
   mailbox: store.mailbox[ownProps.match.params.mailbox],
-  isCreateEmailPopupOpen: store.emails.isCreateEmailPopupOpen
+  isCreateEmailPopupOpen: store.emails.isCreateEmailPopupOpen,
+  hasSelectedEmails: store.emails.selectedEmails && store.emails.selectedEmails.length > 0
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
