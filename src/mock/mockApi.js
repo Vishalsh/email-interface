@@ -1,6 +1,6 @@
-const getUsers = () => JSON.parse(localStorage.getItem('users'));
-const getMailboxes = () => JSON.parse(localStorage.getItem('mailboxes'));
-const getEmails = () => JSON.parse(localStorage.getItem('emails'));
+const getUsers = () => JSON.parse(localStorage.getItem('appUsers'));
+const getMailboxes = () => JSON.parse(localStorage.getItem('appMailboxes'));
+const getEmails = () => JSON.parse(localStorage.getItem('appEmails'));
 
 const methods = {
   GET: 'GET',
@@ -44,12 +44,11 @@ const getMailboxEmails = (url) => {
   const userEmail = url.split('=')[1];
   const mailboxName = url.split('/')[2];
 
-  const mailboxEmails = mailboxes
-    .find(mailbox => mailbox.name === mailboxName).emails;
+  const mailboxId = mailboxes.find(mailbox => mailbox.name === mailboxName).id;
 
   let emailList = [];
   if (mailboxName === mailbox.SENT) {
-    emailList = emails.filter(email => mailboxEmails.includes(email.id) && email.from === userEmail)
+    emailList = emails.filter(email => email.mailboxId === mailboxId && email.from === userEmail)
       .map(email => ({
         ...email,
         sender: {
@@ -58,7 +57,7 @@ const getMailboxEmails = (url) => {
         }
       }));
   } else {
-    emailList = emails.filter(email => mailboxEmails.includes(email.id) && (email.to === userEmail || email.cc === userEmail))
+    emailList = emails.filter(email => email.mailboxId === mailboxId && (email.to === userEmail || email.cc === userEmail))
       .map(email => ({
         ...email,
         sender: {
@@ -79,36 +78,34 @@ const getMailboxEmails = (url) => {
 const createEmail = (email) => {
   const emails = getEmails();
   const users = getUsers();
-
   const sender = users.find(user => user.email === email.from);
 
+  let highestId = 1;
+
+  emails.forEach(email => {
+    if (email.id > highestId) {
+      highestId = email.id
+    }
+  });
+
   const newInboxEmail = {
-    id: emails[emails.length - 1].id + 1,
+    id: highestId + 1,
     ...email,
     dateTime: 'Now',
     status: 'UNREAD',
+    mailboxId: 1
   };
 
   const newSentEmail = {
-    id: emails[emails.length - 1].id + 2,
+    id: highestId + 2,
     ...email,
     dateTime: 'Now',
     status: 'READ',
+    mailboxId: 2
   };
   const newEmails = [newInboxEmail, newSentEmail, ...emails];
 
-  localStorage.setItem('emails', JSON.stringify(newEmails));
-
-  const mailboxes = getMailboxes();
-  const mailboxesCopy = mailboxes.slice(0);
-
-  const inputMailbox = mailboxesCopy.find(mb => mb.name === mailbox.INBOX);
-  inputMailbox.emails = [newInboxEmail.id, ...inputMailbox.emails];
-
-  const sentMailbox = mailboxesCopy.find(mb => mb.name === mailbox.SENT);
-  sentMailbox.emails = [newSentEmail.id, ...sentMailbox.emails];
-
-  localStorage.setItem('mailboxes', JSON.stringify(mailboxesCopy));
+  localStorage.setItem('appEmails', JSON.stringify(newEmails));
 
   return new Promise((resolve) => {
     resolve({
@@ -131,7 +128,7 @@ const updateEmail = (email) => {
   const emailToUpdate = emailsCopy.find(e => e.id === email.id);
   emailsCopy[emailsCopy.indexOf(emailToUpdate)] = email;
 
-  localStorage.setItem('emails', JSON.stringify(emailsCopy));
+  localStorage.setItem('appEmails', JSON.stringify(emailsCopy));
 
   return new Promise((resolve) => {
     resolve({
@@ -144,23 +141,23 @@ const deleteEmails = (url, emailIds) => {
   const mailboxName = url.split('/')[2];
 
   const mailboxes = getMailboxes();
-  const mailboxesCopy = mailboxes.slice(0);
-  const mailboxEmails = mailboxesCopy.find(mailbox => mailbox.name === mailboxName).emails;
-  let trashEmails = mailboxesCopy.find(mb => mb.name === mailbox.TRASH).emails;
+  const emails = getEmails();
+  const emailCopy = emails.slice(0);
 
-  emailIds.forEach((id) => {
-    const mailboxEmailIndex = mailboxEmails.indexOf(id);
-    mailboxEmails.splice(mailboxEmailIndex, 1);
-  });
+  let trashMailboxId = mailboxes.find(mb => mb.name === mailbox.TRASH).id;
 
-  trashEmails = [...emailIds, ...trashEmails];
+  if (mailboxName === mailbox.TRASH) {
+    emailIds.forEach((id) => {
+      const emailIndex = emailCopy.indexOf(emailCopy.find(email => email.id === id));
+      emailCopy.splice(emailIndex, 1);
+    });
+  } else {
+    emailIds.forEach((id) => {
+      emailCopy.find(email => email.id === id).mailboxId = trashMailboxId;
+    });
+  }
 
-  const mailboxIndex = mailboxesCopy.indexOf(mailboxesCopy.find(mailbox => mailbox.name === mailboxName));
-
-  mailboxesCopy[mailboxIndex].emails = mailboxEmails;
-  mailboxesCopy[4].emails = trashEmails;
-
-  localStorage.setItem('mailboxes', JSON.stringify(mailboxesCopy));
+  localStorage.setItem('appEmails', JSON.stringify(emailCopy));
 
   return new Promise((resolve) => {
     resolve({

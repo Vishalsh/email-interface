@@ -89,8 +89,6 @@ describe('mailboxActions', () => {
 
 
   describe('deleteEmails', () => {
-    const mailbox = 'inbox';
-
     beforeEach(() => {
       store = mockStore({
         emails: { selectedEmails: [3, 5, 7] },
@@ -105,23 +103,58 @@ describe('mailboxActions', () => {
       })
     });
 
-    it('should dispatch DELETE_EMAILS_SUCCESSFUL if deleting emails succeed', () => {
-      spyOn(http, 'delete').and.returnValue(Promise.resolve());
+    describe('when deleting emails succeed', () => {
+      it('should dispatch DELETE_EMAILS_SUCCESSFUL for selected mailbox and trash mailbox when selected mailbox is not trash', () => {
+        const mailbox = 'inbox';
 
-      const expectedActions = [
-        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2, 4, 6] } },
-        { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [3, 5, 7, 8, 9] } },
-        { type: CLEAR_SELECTED_EMAILS }
-      ];
+        spyOn(http, 'delete').and.returnValue(Promise.resolve());
 
-      return store.dispatch(mailboxActions.deleteEmails(mailbox))
-        .then(() => {
-          expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [3, 5, 7]);
-          expect(store.getActions()).toEqual(expectedActions);
+        const expectedActions = [
+          { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2, 4, 6] } },
+          { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [3, 5, 7, 8, 9] } },
+          { type: CLEAR_SELECTED_EMAILS }
+        ];
+
+        return store.dispatch(mailboxActions.deleteEmails(mailbox))
+          .then(() => {
+            expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [3, 5, 7]);
+            expect(store.getActions()).toEqual(expectedActions);
+          });
+      });
+
+      it('should dispatch DELETE_EMAILS_SUCCESSFUL for trash mailbox only when selected mailbox is trash', () => {
+        store = mockStore({
+          emails: { selectedEmails: [8] },
+          mailbox: {
+            inbox: {
+              emails: [1, 2, 3, 4, 5, 6, 7]
+            },
+            trash: {
+              emails: [8, 9]
+            }
+          }
         });
+
+        const mailbox = 'trash';
+
+        spyOn(http, 'delete').and.returnValue(Promise.resolve());
+
+        const expectedActions = [
+          { type: DELETE_EMAILS_SUCCESSFUL, payload: { mailbox: TRASH, emails: [9] } },
+          { type: CLEAR_SELECTED_EMAILS }
+        ];
+
+        return store.dispatch(mailboxActions.deleteEmails(mailbox))
+          .then(() => {
+            expect(http.delete).toHaveBeenCalledWith(apiEndPoints.deleteEmails(mailbox), [8]);
+            expect(store.getActions()).toEqual(expectedActions);
+          });
+      });
     });
 
     it('should alert if deleting email failed', () => {
+      const mailbox = 'inbox';
+
       spyOn(http, 'delete').and.returnValue(Promise.reject());
 
       return store.dispatch(mailboxActions.deleteEmails(mailbox))

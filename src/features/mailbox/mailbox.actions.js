@@ -44,17 +44,23 @@ const deleteEmails = (mailboxName) => (dispatch, getState) => {
   return http.delete(apiEndPoints.deleteEmails(mailboxName), emails.selectedEmails)
     .then(() => {
       const mailboxEmails = mailbox[mailboxName].emails.slice(0);
-      let trashEmails = mailbox[TRASH].emails.slice(0);
 
       emails.selectedEmails.forEach((id) => {
         const index = mailboxEmails.indexOf(id);
         mailboxEmails.splice(index, 1);
       });
 
-      trashEmails = [...emails.selectedEmails, ...trashEmails];
+      if (mailboxName === TRASH) {
+        dispatch(deleteEmailSuccessful({ mailbox: TRASH, emails: mailboxEmails }));
+      } else {
+        let trashEmails = mailbox[TRASH].emails.slice(0);
 
-      dispatch(deleteEmailSuccessful({ mailbox: mailboxName, emails: mailboxEmails }));
-      dispatch(deleteEmailSuccessful({ mailbox: TRASH, emails: trashEmails }));
+        trashEmails = [...emails.selectedEmails, ...trashEmails];
+
+        dispatch(deleteEmailSuccessful({ mailbox: mailboxName, emails: mailboxEmails }));
+        dispatch(deleteEmailSuccessful({ mailbox: TRASH, emails: trashEmails }));
+      }
+
       dispatch(emailActions.clearSelectedEmails());
     })
     .catch(() => {

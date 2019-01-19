@@ -19,6 +19,12 @@
   font-weight: bold;
 }
 
+.subject {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 .category {
   margin-right: 1rem;
 }
