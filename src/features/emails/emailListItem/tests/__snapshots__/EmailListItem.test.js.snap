@@ -33,7 +33,7 @@ exports[`EmailListItem should render the component 1`] = `
       </span>
     </p>
     <p
-      className="col-sm-4 col-md-5"
+      className="subject col-sm-4 col-md-5"
     >
       subject 1
     </p>
@@ -86,7 +86,7 @@ exports[`EmailListItem should render the component for Sent Mailbox 1`] = `
       </span>
     </p>
     <p
-      className="col-sm-4 col-md-5"
+      className="subject col-sm-4 col-md-5"
     >
       subject 1
     </p>
