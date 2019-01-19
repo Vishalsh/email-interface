@@ -6,6 +6,7 @@ import { NavLink } from 'react-router-dom';
 import SidebarLink from '../SidebarLink';
 
 describe('SidebarLink', () => {
+  const composeEmail = jest.fn();
   const link = {
     name: 'Mailbox',
     icon: 'mailbox',
@@ -19,7 +20,8 @@ describe('SidebarLink', () => {
       disabled: true
     }, {
       name: 'Compose Email',
-      routeTo: 'compose-email'
+      routeTo: 'compose-email',
+      onClick: composeEmail
     }, {
       name: 'Email templates',
       routeTo: 'email-templates',
@@ -46,7 +48,7 @@ describe('SidebarLink', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
-  it('should not prevent navigation for a disabled nested link', () => {
+  it('should not prevent navigation for a disabled link', () => {
     const props = {
       link,
       isSidebarOpen: true
@@ -62,4 +64,18 @@ describe('SidebarLink', () => {
 
     expect(preventDefault).toHaveBeenCalled();
   });
+
+  it('should trigger composeEmail', () => {
+    const props = {
+      link,
+      isSidebarOpen: true
+    };
+    const component = shallow(<SidebarLink {...props}/>);
+    const preventDefault = jest.fn();
+
+    component.find(NavLink).get(3).props.onClick({ preventDefault });
+
+    expect(preventDefault).toHaveBeenCalled();
+    expect(composeEmail).toHaveBeenCalled();
+  })
 });

@@ -6,6 +6,7 @@ exports[`CreateEmail should render the component 1`] = `
 >
   <div
     className="overlay"
+    onClick={[MockFunction]}
   />
   <section
     className="createEmail"

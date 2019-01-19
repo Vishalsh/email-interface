@@ -21,7 +21,7 @@ exports[`EmailListItem should render the component 1`] = `
       MS Dhoni
     </span>
     <p
-      className="col-sm-2 end-sm"
+      className="col-sm-3 col-md-2 end-sm"
     >
       <span
         className="category"
@@ -33,7 +33,7 @@ exports[`EmailListItem should render the component 1`] = `
       </span>
     </p>
     <p
-      className="col-sm-5"
+      className="col-sm-4 col-md-5"
     >
       subject 1
     </p>
@@ -74,7 +74,7 @@ exports[`EmailListItem should render the component for Sent Mailbox 1`] = `
       vKohli@bcci.com
     </span>
     <p
-      className="col-sm-2 end-sm"
+      className="col-sm-3 col-md-2 end-sm"
     >
       <span
         className="category"
@@ -86,7 +86,7 @@ exports[`EmailListItem should render the component for Sent Mailbox 1`] = `
       </span>
     </p>
     <p
-      className="col-sm-5"
+      className="col-sm-4 col-md-5"
     >
       subject 1
     </p>

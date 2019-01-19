@@ -55,7 +55,7 @@ export class CreateEmail extends Component {
 
     return (
       <div className={classes.modalPopup}>
-        <div className={classes.overlay}/>
+        <div className={classes.overlay} onClick={toggleCreateEmailPopup}/>
         <section className={classes.createEmail}>
           <form>
             <InputWithLabel label="to" value={to} onChange={this.onChange}/>

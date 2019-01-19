@@ -77,7 +77,8 @@ exports[`Sidebar should render the component in closed state 1`] = `
             },
             Object {
               "name": "Compose Email",
-              "routeTo": "/mailbox/compose-email",
+              "onClick": undefined,
+              "routeTo": "none",
             },
             Object {
               "disabled": true,
@@ -215,7 +216,8 @@ exports[`Sidebar should render the component in open state 1`] = `
             },
             Object {
               "name": "Compose Email",
-              "routeTo": "/mailbox/compose-email",
+              "onClick": undefined,
+              "routeTo": "none",
             },
             Object {
               "disabled": true,

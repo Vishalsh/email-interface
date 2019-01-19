@@ -69,5 +69,11 @@ describe('CreateEmail', () => {
     component.find(Button).get(1).props.onClick();
 
     expect(props.toggleCreateEmailPopup).toHaveBeenCalled();
+
+    props.toggleCreateEmailPopup.mockReset();
+
+    component.find('.overlay').props().onClick();
+
+    expect(props.toggleCreateEmailPopup).toHaveBeenCalled();
   });
 });

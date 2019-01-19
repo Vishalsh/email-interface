@@ -42,12 +42,12 @@ const EmailListItem = (props) => {
             :
             <span className="col-sm-2">{email.sender.name}</span>
         }
-        <p className="col-sm-2 end-sm">
+        <p className="col-sm-3 col-md-2 end-sm">
           <span className={classes.category}>
             <Badge className={email.category} label={email.category}/>
           </span>
         </p>
-        <p className="col-sm-5">{email.subject}</p>
+        <p className="col-sm-4 col-md-5">{email.subject}</p>
         <span className="col-sm-1 center-sm">
           {
             email.attachments && email.attachments.length > 0 &&
