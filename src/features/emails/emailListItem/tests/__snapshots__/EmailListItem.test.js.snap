@@ -105,3 +105,56 @@ exports[`EmailListItem should render the component for Sent Mailbox 1`] = `
   </Link>
 </li>
 `;
+
+exports[`EmailListItem should render the component when email has no subject 1`] = `
+<li
+  className="listItem "
+>
+  <Checkbox
+    labelClass="checkbox"
+    labelFor="1"
+    onChange={[Function]}
+  />
+  <Link
+    className="row middle-xs emailRow"
+    onClick={[Function]}
+    replace={false}
+    to="/mailbox/inbox/1"
+  >
+    <span
+      className="col-sm-2"
+    >
+      MS Dhoni
+    </span>
+    <p
+      className="col-sm-3 col-md-2 end-sm"
+    >
+      <span
+        className="category"
+      >
+        <Badge
+          className="documents"
+          label="documents"
+        />
+      </span>
+    </p>
+    <p
+      className="subject col-sm-4 col-md-5"
+    >
+      (no subject)
+    </p>
+    <span
+      className="col-sm-1 center-sm"
+    >
+      <i
+        className="icon icon-attachment icon"
+      />
+    </span>
+    <span
+      className="col-sm-2 end-sm"
+    >
+      15 Jan
+    </span>
+  </Link>
+</li>
+`;

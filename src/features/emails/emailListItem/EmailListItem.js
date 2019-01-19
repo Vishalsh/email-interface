@@ -47,7 +47,7 @@ const EmailListItem = (props) => {
             <Badge className={email.category} label={email.category}/>
           </span>
         </p>
-        <p className={`${classes.subject} col-sm-4 col-md-5`}>{email.subject}</p>
+        <p className={`${classes.subject} col-sm-4 col-md-5`}>{email.subject || `(no subject)`}</p>
         <span className="col-sm-1 center-sm">
           {
             email.attachments && email.attachments.length > 0 &&

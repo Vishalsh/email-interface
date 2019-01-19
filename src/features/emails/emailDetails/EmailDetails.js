@@ -13,7 +13,7 @@ export const EmailDetails = (props) => {
   return (
     <section className={classes.emailDetails}>
       <div className="row middle-sm">
-        <h1>{email.subject}</h1>
+        <h1>{email.subject || `(no subject)`}</h1>
         <div>
           <Badge className={email.category} label={email.category}/>
         </div>

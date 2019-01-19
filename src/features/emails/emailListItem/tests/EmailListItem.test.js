@@ -32,6 +32,18 @@ describe('EmailListItem', () => {
     expect(toJson(component)).toMatchSnapshot();
   });
 
+  it('should render the component when email has no subject', () => {
+    const emailWithoutSubjectProps = {
+      ...props,
+      email: {
+        ...props.email,
+        subject: ''
+      }
+    };
+
+    expect(toJson(shallow(<EmailListItem {...emailWithoutSubjectProps} />))).toMatchSnapshot();
+  });
+
   it('should render the component for Sent Mailbox', () => {
     const propsWithSendEmail = {
       ...props,
