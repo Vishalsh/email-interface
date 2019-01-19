@@ -2,7 +2,8 @@ import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
   TOGGLE_EMAIL_SELECTION,
-  CLEAR_SELECTED_EMAILS
+  CLEAR_SELECTED_EMAILS,
+  TOGGLE_CREATE_EMAIL_POPUP
 } from "./emails.actionTypes";
 
 const initialState = {};
@@ -55,6 +56,13 @@ const emailsReducer = (state = initialState, action) => {
       return {
         ...state,
         selectedEmails: []
+      }
+    }
+
+    case TOGGLE_CREATE_EMAIL_POPUP: {
+      return {
+        ...state,
+        isCreateEmailPopupOpen: !state.isCreateEmailPopupOpen
       }
     }
 

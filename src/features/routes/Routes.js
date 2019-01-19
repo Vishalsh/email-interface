@@ -32,12 +32,12 @@ export const Routes = ({ isLoggedIn }) => (
   </Switch>
 );
 
-Mailbox.defaultProps = {
+Routes.defaultProps = {
   isLoggedIn: false
 };
 
-Mailbox.propTypes = {
-  isLoggedIn: PropTypes.bool.isRequired,
+Routes.propTypes = {
+  isLoggedIn: PropTypes.bool
 };
 
 const mapStateToProps = (store) => ({

@@ -2,7 +2,8 @@ import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
   TOGGLE_EMAIL_SELECTION,
-  CLEAR_SELECTED_EMAILS
+  CLEAR_SELECTED_EMAILS,
+  TOGGLE_CREATE_EMAIL_POPUP
 } from "../emails.actionTypes";
 import { status } from 'constants/emails';
 
@@ -124,6 +125,19 @@ describe('emailsReducer', () => {
       })).toEqual(
       {
         selectedEmails: []
+      }
+    );
+  });
+
+  it('should handle TOGGLE_CREATE_EMAIL_POPUP', () => {
+    expect(emailsReducer({
+        isCreateEmailPopupOpen: false
+      },
+      {
+        type: TOGGLE_CREATE_EMAIL_POPUP
+      })).toEqual(
+      {
+        isCreateEmailPopupOpen: true
       }
     );
   });

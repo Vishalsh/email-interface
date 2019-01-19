@@ -7,7 +7,7 @@ exports[`Mailbox should render the component 1`] = `
   <div
     className="col-sm-3"
   >
-    <MailboxAside />
+    <Connect(MailboxAside) />
   </div>
   <div
     className="col-sm-9"

@@ -23,7 +23,7 @@ export const InboxUnreadEmailsCount = (props) => {
       showBadge ?
         <Badge className={classes.inboxUnreadEmailsCount} label={label}/>
         :
-        label
+        `(${label})`
     }
     </>
   );

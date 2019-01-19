@@ -15,7 +15,8 @@ describe('CreateEmail', () => {
   };
 
   const props = {
-    sendEmail: jest.fn()
+    sendEmail: jest.fn(),
+    toggleCreateEmailPopup: jest.fn()
   };
   const component = shallow(<CreateEmail {...props}/>);
 
@@ -49,7 +50,7 @@ describe('CreateEmail', () => {
       }
     });
 
-    expect(component.find(Button).props().disabled).toBeTruthy();
+    expect(component.find(Button).get(0).props.disabled).toBeTruthy();
   });
 
   it('should send the email', () => {
@@ -58,9 +59,15 @@ describe('CreateEmail', () => {
     });
     const preventDefault = jest.fn();
 
-    component.find(Button).props().onClick({ preventDefault });
+    component.find(Button).get(0).props.onClick({ preventDefault });
 
     expect(preventDefault).toHaveBeenCalled();
     expect(props.sendEmail).toHaveBeenCalledWith(email);
+  });
+
+  it('should close the popup', () => {
+    component.find(Button).get(1).props.onClick();
+
+    expect(props.toggleCreateEmailPopup).toHaveBeenCalled();
   });
 });

@@ -1,17 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
 import Button from 'components/button/Button';
+import emailActions from 'features/emails/emails.actions';
 import Folders from 'features/mailboxAside/folders/Folders';
 import Categories from 'features/mailboxAside/categories/Categories';
 import Labels from 'features/mailboxAside/labels/Labels';
-import routes from 'constants/routes';
 import classes from './MailboxAside.module.scss';
 
-const MailboxAside = () => {
+export const MailboxAside = (props) => {
+  const { toggleCreateEmailPopup } = props;
+
   return (
     <section className={classes.mailboxAside}>
-      <Button type="primary" onClick={() => alert('compose')}>
+      <Button type="primary" onClick={toggleCreateEmailPopup}>
         Compose Mail
       </Button>
 
@@ -33,4 +37,12 @@ const MailboxAside = () => {
   )
 };
 
-export default MailboxAside;
+MailboxAside.propTypes = {
+  toggleCreateEmailPopup: PropTypes.func.isRequired
+};
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  toggleCreateEmailPopup: emailActions.toggleCreateEmailPopup
+}, dispatch);
+
+export default connect(null, mapDispatchToProps)(MailboxAside);

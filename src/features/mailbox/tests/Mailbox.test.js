@@ -5,6 +5,7 @@ import toJson from 'enzyme-to-json';
 import loadingStates from 'constants/loadingStates';
 import Button from 'components/button/Button';
 import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
+import CreateEmail from 'features/emails/createEmail/CreateEmail';
 import { Mailbox } from '../Mailbox';
 
 describe('Mailbox', () => {
@@ -29,6 +30,18 @@ describe('Mailbox', () => {
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();
     expect(getEmailsMock).not.toHaveBeenCalled();
+  });
+
+  it('should render the CreateEmail popup when isCreateEmailPopupOpen is true', () => {
+    expect(component.find(CreateEmail)).toHaveLength(0);
+
+    const propsWithCreateEmailPopupVisible = {
+      ...props,
+      isCreateEmailPopupOpen: true
+    };
+    const componentWithCreateEmailPopupVisible = shallow(<Mailbox {...propsWithCreateEmailPopupVisible} />);
+
+    expect(componentWithCreateEmailPopupVisible.find(CreateEmail)).toHaveLength(1);
   });
 
   it('should trigger getEmails for the mailbox when not present', () => {

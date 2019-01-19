@@ -8,7 +8,8 @@ import {
   ADD_EMAILS,
   UPDATE_EMAIL_STATUS_SUCCESSFUL,
   TOGGLE_EMAIL_SELECTION,
-  CLEAR_SELECTED_EMAILS
+  CLEAR_SELECTED_EMAILS,
+  TOGGLE_CREATE_EMAIL_POPUP
 } from "../emails.actionTypes";
 import {
   ADD_EMAIL_TO_MAILBOX
@@ -22,7 +23,13 @@ describe('emailsActions', () => {
   let store;
 
   beforeEach(() => {
-    store = mockStore({})
+    store = mockStore({
+      user: {
+        data: {
+          email: 'msDhoni@bcci.com'
+        }
+      }
+    })
   });
 
   it('should dispatch ADD_EMAILS', () => {
@@ -97,17 +104,24 @@ describe('emailsActions', () => {
       spyOn(http, 'post').and.returnValue(Promise.resolve(email));
 
       const expectedActions = [
-        { type: ADD_EMAILS, payload: { emails: [{ 1: email }] } },
-        { type: ADD_EMAIL_TO_MAILBOX, payload: { mailbox: INBOX, id: email.id } },
+        { type: ADD_EMAILS, payload: { emails: { 1: email } } },
         { type: ADD_EMAIL_TO_MAILBOX, payload: { mailbox: SENT, id: email.id } },
+        { type: TOGGLE_CREATE_EMAIL_POPUP }
       ];
 
       return store.dispatch(emailsActions.sendEmail(email))
         .then(() => {
-          expect(http.post).toHaveBeenCalledWith(apiEndPoints.sendEmail(), email);
+          expect(http.post).toHaveBeenCalledWith(apiEndPoints.sendEmail(), { ...email, from: 'msDhoni@bcci.com' });
           expect(store.getActions()).toEqual(expectedActions);
         });
     });
   });
 
+  it('should dispatch TOGGLE_CREATE_EMAIL_POPUP', () => {
+    const expectedActions = [{ type: TOGGLE_CREATE_EMAIL_POPUP }];
+
+    store.dispatch(emailsActions.toggleCreateEmailPopup());
+
+    expect(store.getActions()).toEqual(expectedActions);
+  });
 });

@@ -21,8 +21,14 @@ export const EmailDetails = (props) => {
 
       <div className={`${classes.detailRow} row`}>
         <div className="col-sm-6">
-          <span className={classes.label}>From: </span>
-          <span>{`${email.sender.name} <${email.sender.email}>`}</span>
+          <div>
+            <span className={classes.label}>From: </span>
+            <span>{`${email.sender.name} <${email.sender.email}>`}</span>
+          </div>
+          <div>
+            <span className={classes.label}>To: </span>
+            <span>{email.to}</span>
+          </div>
         </div>
         <div className="col-sm-6 end-sm">
           <span>{email.dateTime}</span>

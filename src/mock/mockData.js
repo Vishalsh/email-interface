@@ -8,7 +8,7 @@ const users = [{
 }, {
   id: 2,
   name: 'Virat Kohli',
-  email: 'vkohli@bcci.com',
+  email: 'vKohli@bcci.com',
   password: '!abcd1234',
   role: 'Captain',
   avatar: 'http://s.ndtvimg.com/images/entities/120/virat-kohli-967.png'
@@ -33,18 +33,11 @@ const users = [{
   password: '!abcd1234',
   role: 'Bowler',
   avatar: ''
-}, {
-  id: 1,
-  name: 'MS Dhoni',
-  email: 'a@b.c',
-  password: 'a',
-  role: 'Wicket Keeper',
-  avatar: 'http://s.ndtvimg.com/images/entities/120/ms-dhoni-700.png'
 }];
 
 const emails = [{
   id: 1,
-  from: 'vkohli@bcci.com',
+  from: 'vKohli@bcci.com',
   to: 'msDhoni@bcci.com',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'hi, how are you ?',
@@ -88,7 +81,7 @@ const emails = [{
 }, {
   id: 6,
   from: 'jynks@bcci.com',
-  to: 'msDhoni@bcci.com',
+  to: 'vKohli@bcci.com',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
@@ -138,7 +131,8 @@ const emails = [{
 }, {
   id: 12,
   from: 'bhuvi@bcci.com',
-  to: 'msDhoni@bcci.com',
+  to: 'vKohli@bcci.com',
+  cc: 'msDhoni@bcci.com',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
@@ -170,7 +164,7 @@ const emails = [{
 }, {
   id: 16,
   from: 'rkharma@bcci.com',
-  to: 'msDhoni@bcci.com',
+  to: 'vKohli@bcci.com',
   body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat',
   subject: 'Lorem ipsum dolor sit amet.',
   status: 'READ',
@@ -207,18 +201,18 @@ const mailboxes = [{
   emails: []
 }];
 
-// if (!localStorage.getItem('users')) {
-//   localStorage.setItem('users', JSON.stringify(users));
-// }
-// if (!localStorage.getItem('mailboxes')) {
-//   localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
-// }
-// if (!localStorage.getItem('emails')) {
-//   localStorage.setItem('emails', JSON.stringify(emails));
-// }
-
-(function reset() {
+if (!localStorage.getItem('users')) {
   localStorage.setItem('users', JSON.stringify(users));
+}
+if (!localStorage.getItem('mailboxes')) {
   localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
+}
+if (!localStorage.getItem('emails')) {
   localStorage.setItem('emails', JSON.stringify(emails));
-})();
+}
+
+// (function reset() {
+//   localStorage.setItem('users', JSON.stringify(users));
+//   localStorage.setItem('mailboxes', JSON.stringify(mailboxes));
+//   localStorage.setItem('emails', JSON.stringify(emails));
+// })();

@@ -41,21 +41,32 @@ const getMailboxEmails = (url) => {
   const mailboxes = getMailboxes();
   const emails = getEmails();
 
-  const userId = parseInt(url.split('/')[2]);
-  const mailboxName = url.split('/')[4];
+  const userEmail = url.split('=')[1];
+  const mailboxName = url.split('/')[2];
 
-  const receiverEmail = users.find(user => user.id === userId).email;
   const mailboxEmails = mailboxes
     .find(mailbox => mailbox.name === mailboxName).emails;
 
-  const emailList = emails.filter(email => email.to === receiverEmail && mailboxEmails.includes(email.id))
-    .map(email => ({
-      ...email,
-      sender: {
-        name: users.find(user => user.email === email.from).name,
-        email: email.from
-      }
-    }));
+  let emailList = [];
+  if (mailboxName === mailbox.SENT) {
+    emailList = emails.filter(email => mailboxEmails.includes(email.id) && email.from === userEmail)
+      .map(email => ({
+        ...email,
+        sender: {
+          name: users.find(user => user.email === email.from).name,
+          email: email.from
+        }
+      }));
+  } else {
+    emailList = emails.filter(email => mailboxEmails.includes(email.id) && (email.to === userEmail || email.cc === userEmail))
+      .map(email => ({
+        ...email,
+        sender: {
+          name: users.find(user => user.email === email.from).name,
+          email: email.from
+        }
+      }));
+  }
 
   return new Promise((resolve) => {
     resolve({
@@ -67,15 +78,24 @@ const getMailboxEmails = (url) => {
 
 const createEmail = (email) => {
   const emails = getEmails();
+  const users = getUsers();
 
-  const newEmail = {
+  const sender = users.find(user => user.email === email.from);
+
+  const newInboxEmail = {
     id: emails[emails.length - 1].id + 1,
     ...email,
-    dateTime: 'Jan 1',
+    dateTime: 'Now',
     status: 'UNREAD',
   };
 
-  const newEmails = [...emails, newEmail];
+  const newSentEmail = {
+    id: emails[emails.length - 1].id + 2,
+    ...email,
+    dateTime: 'Now',
+    status: 'READ',
+  };
+  const newEmails = [newInboxEmail, newSentEmail, ...emails];
 
   localStorage.setItem('emails', JSON.stringify(newEmails));
 
@@ -83,12 +103,25 @@ const createEmail = (email) => {
   const mailboxesCopy = mailboxes.slice(0);
 
   const inputMailbox = mailboxesCopy.find(mb => mb.name === mailbox.INBOX);
-  inputMailbox.emails = [newEmail, ...inputMailbox.emails];
+  inputMailbox.emails = [newInboxEmail.id, ...inputMailbox.emails];
 
   const sentMailbox = mailboxesCopy.find(mb => mb.name === mailbox.SENT);
-  sentMailbox.emails = [newEmail, ...inputMailbox.emails];
+  sentMailbox.emails = [newSentEmail.id, ...sentMailbox.emails];
 
   localStorage.setItem('mailboxes', JSON.stringify(mailboxesCopy));
+
+  return new Promise((resolve) => {
+    resolve({
+      status: 200,
+      data: {
+        ...newSentEmail,
+        sender: {
+          name: sender.name,
+          email: sender.email
+        }
+      }
+    });
+  });
 };
 
 const updateEmail = (email) => {
@@ -141,7 +174,7 @@ const fetch = (url, { method }, data) => {
     return login(data);
   }
 
-  if (url.includes('users') && url.includes('mailboxes') && url.includes('emails')) {
+  if (method === methods.GET && url.includes('mailboxes') && url.includes('emails')) {
     return getMailboxEmails(url);
   }
 

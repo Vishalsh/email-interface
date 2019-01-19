@@ -7,7 +7,7 @@ exports[`MailboxAside should render the component 1`] = `
   <Button
     className=""
     disabled={false}
-    onClick={[Function]}
+    onClick={[MockFunction]}
     type="primary"
   >
     Compose Mail

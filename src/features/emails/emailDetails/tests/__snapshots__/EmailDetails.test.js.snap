@@ -23,14 +23,24 @@ exports[`Emails should render the component 1`] = `
     <div
       className="col-sm-6"
     >
-      <span
-        className="label"
-      >
-        From: 
-      </span>
-      <span>
-        MS Dhoni &lt;msDhoni@bcci.com&gt;
-      </span>
+      <div>
+        <span
+          className="label"
+        >
+          From: 
+        </span>
+        <span>
+          MS Dhoni &lt;msDhoni@bcci.com&gt;
+        </span>
+      </div>
+      <div>
+        <span
+          className="label"
+        >
+          To: 
+        </span>
+        <span />
+      </div>
     </div>
     <div
       className="col-sm-6 end-sm"

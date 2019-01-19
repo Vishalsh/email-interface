@@ -12,6 +12,7 @@ describe('EmailListItem', () => {
     email: {
       id: 1,
       subject: 'subject 1',
+      to: 'vKohli@bcci.com',
       sender: {
         name: 'MS Dhoni',
         email: 'msDhoni@bcci.com'
@@ -29,6 +30,15 @@ describe('EmailListItem', () => {
 
   it('should render the component', () => {
     expect(toJson(component)).toMatchSnapshot();
+  });
+
+  it('should render the component for Sent Mailbox', () => {
+    const propsWithSendEmail = {
+      ...props,
+      mailbox: 'sent'
+    };
+
+    expect(toJson(shallow(<EmailListItem {...propsWithSendEmail} />))).toMatchSnapshot();
   });
 
   it('should not trigger onClickEmail if the email status is not UNREAD', () => {

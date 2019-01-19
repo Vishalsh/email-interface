@@ -39,7 +39,7 @@ export class Mailbox extends Component {
   };
 
   render() {
-    const { match, mailbox } = this.props;
+    const { match, mailbox, isCreateEmailPopupOpen } = this.props;
 
     return (
       <section className={classes.mailbox}>
@@ -49,7 +49,7 @@ export class Mailbox extends Component {
               {match.params.mailbox}
               {
                 match.params.mailbox === INBOX &&
-                <>(<InboxUnreadEmailsCount showBadge={false}/>)</>
+                <><InboxUnreadEmailsCount showBadge={false}/></>
               }
             </h1>
           </div>
@@ -70,10 +70,10 @@ export class Mailbox extends Component {
               </Button>
             </div>
             <div className="col-sm-4 end-xs flex">
-              <Button type="default">
+              <Button type="default" className={classes.actionButton}>
                 <i className="icon icon-left"/>
               </Button>
-              <Button type="default" className={classes.paginationRightButton}>
+              <Button type="default" className={`${classes.actionButton} ${classes.paginationRightButton}`}>
                 <i className="icon icon-right"/>
               </Button>
             </div>
@@ -88,6 +88,11 @@ export class Mailbox extends Component {
         }
 
         <Route path={`${match.url}/:id`} component={EmailDetails}/>
+
+        {
+          isCreateEmailPopupOpen &&
+          <CreateEmail />
+        }
       </section>
     );
   }
@@ -97,7 +102,8 @@ Mailbox.defaultProps = {
   mailbox: {
     emails: [],
     loadingState: loadingStates.AT_REST
-  }
+  },
+  isCreateEmailPopupOpen: false
 };
 
 Mailbox.propTypes = {
@@ -106,12 +112,14 @@ Mailbox.propTypes = {
     emails: PropTypes.array,
     loadingState: PropTypes.string,
   }),
+  isCreateEmailPopupOpen: PropTypes.bool.isRequired,
   getEmails: PropTypes.func.isRequired,
-  deleteEmails: PropTypes.func.isRequired
+  deleteEmails: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (store, ownProps) => ({
-  mailbox: store.mailbox[ownProps.match.params.mailbox]
+  mailbox: store.mailbox[ownProps.match.params.mailbox],
+  isCreateEmailPopupOpen: store.emails.isCreateEmailPopupOpen
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({

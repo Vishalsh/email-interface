@@ -13,7 +13,7 @@ import {
   ADD_EMAILS,
   CLEAR_SELECTED_EMAILS
 } from "features/emails/emails.actionTypes";
-import { INBOX, TRASH } from 'constants/mailbox';
+import { INBOX, TRASH, SENT } from 'constants/mailbox';
 
 import mailboxActions from '../mailbox.actions';
 
@@ -32,7 +32,6 @@ describe('mailboxActions', () => {
   });
 
   describe('getEmails', () => {
-    const mailbox = 'inbox';
     const emails = [{
       id: 1,
       subject: 'subject 1'
@@ -60,12 +59,12 @@ describe('mailboxActions', () => {
             }
           }
         },
-        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox, emails: [1, 2] } }
+        { type: GET_EMAILS_SUCCESSFUL, payload: { mailbox: INBOX, emails: [1, 2] } }
       ];
 
-      return store.dispatch(mailboxActions.getEmails(mailbox))
+      return store.dispatch(mailboxActions.getEmails(INBOX))
         .then(() => {
-          expect(http.get).toHaveBeenCalledWith(apiEndPoints.getEmails(1, mailbox));
+          expect(http.get).toHaveBeenCalledWith(apiEndPoints.getEmails('msDhoni@bcci.com', INBOX));
           expect(store.getActions()).toEqual(expectedActions);
         });
     });
@@ -76,12 +75,12 @@ describe('mailboxActions', () => {
       spyOn(http, 'get').and.returnValue(Promise.reject(error));
 
       const expectedActions = [
-        { type: GET_EMAILS_FAILED, payload: { mailbox } }
+        { type: GET_EMAILS_FAILED, payload: { mailbox: SENT } }
       ];
 
-      return store.dispatch(mailboxActions.getEmails(mailbox))
+      return store.dispatch(mailboxActions.getEmails(SENT))
         .then(() => {
-          expect(http.get).toHaveBeenCalledWith(apiEndPoints.getEmails(1, mailbox));
+          expect(http.get).toHaveBeenCalledWith(apiEndPoints.getEmails('msDhoni@bcci.com', SENT));
           expect(store.getActions()).toEqual(expectedActions);
         });
     });

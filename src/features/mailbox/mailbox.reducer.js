@@ -10,15 +10,15 @@ import { INBOX, SENT, TRASH } from 'constants/mailbox';
 const initialState = {
   [INBOX]: {
     emails: [],
-    loadingStates: loadingStates.AT_REST
+    loadingState: loadingStates.AT_REST
   },
   [SENT]: {
     emails: [],
-    loadingStates: loadingStates.AT_REST
+    loadingState: loadingStates.AT_REST
   },
   [TRASH]: {
     emails: [],
-    loadingStates: loadingStates.AT_REST
+    loadingState: loadingStates.AT_REST
   }
 };
 

@@ -49,33 +49,51 @@ export class CreateEmail extends Component {
   };
 
   render() {
+    const { toggleCreateEmailPopup } = this.props;
     const { email } = this.state;
     const { to, cc, subject, body } = email;
 
     return (
-      <section className={classes.createEmail}>
-        <form>
-          <InputWithLabel label="to" value={to} onChange={this.onChange}/>
-          <InputWithLabel label="cc" value={cc} onChange={this.onChange}/>
-          <InputWithLabel label="subject" value={subject} onChange={this.onChange}/>
-          <InputWithLabel label="body" value={body} onChange={this.onChange}/>
+      <div className={classes.modalPopup}>
+        <div className={classes.overlay}/>
+        <section className={classes.createEmail}>
+          <form>
+            <InputWithLabel label="to" value={to} onChange={this.onChange}/>
+            <InputWithLabel label="cc" value={cc} onChange={this.onChange}/>
+            <InputWithLabel label="subject" value={subject} onChange={this.onChange}/>
+            <InputWithLabel label="body" value={body} onChange={this.onChange}/>
 
-          <Button type="primary" onClick={this.submit} disabled={!this.isFormValid()}>
-            Compose Mail
-          </Button>
-        </form>
-      </section>
+            <div className="row">
+              <div className="col-sm-6">
+                <Button type="primary"
+                        className={classes.submitButton}
+                        onClick={this.submit}
+                        disabled={!this.isFormValid()}>
+                  Send
+                </Button>
+              </div>
+              <div className="col-sm-6">
+                <Button type="default"
+                        onClick={toggleCreateEmailPopup}>
+                  Cancel
+                </Button>
+              </div>
+            </div>
+          </form>
+        </section>
+      </div>
     );
   }
 }
 
 CreateEmail.propTypes = {
-  sendEmail: PropTypes.func.isRequired
+  sendEmail: PropTypes.func.isRequired,
+  toggleCreateEmailPopup: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  sendEmail: emailActions.sendEmail
+  sendEmail: emailActions.sendEmail,
+  toggleCreateEmailPopup: emailActions.toggleCreateEmailPopup
 }, dispatch);
-
 
 export default connect(null, mapDispatchToProps)(CreateEmail);

@@ -27,8 +27,6 @@
 .default {
   background-color: map_get($gray, '1500');
   border: 1px solid map_get($gray, '1300');
-  width: auto;
-  height: 3.5rem;
 }
 
 .primary {

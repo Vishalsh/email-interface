@@ -19,7 +19,7 @@ const addEmailToMailbox = createAction(ADD_EMAIL_TO_MAILBOX);
 const getEmails = (mailbox) => (dispatch, getState) => {
   const { user } = getState();
 
-  return http.get(apiEndPoints.getEmails(user.data.id, mailbox))
+  return http.get(apiEndPoints.getEmails(user.data.email, mailbox))
     .then((emails) => {
       dispatch(emailActions.addEmails({
         emails: emails.reduce((emailsObject, email) => {

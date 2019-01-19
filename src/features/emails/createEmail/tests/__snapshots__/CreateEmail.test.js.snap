@@ -1,42 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateEmail should render the component 1`] = `
-<section
-  className="createEmail"
+<div
+  className="modalPopup"
 >
-  <form>
-    <InputWithLabel
-      inputType="text"
-      label="to"
-      onChange={[Function]}
-      value=""
-    />
-    <InputWithLabel
-      inputType="text"
-      label="cc"
-      onChange={[Function]}
-      value=""
-    />
-    <InputWithLabel
-      inputType="text"
-      label="subject"
-      onChange={[Function]}
-      value=""
-    />
-    <InputWithLabel
-      inputType="text"
-      label="body"
-      onChange={[Function]}
-      value=""
-    />
-    <Button
-      className=""
-      disabled={true}
-      onClick={[Function]}
-      type="primary"
-    >
-      Compose Mail
-    </Button>
-  </form>
-</section>
+  <div
+    className="overlay"
+  />
+  <section
+    className="createEmail"
+  >
+    <form>
+      <InputWithLabel
+        inputType="text"
+        label="to"
+        onChange={[Function]}
+        value=""
+      />
+      <InputWithLabel
+        inputType="text"
+        label="cc"
+        onChange={[Function]}
+        value=""
+      />
+      <InputWithLabel
+        inputType="text"
+        label="subject"
+        onChange={[Function]}
+        value=""
+      />
+      <InputWithLabel
+        inputType="text"
+        label="body"
+        onChange={[Function]}
+        value=""
+      />
+      <div
+        className="row"
+      >
+        <div
+          className="col-sm-6"
+        >
+          <Button
+            className="submitButton"
+            disabled={true}
+            onClick={[Function]}
+            type="primary"
+          >
+            Send
+          </Button>
+        </div>
+        <div
+          className="col-sm-6"
+        >
+          <Button
+            className=""
+            disabled={false}
+            onClick={[MockFunction]}
+            type="default"
+          >
+            Cancel
+          </Button>
+        </div>
+      </div>
+    </form>
+  </section>
+</div>
 `;
