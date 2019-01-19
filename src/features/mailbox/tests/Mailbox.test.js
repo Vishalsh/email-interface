@@ -6,6 +6,7 @@ import loadingStates from 'constants/loadingStates';
 import Button from 'components/button/Button';
 import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import CreateEmail from 'features/emails/createEmail/CreateEmail';
+import MailboxHeader from 'features/mailbox/mailboxHeader/MailboxHeader';
 import { Mailbox } from '../Mailbox';
 
 describe('Mailbox', () => {
@@ -55,26 +56,9 @@ describe('Mailbox', () => {
   });
 
   it('should trigger deleteEmails', () => {
-    component.find(Button).get(3).props.onClick();
+    component.find(MailboxHeader).props().onClickDeleteEmails();
 
     expect(deleteEmailsMock).toHaveBeenCalledWith('inbox');
-  });
-
-  it('should unread emails count only for Inbox', () => {
-    expect(component.find(InboxUnreadEmailsCount)).toHaveLength(1);
-
-    const propWithSentMailbox = {
-      ...props,
-      match: {
-        params: {
-          mailbox: 'sent'
-        },
-        url: '/mailbox/sent'
-      }
-    };
-    const componentWithSentMailbox = shallow(<Mailbox {...propWithSentMailbox} />);
-
-    expect(componentWithSentMailbox.find(InboxUnreadEmailsCount)).toHaveLength(0);
   });
 
   it('should trigger getEmails on change of mailbox when already not present', () => {

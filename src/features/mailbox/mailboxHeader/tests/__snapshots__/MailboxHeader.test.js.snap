@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MailboxHeader should render the component 1`] = `
+<header
+  className="header"
+>
+  <div
+    className="row"
+  >
+    <h1
+      className="name col-sm-7 col-md-8"
+    >
+      inbox
+      <Connect(InboxUnreadEmailsCount)
+        showBadge={false}
+      />
+    </h1>
+    <div
+      className="col-sm-5 col-md-4 end-sm"
+    >
+      <SearchInput />
+    </div>
+  </div>
+  <div
+    className="mailboxActions row"
+  >
+    <div
+      className="col-sm-8 flex"
+    >
+      <Button
+        className="actionButton"
+        disabled={false}
+        type="default"
+      >
+        <i
+          className="icon icon-refresh iconRefresh"
+        />
+        <span>
+          Refresh
+        </span>
+      </Button>
+      <Button
+        className="actionButton"
+        disabled={false}
+        type="default"
+      >
+        <i
+          className="icon icon-eye"
+        />
+      </Button>
+      <Button
+        className="actionButton"
+        disabled={false}
+        type="default"
+      >
+        <i
+          className="icon icon-bang"
+        />
+      </Button>
+      <Button
+        className="actionButton"
+        disabled={false}
+        onClick={[MockFunction]}
+        type="default"
+      >
+        <i
+          className="icon icon-delete"
+        />
+      </Button>
+    </div>
+    <div
+      className="col-sm-4 end-xs flex"
+    >
+      <Button
+        className="actionButton"
+        disabled={false}
+        type="default"
+      >
+        <i
+          className="icon icon-left"
+        />
+      </Button>
+      <Button
+        className="actionButton paginationRightButton"
+        disabled={false}
+        type="default"
+      >
+        <i
+          className="icon icon-right"
+        />
+      </Button>
+    </div>
+  </div>
+</header>
+`;

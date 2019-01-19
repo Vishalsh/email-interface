@@ -6,16 +6,20 @@ exports[`Login should render the component 1`] = `
 >
   <form>
     <InputWithLabel
+      className=""
       inputType="text"
       label="email"
       onChange={[Function]}
+      placeholder=""
       textarea={false}
       value=""
     />
     <InputWithLabel
+      className=""
       inputType="password"
       label="password"
       onChange={[Function]}
+      placeholder=""
       textarea={false}
       value=""
     />

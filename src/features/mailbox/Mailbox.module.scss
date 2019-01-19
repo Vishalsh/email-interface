@@ -6,31 +6,3 @@
   margin: 0 1rem;
   position: relative;
 }
-
-.header {
-  padding: 3rem 2rem 2rem;
-  border-bottom: 1px solid map-get($gray, '1300');
-}
-
-.name {
-  text-transform: capitalize;
-}
-
-.mailboxActions {
-  margin-top: 2rem;
-}
-
-.actionButton {
-  margin-right: 0.5rem;
-  width: auto;
-  height: 3.5rem;
-}
-
-.iconRefresh {
-  margin-right: 0.3rem;
-}
-
-.paginationRightButton {
-  margin-left: -0.6rem;
-  margin-right: 0;
-}

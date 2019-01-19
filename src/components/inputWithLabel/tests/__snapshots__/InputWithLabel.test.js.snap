@@ -2,7 +2,7 @@
 
 exports[`InputWithLabel should render the component 1`] = `
 <div
-  className="inputWithLabel"
+  className="inputWithLabel "
 >
   <label
     className="label"
@@ -15,6 +15,7 @@ exports[`InputWithLabel should render the component 1`] = `
     id="foo"
     name="foo"
     onChange={[MockFunction]}
+    placeholder=""
     type="text"
     value="bar"
   />
@@ -23,7 +24,7 @@ exports[`InputWithLabel should render the component 1`] = `
 
 exports[`InputWithLabel should render the component with textarea 1`] = `
 <div
-  className="inputWithLabel"
+  className="inputWithLabel "
 >
   <label
     className="label"
@@ -36,6 +37,7 @@ exports[`InputWithLabel should render the component with textarea 1`] = `
     id="foo"
     name="foo"
     onChange={[MockFunction]}
+    placeholder=""
     value="bar"
   />
 </div>

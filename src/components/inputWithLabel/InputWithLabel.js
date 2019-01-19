@@ -9,11 +9,13 @@ const InputWithLabel = (props) => {
     value,
     inputType,
     textarea,
+    className,
+    placeholder,
     onChange
   } = props;
 
   return (
-    <div className={classes.inputWithLabel}>
+    <div className={`${classes.inputWithLabel} ${className}`}>
       <label className={classes.label}
              htmlFor={label}>
         {label.toUpperCase()}
@@ -24,6 +26,7 @@ const InputWithLabel = (props) => {
                     className={`${classes.input} ${classes.textarea}`}
                     value={value}
                     name={label}
+                    placeholder={placeholder}
                     onChange={onChange}>
           </textarea>
           :
@@ -32,6 +35,7 @@ const InputWithLabel = (props) => {
                  value={value}
                  name={label}
                  type={inputType}
+                 placeholder={placeholder}
                  onChange={onChange}/>
       }
     </div>
@@ -40,6 +44,8 @@ const InputWithLabel = (props) => {
 
 InputWithLabel.defaultProps = {
   inputType: 'text',
+  className: '',
+  placeholder: '',
   textarea: false
 };
 
@@ -47,6 +53,8 @@ InputWithLabel.propTypes = {
   label: PropTypes.string.isRequired,
   value: PropTypes.string.isRequired,
   inputType: PropTypes.string,
+  className: PropTypes.string,
+  placeholder: PropTypes.string,
   textarea: PropTypes.bool,
   onChange: PropTypes.func.isRequired
 };

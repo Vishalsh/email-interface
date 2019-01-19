@@ -6,13 +6,11 @@ import { Route } from 'react-router-dom';
 
 import mailboxActions from './mailbox.actions';
 import loadingStates from 'constants/loadingStates';
-import { INBOX } from 'constants/mailbox';
-import Button from 'components/button/Button';
 import Emails from 'features/emails/Emails';
 import NoEmail from 'features/emails/noEmail/NoEmail';
-import InboxUnreadEmailsCount from 'features/mailbox/inboxUnreadEmailsCount/InboxUnreadEmailsCount';
 import EmailDetails from 'features/emails/emailDetails/EmailDetails';
 import CreateEmail from 'features/emails/createEmail/CreateEmail';
+import MailboxHeader from 'features/mailbox/mailboxHeader/MailboxHeader';
 import classes from './Mailbox.module.scss';
 
 export class Mailbox extends Component {
@@ -43,42 +41,7 @@ export class Mailbox extends Component {
 
     return (
       <section className={classes.mailbox}>
-        <header className={classes.header}>
-          <div className="row">
-            <h1 className={`${classes.name} col-sm-6`}>
-              {match.params.mailbox}
-              {
-                match.params.mailbox === INBOX &&
-                <><InboxUnreadEmailsCount showBadge={false}/></>
-              }
-            </h1>
-          </div>
-          <div className={`${classes.mailboxActions} row`}>
-            <div className="col-sm-8 flex">
-              <Button type="default" className={classes.actionButton}>
-                <i className={`icon icon-refresh ${classes.iconRefresh}`}/>
-                <span>Refresh</span>
-              </Button>
-              <Button type="default" className={classes.actionButton}>
-                <i className="icon icon-eye"/>
-              </Button>
-              <Button type="default" className={classes.actionButton}>
-                <i className="icon icon-bang"/>
-              </Button>
-              <Button type="default" onClick={this.onClickDeleteEmails} className={classes.actionButton}>
-                <i className="icon icon-delete"/>
-              </Button>
-            </div>
-            <div className="col-sm-4 end-xs flex">
-              <Button type="default" className={classes.actionButton}>
-                <i className="icon icon-left"/>
-              </Button>
-              <Button type="default" className={`${classes.actionButton} ${classes.paginationRightButton}`}>
-                <i className="icon icon-right"/>
-              </Button>
-            </div>
-          </div>
-        </header>
+        <MailboxHeader mailbox={match.params.mailbox} onClickDeleteEmails={this.onClickDeleteEmails}/>
 
         {
           mailbox.emails.length > 0 ?

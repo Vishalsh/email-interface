@@ -13,30 +13,38 @@ exports[`CreateEmail should render the component 1`] = `
   >
     <form>
       <InputWithLabel
+        className=""
         inputType="text"
         label="to"
         onChange={[Function]}
+        placeholder=""
         textarea={false}
         value=""
       />
       <InputWithLabel
+        className=""
         inputType="text"
         label="cc"
         onChange={[Function]}
+        placeholder=""
         textarea={false}
         value=""
       />
       <InputWithLabel
+        className=""
         inputType="text"
         label="subject"
         onChange={[Function]}
+        placeholder=""
         textarea={false}
         value=""
       />
       <InputWithLabel
+        className=""
         inputType="text"
         label="body"
         onChange={[Function]}
+        placeholder=""
         textarea={true}
         value=""
       />

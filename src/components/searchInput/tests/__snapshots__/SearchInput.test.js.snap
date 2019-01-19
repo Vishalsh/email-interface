@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchInput should render the component 1`] = `
+<div
+  className="row middle-xs"
+>
+  <div
+    className="inputWithLabelContainer col-sm-8 col-md-9"
+  >
+    <InputWithLabel
+      className="inputWithLabel"
+      inputType="text"
+      label=""
+      onChange={[Function]}
+      placeholder="Search email"
+      textarea={false}
+      value=""
+    />
+  </div>
+  <Button
+    className="col-sm-4 col-md-3"
+    disabled={false}
+    type="primary"
+  >
+    Search
+  </Button>
+</div>
+`;
